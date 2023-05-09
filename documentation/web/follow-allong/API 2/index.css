@@ -1,0 +1,169 @@
+body {
+  margin: 0;
+  background-color: #181818;
+  color: rgb(240, 240, 240);
+}
+
+* {
+  font-family: Roboto, Arial, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#page-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px 2vw 10px 2vw;
+  position: sticky;
+  top: 0;
+  background-color: #202020;
+  font-size: x-large;
+}
+
+#research-input {
+  min-width: 20vw;
+  border: 1px solid #2c2c2c;
+  font-size: 1.2rem;
+  padding: 9px;
+  background-color: #101010;
+  color: white;
+}
+
+#search-bar {
+  background-color: #333333;
+}
+
+#search-btn {
+  font-size: 2.2rem;
+  margin: 0 3px 3px 0;
+  color: white;
+}
+
+button[type=submit] {
+  border: none;
+  background-color: transparent;
+  vertical-align: bottom;
+}
+
+#research-input:focus {
+  outline: none;
+}
+
+.material-icons, .material-icons-outlined {
+  vertical-align: bottom;
+  user-select: none;
+}
+
+#page-body {
+  display: flex;
+  padding: 20px;
+  max-width: 1600px;
+  margin: auto;
+}
+
+#page-body > :first-child {
+  max-width: 70%;
+}
+
+#videos-list {
+  flex-grow: 1;
+  padding: 20px;
+  margin: 0;
+  list-style: none;
+}
+
+#videos-list > li > * {
+  margin-bottom: 10px;
+  display: flex;
+}
+
+.video-vignette {
+  width: 180px;
+  height: 90px;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+#videos-list > li > * > :last-child {
+  vertical-align: top;
+}
+
+#video-player > * {
+  width: 100%;
+}
+
+#video-actions {
+  text-align: end;
+  position: relative;
+}
+
+#video-actions > :first-child {
+  position: absolute;
+  left: 0;
+}
+
+#video-actions > * {
+  margin-right: 15px;
+}
+
+#video-info {
+  display: flex;
+  flex-direction: row;
+}
+
+#video-info > :nth-child(2) {
+  flex-grow: 1;
+  padding: 0 20px 0 20px;
+}
+
+#video-info > :last-child {
+  white-space: nowrap;
+}
+
+#video-info h4 {
+  margin: 0;
+}
+
+.profile-picture {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.small-text {
+  color: #acacac;
+}
+
+.subscribe-btn {
+  border: none;
+  border-radius: 2px;
+  background-color: rgb(204, 0, 0);
+  color: white;
+  font-size: 1.5rem;
+  padding: 8px;
+}
+
+.subscribe-btn ~ span {
+  font-size: 2.2rem;
+  padding-bottom: 4px;
+}
+
+hr {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.tubeyou-logo::before {
+  content: '';
+  display: inline-block;
+  vertical-align: sub;
+  margin-right: 3px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgb(221, 16, 16);
+}

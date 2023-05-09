@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>web-fr.md</title>
+    <link href="/documentation/index.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+</head>
+<body>
+    <h1 id="développement-web">Développement web</h1>
+<p>Un "cours" qui traite de tous les aspects du web nécessaires pour réaliser un site.</p>
+<h2 id="table-des-matières">1 Table des matières</h2>
+<p>Certains blocks ont été masqués.</p>
+<p><nav class="toc"><ol class="toc-level toc-level-1"><li class="toc-item toc-item-h2"><a class="toc-link toc-link-h2" href="#table-des-matières">Table des matières</a></li><li class="toc-item toc-item-h2"><a class="toc-link toc-link-h2" href="#intro">Intro</a><ol class="toc-level toc-level-2"><li class="toc-item toc-item-h3"><a class="toc-link toc-link-h3" href="#comment-ça-marche-le-web-">Comment ça marche, le web ?</a></li><li class="toc-item toc-item-h3"><a class="toc-link toc-link-h3" href="#installation">Installation</a></li></ol></li><li class="toc-item toc-item-h2"><a class="toc-link toc-link-h2" href="#html">HTML</a><ol class="toc-level toc-level-2"><li class="toc-item toc-item-h3"><a class="toc-link toc-link-h3" href="#les-balises-utiles">Les balises utiles</a></li><li class="toc-item toc-item-h3"><a class="toc-link toc-link-h3" href="#w3c">W3C</a></li></ol></li><li class="toc-item toc-item-h2"><a class="toc-link toc-link-h2" href="#css">css</a><ol class="toc-level toc-level-2"><li class="toc-item toc-item-h3"><a class="toc-link toc-link-h3" href="#sélecteurs">Sélecteurs</a></li><li class="toc-item toc-item-h3"><a class="toc-link toc-link-h3" href="#les-devtools">Les devtools</a></li><li class="toc-item toc-item-h3"><a class="toc-link toc-link-h3" href="#positionnement">Positionnement</a></li><li class="toc-item toc-item-h3"><a class="toc-link toc-link-h3" href="#styles">Styles</a></li><li class="toc-item toc-item-h3"><a class="toc-link toc-link-h3" href="#outils-supplémentaires">Outils supplémentaires</a></li></ol></li><li class="toc-item toc-item-h2"><a class="toc-link toc-link-h2" href="#requêtes">Requêtes</a><ol class="toc-level toc-level-2"><li class="toc-item toc-item-h3"><a class="toc-link toc-link-h3" href="#liens">Liens</a></li><li class="toc-item toc-item-h3"><a class="toc-link toc-link-h3" href="#forms">Forms</a></li></ol></li><li class="toc-item toc-item-h2"><a class="toc-link toc-link-h2" href="#php">php</a><ol class="toc-level toc-level-2"><li class="toc-item toc-item-h3"><a class="toc-link toc-link-h3" href="#syntaxe-de-base">Syntaxe de base</a></li><li class="toc-item toc-item-h3"><a class="toc-link toc-link-h3" href="#intégration-en-html">Intégration en html</a></li><li class="toc-item toc-item-h3"><a class="toc-link toc-link-h3" href="#sessions">Sessions</a></li><li class="toc-item toc-item-h3"><a class="toc-link toc-link-h3" href="#pdo">PDO</a></li><li class="toc-item toc-item-h3"><a class="toc-link toc-link-h3" href="#communication-avec-lextérieur">Communication avec l'extérieur</a></li></ol></li><li class="toc-item toc-item-h2"><a class="toc-link toc-link-h2" href="#le-mvc">Le MVC</a></li><li class="toc-item toc-item-h2"><a class="toc-link toc-link-h2" href="#js">JS</a><ol class="toc-level toc-level-2"><li class="toc-item toc-item-h3"><a class="toc-link toc-link-h3" href="#syntaxe">Syntaxe</a></li><li class="toc-item toc-item-h3"><a class="toc-link toc-link-h3" href="#interaction-avec-le-dom">Interaction avec le DOM</a></li><li class="toc-item toc-item-h3"><a class="toc-link toc-link-h3" href="#eléments-du-langage">Eléments du langage</a></li><li class="toc-item toc-item-h3"><a class="toc-link toc-link-h3" href="#les-requêtes-en-js">Les requêtes en JS</a></li><li class="toc-item toc-item-h3"><a class="toc-link toc-link-h3" href="#les-twists-de-javascript">Les twists de Javascript</a></li></ol></li><li class="toc-item toc-item-h2"><a class="toc-link toc-link-h2" href="#notes-additionnelles">Notes additionnelles</a><ol class="toc-level toc-level-2"><li class="toc-item toc-item-h3"><a class="toc-link toc-link-h3" href="#nodejs">NodeJS</a></li></ol></li><li class="toc-item toc-item-h2"><a class="toc-link toc-link-h2" href="#liens-1">Liens</a></li></ol></nav></p>
+<h2 id="intro">2 Intro</h2>
+<p>Avec ce "cours" je compte vous apprendre à vous servir d'html, css, php et javascript (js) pour construire un site web complet. Je n'ai pas besoin de vous expliquer à quel point le web est important... duh. Et savoir faire ça est très pratique, surtout pour la création d'interfaces - vous pouvez toujours utiliser d'autres langages style Java, c++ etc pour créer des interfaces mais le web est <em>fait pour</em> ; même dans vos autres projets passer par html/css est souvent très pratique.</p>
+<h3 id="comment-ça-marche-le-web-">2.1 Comment ça marche, le web ?</h3>
+<p>A première vue il faut déjà différencier le client (le navigateur web) et le serveur (le site web). Le client va sur le site, demande une page web et tout ce qui va avec et le serveur lui donne.</p>
+<p>Pour faire nos pages on va utiliser HTML et CSS, retenez que ces langages ne sont utile <em>que côté client</em>.
+Pour faire un serveur, on utilisera <em>apache2</em> ou <em>nodeJS</em>, on verra plus tard comment ils fonctionnent. Pour l'instant on n'utilisera pas du tout de serveur, un navigateur normal est capable d'ouvrir une "page web" depuis un fichier html. ^287bdd</p>
+<table>
+<thead>
+<tr>
+<th>Langage</th>
+<th>Utilisation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HTML</td>
+<td>Côté client uniquement, défini le contenu d'une page web</td>
+</tr>
+<tr>
+<td>CSS</td>
+<td>Côté client uniquement, met en forme la page</td>
+</tr>
+<tr>
+<td>JS - côté client</td>
+<td>Rend une page web interactive (click sur un bouton...)</td>
+</tr>
+<tr>
+<td>JS - côté serveur</td>
+<td>Permet de faire un serveur web avec nodeJS</td>
+</tr>
+</tbody>
+</table>
+<h3 id="installation">2.2 Installation</h3>
+<p>Pour programmer en web il va vous falloir :</p>
+<ul>
+<li><strong>Un IDE</strong> -
+J'utilise Visual Studio Code (VSCode) comme IDE, il connaît par défaut html, css, js et php. Ne confondez pas Visual Studio et Visual Studio Code !</li>
+<li><strong>Un navigateur web</strong> -
+Celui de votre ordi fera très bien l'affaire, personnellement j'utilise firefox.</li>
+<li><strong>Un serveur web</strong> -
+Ce n'est pas nécessaire tout de suite, si vous voulez vous avancer vous pouvez installer <a href="https://www.wampserver.com/en/">wamp</a> (windows), <a href="https://doc.ubuntu-fr.org/lamp">lamp</a> (linux), <a href="https://www.apachefriends.org/fr/index.html">xampp</a> (macos) ou <a href="https://nodejs.dev/">nodeJS</a> (tout os). Les trois premiers sont des ensembles apache2-mysql-php.</li>
+</ul>
+<blockquote>
+<p>Il va vous falloir un dossier dans lequel vous mettrez tous vos fichiers, ouvrez le avec VSCode, assurez vous qu'il soit vide pour l'instant.</p>
+</blockquote>
+<h2 id="html">3 HTML</h2>
+<p>HTML est un langage de description de contenu, il dit <em>ce qu'il y a</em> dans une page web.</p>
+<p>Pour commencer, créez un fichier <code>index.html</code>. Vous pouvez le remplir avec ce code :</p>
+<pre><code class="language-html"><span class="cdhg-separator">&#x3C;</span><span class="cdhg-builtin">!DOCTYPE</span><span class="cdhg-separator"> </span><span class="cdhg-html-element">html</span><span class="cdhg-separator">></span><span class="cdhg-misc">
+</span><span class="cdhg-separator">&#x3C;</span><span class="cdhg-html-element">html</span><span class="cdhg-separator"> </span><span class="cdhg-html-attribute">lang</span><span class="cdhg-separator">=</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">en</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">></span><span class="cdhg-misc">
+</span><span class="cdhg-separator">&#x3C;</span><span class="cdhg-html-element">head</span><span class="cdhg-separator">></span><span class="cdhg-misc">
+  </span><span class="cdhg-separator">&#x3C;</span><span class="cdhg-html-element">title</span><span class="cdhg-separator">></span><span class="cdhg-misc">Document</span><span class="cdhg-separator">&#x3C;/</span><span class="cdhg-html-element">title</span><span class="cdhg-separator">></span><span class="cdhg-misc">
+</span><span class="cdhg-separator">&#x3C;/</span><span class="cdhg-html-element">head</span><span class="cdhg-separator">></span><span class="cdhg-misc">
+</span><span class="cdhg-separator">&#x3C;</span><span class="cdhg-html-element">body</span><span class="cdhg-separator">></span><span class="cdhg-misc">
+
+</span><span class="cdhg-separator">&#x3C;/</span><span class="cdhg-html-element">body</span><span class="cdhg-separator">></span><span class="cdhg-misc">
+</span><span class="cdhg-separator">&#x3C;/</span><span class="cdhg-html-element">html</span><span class="cdhg-separator">></span></code></pre>
+<p>La première ligne sert juste à dire que c'est bien un fichier html.
+Le reste du fichier va se composer en <em>balises html</em>, par exemple la balise <code>&#x3C;html></code> est la première et contient tout le reste du document.</p>
+<blockquote>
+<p><em>Le document</em> est un synonyme pour <em>la page</em>.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Balise</th>
+<th>Utilisation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&#x3C;html></code></td>
+<td>Contient tout le document</td>
+</tr>
+<tr>
+<td><code>&#x3C;head></code></td>
+<td>Contient des déclarations méta, elle ne s'affiche pas sur la page</td>
+</tr>
+<tr>
+<td><code>&#x3C;title></code></td>
+<td>Permet de donner un titre à la page - le titre de l'onglet</td>
+</tr>
+<tr>
+<td><code>&#x3C;body></code></td>
+<td>Le corps du document, c'est ici qu'on mettra à peu près tout</td>
+</tr>
+</tbody>
+</table>
+<p>Si vous ouvrez le fichier maintenant avec votre navigateur vous devriez avoir une page blanche qui s'appelle "Document".</p>
+<blockquote class="callout-hint callout"><p> Syntaxe &#x3C;/></p><div><p>La quasi-totalité des balises s'ouvrent avec <code>&#x3C;...></code> et se ferment avec <code>&#x3C;/...></code>, certaines ne peuvent pas avoir de contenu, dans ce cas elles n'ont pas besoin de se fermer, on les écrira plutôt comme <code>&#x3C;.../></code>, par exemple <code>&#x3C;img/></code>.</p><blockquote>
+<p>Techniquement le / n'est pas nécessaire, il est possible que j'en oublie certains, vous n'êtes pas obligés non plus de le mettre si vous savez quelles balises possèdent un contenu ou pas.</p>
+</blockquote><p>On peut rajouter des paramètres à certaines balises, par exemple <code>lang="en"</code> dans la balise <code>html</code>, les paramètres dépendent de la balise.</p></div></blockquote>
+<p>Par exemple</p>
+<pre><code class="language-html"><span class="cdhg-separator">&#x3C;</span><span class="cdhg-html-element">html</span><span class="cdhg-separator"> </span><span class="cdhg-html-attribute">lang</span><span class="cdhg-separator">=</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">fr</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">></span><span class="cdhg-misc">
+</span><span class="cdhg-separator">&#x3C;</span><span class="cdhg-html-element">body</span><span class="cdhg-separator">></span><span class="cdhg-misc">
+	</span><span class="cdhg-separator">&#x3C;</span><span class="cdhg-html-element">img</span><span class="cdhg-separator"> </span><span class="cdhg-html-attribute">src</span><span class="cdhg-separator">=</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">/media/image1.png</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">/></span><span class="cdhg-misc">
+	</span><span class="cdhg-separator">&#x3C;</span><span class="cdhg-html-element">div</span><span class="cdhg-separator">></span><span class="cdhg-misc">
+		Du texte</span><span class="cdhg-separator">&#x3C;</span><span class="cdhg-html-element">br</span><span class="cdhg-separator">/></span><span class="cdhg-misc">
+		Plus de texte
+	</span><span class="cdhg-separator">&#x3C;/</span><span class="cdhg-html-element">div</span><span class="cdhg-separator">></span><span class="cdhg-misc">
+</span><span class="cdhg-separator">&#x3C;/</span><span class="cdhg-html-element">body</span><span class="cdhg-separator">></span><span class="cdhg-misc">
+</span><span class="cdhg-separator">&#x3C;/</span><span class="cdhg-html-element">html</span><span class="cdhg-separator">></span></code></pre>
+<h3 id="les-balises-utiles">3.1 Les balises utiles</h3>
+<table>
+<thead>
+<tr>
+<th>Balise</th>
+<th>Utilisation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&#x3C;div></code></td>
+<td>La balise la plus utilisée, pour organiser le document</td>
+</tr>
+<tr>
+<td><code>&#x3C;span></code></td>
+<td>Souvent utilisée pour mettre du texte</td>
+</tr>
+<tr>
+<td><code>&#x3C;ul></code> <code>&#x3C;ol></code></td>
+<td>Liste ordonnée et non-ordonnée</td>
+</tr>
+<tr>
+<td><code>&#x3C;pre></code></td>
+<td>Contient du texte formaté</td>
+</tr>
+<tr>
+<td><code>&#x3C;p></code></td>
+<td>Paragraphe</td>
+</tr>
+<tr>
+<td><code>&#x3C;br/></code></td>
+<td>Retour à la ligne forcé</td>
+</tr>
+<tr>
+<td><code>&#x3C;hr/></code></td>
+<td>Division horizontale</td>
+</tr>
+<tr>
+<td><code>&#x3C;a></code></td>
+<td>Lien (vers un fichier/site/page...)</td>
+</tr>
+<tr>
+<td><code>&#x3C;h1></code>, <code>&#x3C;h2></code>...</td>
+<td>Titre</td>
+</tr>
+<tr>
+<td><code>&#x3C;img/></code></td>
+<td>Image</td>
+</tr>
+<tr>
+<td><code>&#x3C;table></code></td>
+<td>Tableau</td>
+</tr>
+<tr>
+<td><code>&#x3C;form></code></td>
+<td>Formulaire</td>
+</tr>
+<tr>
+<td><code>&#x3C;input/></code></td>
+<td>Champ d'entrée utilisateur (texte, date...)</td>
+</tr>
+<tr>
+<td><code>&#x3C;script></code></td>
+<td>Contient du code JS</td>
+</tr>
+</tbody>
+</table>
+<p>Vous pouvez en retrouver plus dans la <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">doc mdn</a>.</p>
+<blockquote class="callout-question callout"><p> Quoi utiliser et quand</p><div><p>Pour choisir quelle balise utiliser il faut penser au rôle de ce que vous voulez ajouter, et pas du tout au visuel. Typiquement, si vous voulez une liste horizontale d'images vous utiliserez plutôt <code>&#x3C;ul></code>, même si la liste va s'afficher verticalement sans css.</p><p>Pour organiser le document le plus souvent on utilise les <code>&#x3C;div></code>, il peut y en avoir plusieurs dizaines/centaines très rapidement.
+La différence principale entre <code>&#x3C;span></code> et <code>&#x3C;div></code> est que le <code>&#x3C;span></code> ne fait pas un retour à la ligne automatiquement.</p></div></blockquote>
+<p>Allez voir les 👉<a href="https://github.com/Akahara/documentation/tree/master/web/examples/html/">examples</a> pour savoir comment utiliser ces balises.</p>
+<h3 id="w3c">3.2 W3C</h3>
+<p>Le W3C propose des outils très pratiques de validation html notamment. Une fois que vous avez fini votre page vous pouvez la donner au <a href="https://validator.w3.org/">W3C validator</a> pour vérifier que tout est bien écrit.</p>
+<blockquote class="callout-example callout"><p> Ce que fait le W3C validator</p><div><p>Le w3c validator vous montrera les balises qui sont mal écrites mais aussi les attributs qui pourraient manquer.</p><p>C'est important de faire valider votre html <em>avant</em> d'ajouter js/php car le validator ne supporte pas ces langages, et les contenus dynamiques générés sur la page ne pourront pas être vérifiés.</p></div></blockquote>
+<h2 id="css">4 css</h2>
+<p>Le css permet de donner le style de votre page, les deux parties clés du css sont le positionnement et le reste (couleur, polices, effets...). Pour rajouter une feuille de style à votre page il vous faut créer un fichier .css et le lier à votre html via une balise</p>
+<pre><code class="language-html"><span class="cdhg-separator">&#x3C;</span><span class="cdhg-html-element">link</span><span class="cdhg-separator"> </span><span class="cdhg-html-attribute">href</span><span class="cdhg-separator">=</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">style.css</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator"> </span><span class="cdhg-html-attribute">rel</span><span class="cdhg-separator">=</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">stylesheet</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">/></span></code></pre>
+<p>dans votre balise <code>&#x3C;head></code>.</p>
+<p>Une deuxième possibilité est d'ajouter votre css directement dans une balise <code>&#x3C;style>...&#x3C;/style></code>, c'est bien pour tester des choses mais utilisez plutôt plusieurs fichiers.</p>
+<p>Les propriétés css s'appliquent à un ou plusieurs objets via des <em>sélecteurs</em>. Par défaut le nom d'une balise est un sélecteur qui s'applique à toutes les balises de ce type, par exemple:</p>
+<pre><code class="language-css"><span class="cdhg-comment">/* Tous les &#x3C;span> auront un arrière-plan rouge */</span><span class="cdhg-separator">
+</span><span class="cdhg-css-selector">span</span><span class="cdhg-separator"> {
+    </span><span class="cdhg-css-attribute">background-color:</span><span class="cdhg-separator"> </span><span class="cdhg-css-value">red</span><span class="cdhg-separator">;
+}</span></code></pre>
+<p>Après avoir spécifié le sélecteur on rajoute les propriétés css qui s'appliquent aux éléments correspondants (<code>background-color</code> dans mon exemple).</p>
+<h3 id="sélecteurs">4.1 Sélecteurs</h3>
+<p>Avant de pouvoir écrire votre css il faut bien comprendre les sélecteurs.</p>
+<h4 id="sélecteurs-de-base">4.1.1 Sélecteurs de base</h4>
+<pre><code class="language-css"><span class="cdhg-comment">/* Toutes les balises &#x3C;span> */</span><span class="cdhg-separator">
+</span><span class="cdhg-css-selector">span</span><span class="cdhg-separator"> {}
+</span><span class="cdhg-comment">/* Tous les éléments de classe "someclass" */</span><span class="cdhg-separator">
+</span><span class="cdhg-css-selector">.someclass</span><span class="cdhg-separator"> {}
+</span><span class="cdhg-comment">/* L'élément d'id "someid" */</span><span class="cdhg-separator">
+</span><span class="cdhg-css-selector">#someid</span><span class="cdhg-separator"> {}
+</span><span class="cdhg-comment">/* Tous les éléments */</span><span class="cdhg-separator">
+* {}</span></code></pre>
+<p>Pour spécifier une classe ou un id on rajoute <code>id="someid"</code> ou <code>class="someclass"</code> à l'élément :</p>
+<pre><code class="language-html"><span class="cdhg-separator">&#x3C;</span><span class="cdhg-html-element">div</span><span class="cdhg-separator"> </span><span class="cdhg-html-attribute">id</span><span class="cdhg-separator">=</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">someid</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator"> </span><span class="cdhg-html-attribute">class</span><span class="cdhg-separator">=</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">someclass class1 class2</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">></span><span class="cdhg-misc">...</span><span class="cdhg-separator">&#x3C;/</span><span class="cdhg-html-element">div</span><span class="cdhg-separator">></span></code></pre>
+<p>Un id est unique, un élément possède au plus 1 id et deux éléments ne peuvent pas avoir le même. Un élément peut avoir plusieurs classes et plusieurs éléments peuvent avoir la même classe.
+La convention pour les classes et les id est de ne pas utiliser les majuscules et de séparer les mots par des tirets : <code>some-complex-class</code> ou <code>text-section-6</code>.</p>
+<blockquote>
+<p>Les id et les classes seront aussi utilisées par le javascript de la page, attention à bien choisir vos noms de classes et surtout d'id.</p>
+</blockquote>
+<h4 id="sélecteurs-combinatoires">4.1.2 Sélecteurs combinatoires</h4>
+<pre><code class="language-css"><span class="cdhg-comment">/* S'applique à tous les &#x3C;span> et les &#x3C;div> */</span><span class="cdhg-separator">
+</span><span class="cdhg-css-selector">span,</span><span class="cdhg-separator"> </span><span class="cdhg-css-selector">div</span><span class="cdhg-separator"> {}
+</span><span class="cdhg-comment">/* S'applique à toutes les &#x3C;div> qui sont à l'intérieur d'un &#x3C;span> */</span><span class="cdhg-separator">
+</span><span class="cdhg-css-selector">span</span><span class="cdhg-separator"> </span><span class="cdhg-css-selector">div</span><span class="cdhg-separator"> {}
+</span><span class="cdhg-comment">/* S'applique à toutes les &#x3C;div> qui sont les enfants directes d'un &#x3C;span> */</span><span class="cdhg-separator">
+</span><span class="cdhg-css-selector">span</span><span class="cdhg-separator"> > </span><span class="cdhg-css-selector">div</span><span class="cdhg-separator"> {}
+</span><span class="cdhg-comment">/* S'applique à tous les &#x3C;span> de classe "someclass" */</span><span class="cdhg-separator">
+</span><span class="cdhg-css-selector">span.someclass</span><span class="cdhg-separator"> {}
+</span><span class="cdhg-comment">/* S'applique au &#x3C;span> d'id "someid" */</span><span class="cdhg-separator">
+</span><span class="cdhg-css-selector">span.someid</span><span class="cdhg-separator"> {}
+
+</span><span class="cdhg-comment">/* Ces sélecteurs peuvent être chaînés : */</span><span class="cdhg-separator">
+</span><span class="cdhg-css-selector">span.class1,</span><span class="cdhg-separator">
+</span><span class="cdhg-css-selector">#id1</span><span class="cdhg-separator"> > </span><span class="cdhg-css-selector">#id2</span><span class="cdhg-separator"> </span><span class="cdhg-css-selector">div,</span><span class="cdhg-separator">
+</span><span class="cdhg-css-selector">.class1.class2</span><span class="cdhg-separator"> {}</span></code></pre>
+<blockquote>
+<p>Quand vous utilisez les <code>,</code> n'hésitez pas à mettre vos différents sélecteurs sur plusieurs lignes.</p>
+</blockquote>
+<h4 id="selecteurs-complexes">4.1.3 Selecteurs complexes</h4>
+<pre><code class="language-css"><span class="cdhg-comment">/* S'applique aux &#x3C;div> qui sont les premiers enfants de leurs parents */</span><span class="cdhg-separator">
+</span><span class="cdhg-css-selector">div:first-child</span><span class="cdhg-separator"> {}
+</span><span class="cdhg-comment">/* S'applique aux &#x3C;div> qui sont les derniers enfants de leurs parents */</span><span class="cdhg-separator">
+</span><span class="cdhg-css-selector">div:last-child</span><span class="cdhg-separator"> {}
+</span><span class="cdhg-comment">/* S'applique aux &#x3C;div> qui sont les 5ème éléments de leurs parents */</span><span class="cdhg-separator">
+</span><span class="cdhg-css-selector">div:nth-child</span><span class="cdhg-separator">(</span><span class="cdhg-css-selector">5</span><span class="cdhg-separator">) {}
+</span><span class="cdhg-comment">/* S'applique aux &#x3C;div> qui n'ont pas la classe "someclass" */</span><span class="cdhg-separator">
+</span><span class="cdhg-css-selector">div:not</span><span class="cdhg-separator">(</span><span class="cdhg-css-selector">.someclass</span><span class="cdhg-separator">) {}
+</span><span class="cdhg-comment">/* S'applique aux &#x3C;a> (balise de lien) qui ont déjà été visités */</span><span class="cdhg-separator">
+</span><span class="cdhg-css-selector">a:active</span><span class="cdhg-separator"> {}
+</span><span class="cdhg-comment">/* S'applique aux &#x3C;input type="text"> */</span><span class="cdhg-separator">
+</span><span class="cdhg-css-selector">input[type=text]</span><span class="cdhg-separator"> {}
+</span><span class="cdhg-comment">/* S'applique aux éléments sous le curseur */</span><span class="cdhg-separator">
+</span><span class="cdhg-css-selector">:hover</span><span class="cdhg-separator"> {}</span></code></pre>
+<ul>
+<li>L'opérateur <code>:not(selecteur)</code> fonctionne avec tous les selecteurs.</li>
+<li>Les opérateurs <code>:first-child</code> et cie fonctionnent tel-quel, ils sont souvent utilisés comme dans le premier exemple de la section suivante.</li>
+<li>Les opérateurs <code>[propriete=valeur]</code> sont utilisables sur tous les éléments.</li>
+</ul>
+<h4 id="exemples">4.1.4 Exemples</h4>
+<pre><code class="language-css"><span class="cdhg-comment">/* Le dernier élément de #someid */</span><span class="cdhg-separator">
+</span><span class="cdhg-css-selector">#someid</span><span class="cdhg-separator"> > </span><span class="cdhg-css-selector">:last-child</span><span class="cdhg-separator"> {}
+</span><span class="cdhg-comment">/* Tous les enfants des éléments de la liste #video-list */</span><span class="cdhg-separator">
+</span><span class="cdhg-css-selector">#videos-list</span><span class="cdhg-separator"> > </span><span class="cdhg-css-selector">li</span><span class="cdhg-separator"> > * {}
+</span><span class="cdhg-comment">/* Toutes les .section-container sauf la première de la #section-6 */</span><span class="cdhg-separator">
+</span><span class="cdhg-css-selector">#section-6</span><span class="cdhg-separator"> </span><span class="cdhg-css-selector">.section-container:not</span><span class="cdhg-separator">(</span><span class="cdhg-css-selector">:first-of-type</span><span class="cdhg-separator">) {}
+</span><span class="cdhg-comment">/* Les images filles de #empty-dir-info */</span><span class="cdhg-separator">
+</span><span class="cdhg-css-selector">#empty-dir-info</span><span class="cdhg-separator"> > </span><span class="cdhg-css-selector">img</span><span class="cdhg-separator"> {}
+</span><span class="cdhg-comment">/* Les éléments de classe "file-name-edit" ou file-delete" fils d'un élément de classe "file-repr" qui n'est pas sous le curseur */</span><span class="cdhg-separator">
+</span><span class="cdhg-css-selector">.file-repr:not</span><span class="cdhg-separator">(</span><span class="cdhg-css-selector">:hover</span><span class="cdhg-separator">) </span><span class="cdhg-css-selector">.file-name-edit,</span><span class="cdhg-separator">
+</span><span class="cdhg-css-selector">.file-repr:not</span><span class="cdhg-separator">(</span><span class="cdhg-css-selector">:hover</span><span class="cdhg-separator">) </span><span class="cdhg-css-selector">.file-delete</span><span class="cdhg-separator"> {}</span></code></pre>
+<p>Pour plus de selecteurs allez sur <a href="https://www.w3schools.com/cssref/css_selectors.asp">w3school</a>, mais normalement vous devriez pouvoir tout faire avec ceux-là.</p>
+<blockquote class="callout-question callout"><p> Quels sélecteurs utiliser</p><div><ul>
+<li>Si vous avez un unique élément à styler utilisez un id ou les sélecteurs <code>xx > :last-child</code>.</li>
+<li>Si vous avez plusieurs éléments à plusieurs endroits dans le document utilisez les classes.</li>
+<li>Si vous voulez styler tous les éléments d'une liste utilisez <code>></code>.</li>
+<li>Pour les sélecteurs plus spécifiques utilisez des classes aussi : <code>.dark-on-hover:hover</code>.</li>
+</ul></div></blockquote>
+<blockquote class="callout-hint callout"><p> Utilisez plusieurs .css</p><div><p>Essayez de bien séparer vos .css, si vous pouvez réutiliser un même fichier pour plusieurs pages vous vous en sortirez mieux, mais ca ne sera pas possible si votre .css contient des sélecteurs trop vastes (<code>*</code>, <code>li</code>...).</p></div></blockquote>
+<h3 id="les-devtools">4.2 Les devtools</h3>
+<p>La console et l'inspecteur web sont les meilleurs amis du développeur web. Ils permettent de tester du js, de vérifier que l'html est bon, de comprendre ce qui ne va pas dans l'arborescence css, de tester du css/js sans avoir à écrire dans un fichier et recharger la page etc...</p>
+<p>Pour ouvrir les outils de développement web (devtools) cherchez le bouton dans les menus de votre navigateur, sous Firefox vous pouvez aussi faire f12 ou Ctrl+Shift+I.</p>
+<blockquote class="callout-example callout"><p> L'inspecteur css</p><div><p><img src="resources/inspector-0.png" alt="missing inspector image"></p><p><img src="resources/inspector-1.png" alt="missing image &#x22;inspector-1.png&#x22;"></p><p>Vous pouvez directement voir et éditer les propriétés css d'un élément de la page. Si vous voulez conserver vos modifications vous pouvez directement les copier dans votre .css, autrement il suffit de recharger la page pour qu'elles disparaissent.
+L'onglet "calculé" est pratique quand vous cherchez des couleurs ou des polices sur un site web, pour pouvoir les copier sur le votre.</p><p>Dans l'onglet "Mise en page" vous pouvez voir les dimensions d'un élément, ses marges et espacements.</p><p>Avec Ctrl+Shift+C vous pouvez sélectionner un élément de la page sans passer par l'inspecteur html.</p></div></blockquote>
+<blockquote class="callout-example callout"><p> La console JS</p><div><p><img src="resources/inspector-2.png" alt="missing image &#x22;inspector-2.png&#x22;"></p><p><img src="resources/inspector-3.png" alt="missing image &#x22;inspector-3.png&#x22;"></p><p>Vous pouvez écrire n'importe quoi dans la console dynamique et avoir immédiatement le résultat.</p><p>Vous pouvez voir les problèmes de chargement en activant les <code>requêtes</code> et le <code>xhr</code> dans les filtres. Ici par exemple le <em>favicon</em> (l'icône de l'onglet) n'a pas pu être chargé car il n'existe pas.</p><p>Vous aurez certainement un bon nombre de messages d'alerte qui ne servent pas à grand-chose, par exemple ici j'ai un "-moz-osx-font-smoothing : propriété inconnue" qui vient des feuilles de style par défaut de firefox.</p></div></blockquote>
+<blockquote class="callout-warning callout"><p> Le cache http</p><div><p>Avant de commencer à écrire du css, il faut <em>toujours</em> désactiver le cache http. Par défaut votre navigateur enregistre les feuilles de style pour éviter d'avoir à les télécharger à chaque changement de page, mais il arrive que le cache se bloque et que le navigateur ne détecte pas les changements que vous avez apporté à votre .css, pour éviter ça le plus simple est de complètement désactiver le cache.</p><p><img src="resources/inspector-config-1.png" alt="missing image &#x22;inspector-config-1.png&#x22;"></p><p>De cette manière tous les .css, .js etc sont complètement rechargés à chaque rechargement de la page. Ça peut vous poser problème si vous avez de grosses images à charger à chaque fois, dans ce cas vous pouvez aussi laisser le cache et faire Ctrl+f5 pour recharger la page sans le cache si vous voyez qu'il s'est bloqué.</p></div></blockquote>
+<h3 id="positionnement">4.3 Positionnement</h3>
+<p>Le positionnement est la partie la plus longue est compliquée du css. Si vous maitrisez ça vous pouvez tout faire.</p>
+<p>Voici une liste des propriétés de positionnement, si vous comprenez les premières et les <code>flexbox</code> vous aurez déjà un très bon niveau.</p>
+<table>
+<thead>
+<tr>
+<th>Style</th>
+<th>Utilité</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>margin</td>
+<td>Applique une marge extérieure</td>
+</tr>
+<tr>
+<td>padding</td>
+<td>Applique une marge intérieure</td>
+</tr>
+<tr>
+<td>border</td>
+<td>Applique une bordure</td>
+</tr>
+<tr>
+<td>display</td>
+<td>Change le type de positionnement dans le parent</td>
+</tr>
+<tr>
+<td>position</td>
+<td>Change le type de positionnement dans la page</td>
+</tr>
+<tr>
+<td>width</td>
+<td>Donne la largeur</td>
+</tr>
+<tr>
+<td>height</td>
+<td>Donne la hauteur</td>
+</tr>
+<tr>
+<td>vertical-align</td>
+<td>Aligne cet élément verticalement par rapport à la ligne de texte</td>
+</tr>
+<tr>
+<td>text-align</td>
+<td>Aligne les enfants de cet élément</td>
+</tr>
+<tr>
+<td>white-space</td>
+<td>Permet d'empêcher un retour à la ligne</td>
+</tr>
+</tbody>
+</table>
+<p><strong>margin, padding, border:</strong></p>
+<p><img src="resources/style-2.png" alt="missing image &#x22;style-2.png&#x22;"></p>
+<ul>
+<li>La <code>margin</code> est une marge extérieure, deux <code>margin</code> peuvent se chevaucher (ici les deux carrés rouges ne sont séparés que par 30px, pas 60px).</li>
+<li>Le <code>padding</code> est une marge intérieure, une <code>margin</code> et un <code>padding</code> peuvent se chevaucher mais un padding ne peut pas dépasser une <code>margin</code>.</li>
+<li>La <code>border</code> s'applique entre les deux marges, on l'utilise surtout pour styler les éléments, pas vraiment pour les placer.</li>
+</ul>
+<p>Rapportez vous à l'onglet <em>Mise en page</em> des devtools pour vérifier que vos marges sont bonnes ou y trouver des problèmes.</p>
+<p><strong>display:</strong></p>
+<ul>
+<li>flex - liste dynamique~</li>
+<li>none - cache l'élément</li>
+<li>block - l'élément prend toute une ligne</li>
+<li>inline - l'élément s'insère dans une ligne, on ne peut plus lui donner une taille</li>
+<li>inline-block - inline mais sa taille peut être forcée</li>
+<li>grid - affichage grille, utilisez <code>&#x3C;table></code> à la place de cette propriété</li>
+</ul>
+<blockquote class="callout-example callout"><p> Les Flexbox
+Avec <code>display: flex;</code> vous pouvez aussi faire des listes. L'affichage flexbox permet de redimensionner automatiquement un containeur à la taille de ce qu'il contient, c'est très pratique quand vous ne savez pas exactement quelle taille font vos éléments.
+Allez regarder <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">ici</a> pour plus d'info !</p><div></div></blockquote>
+<p><strong>position</strong>:</p>
+<ul>
+<li>absolute - utilisé avec <code>top left right bottom</code> pour donner une position dans l'élément parent le plus proche de position <code>relative</code>. Souvent utilisé pour les popups car la position ne dépend plus du scroll.</li>
+<li>relative - comme par défaut, utilisé avec <code>absolute</code>.</li>
+<li>sticky - comme le positionnement par défaut mais ne peut pas sortir de l'écran, souvent utilisé pour les bannières (champ de recherche de google par exemple).</li>
+</ul>
+<blockquote class="callout-question callout"><p> Quand utiliser quoi</p><div><p>Les propriétés les plus importantes à connaître sont <code>margin</code>, <code>padding</code>, <code>display: flex</code> et <code>position: absolute</code> (plus rarement utilisée).
+Si possible évitez de donner des tailles fixes à vos éléments (<code>width</code>/<code>height</code>), préférez laisser la page s'organiser toute seule.</p></div></blockquote>
+<h4 id="les-unités">4.3.1 Les unités</h4>
+<blockquote class="callout-tldr callout"><p> Unités de taille</p><div><table>
+<thead>
+<tr>
+<th>Unité</th>
+<th>Dimension</th>
+<th>Exemple</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>px</td>
+<td>nombre en pixels</td>
+<td><code>10px</code> - 10 pixels</td>
+</tr>
+<tr>
+<td>%</td>
+<td>taille relative au parent</td>
+<td><code>10%</code> - 10% de la largeur du parent</td>
+</tr>
+<tr>
+<td>rem</td>
+<td>taille relative à la taille du texte de la page</td>
+<td><code>2.5rem</code> - 2,5 fois la taille du texte</td>
+</tr>
+<tr>
+<td>em</td>
+<td>taille relative à la taille du texte du parent</td>
+<td><code>2.5em</code> - 2,5 fois la taille du texte</td>
+</tr>
+<tr>
+<td>vw</td>
+<td>taille relative à la largeur de la page</td>
+<td><code>50vw</code> - 50% de la largeur de la page</td>
+</tr>
+<tr>
+<td>vh</td>
+<td>taille relative à la hauteur de la page</td>
+<td><code>50vh</code> - 50% de la hauteur de la page</td>
+</tr>
+</tbody>
+</table><p>Il en existe d'autres mais qui sont beaucoup plus rarement utilisées.</p></div></blockquote>
+<blockquote class="callout-tldr callout"><p> Unités de couleur</p><div><table>
+<thead>
+<tr>
+<th>Format</th>
+<th>Usage</th>
+<th>Exemple</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>nom</em></td>
+<td>nom de la couleur</td>
+<td><code>red</code>, <code>dark-grey</code></td>
+</tr>
+<tr>
+<td>rgb(<em>r</em>, <em>g</em>, <em>b</em>)</td>
+<td>couleur rgb</td>
+<td><code>rgb(200, 245, 43)</code></td>
+</tr>
+<tr>
+<td>rgba(<em>r</em>, <em>g</em>, <em>b</em>, <em>a</em>)</td>
+<td>couleur rgba</td>
+<td><code>rgba(200, 245, 43, 0.4)</code></td>
+</tr>
+<tr>
+<td>#rrggbb</td>
+<td>couleur hexadécimale</td>
+<td><code>#ffbba2</code></td>
+</tr>
+<tr>
+<td>#rrggbbaa</td>
+<td>couleur hexadécimale</td>
+<td><code>#ffbba2a0</code></td>
+</tr>
+<tr>
+<td>hsl(<em>h</em>, <em>s</em>, <em>l</em>)</td>
+<td>couleur hsl</td>
+<td><code>hsl(360, 100%, 50%)</code></td>
+</tr>
+<tr>
+<td>hsl(<em>h</em>, <em>s</em>, <em>l</em>, <em>a</em>)</td>
+<td>couleur hsla</td>
+<td><code>hsl(360, 100%, 50%, 0.4)</code></td>
+</tr>
+</tbody>
+</table><p>Pour trouver une couleur utilisez votre ide ou tapez "color picker" sur google.</p></div></blockquote>
+<blockquote>
+<p>Les unités sont utiles quand on spéficie des tailles (<code>width</code>, <code>height</code>, <code>margin</code>, <code>padding</code>, <code>top</code> avec <code>position:absolute</code> etc).
+Quand vous spécifiez des tailles de police avec <code>font-size</code> mettez les en <code>em</code>/<code>rem</code> seulement, pas en <code>px</code>.</p>
+</blockquote>
+<h3 id="styles">4.4 Styles</h3>
+<p><strong>Styles utiles :</strong></p>
+<table>
+<thead>
+<tr>
+<th>Style</th>
+<th>Utilité</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>background-color</td>
+<td>couleur de fond</td>
+</tr>
+<tr>
+<td>color</td>
+<td>couleur du texte</td>
+</tr>
+<tr>
+<td>font-family</td>
+<td>police à utiliser</td>
+</tr>
+<tr>
+<td>font-size</td>
+<td>taille du texte</td>
+</tr>
+<tr>
+<td>user-select</td>
+<td>permet d'empêcher la sélection</td>
+</tr>
+<tr>
+<td>list-style</td>
+<td>permet de retirer les points des listes</td>
+</tr>
+<tr>
+<td>border-radius</td>
+<td>permet d'arrondir un élément</td>
+</tr>
+</tbody>
+</table>
+<p>Par exemple :</p>
+<pre><code class="language-css"><span class="cdhg-css-selector">button</span><span class="cdhg-separator"> {
+  </span><span class="cdhg-css-attribute">background-color:</span><span class="cdhg-separator"> </span><span class="cdhg-css-value">red</span><span class="cdhg-separator">;
+  </span><span class="cdhg-css-attribute">border-radius:</span><span class="cdhg-separator"> </span><span class="cdhg-css-value">5px</span><span class="cdhg-separator">;
+  </span><span class="cdhg-css-attribute">font-size:</span><span class="cdhg-separator"> </span><span class="cdhg-css-value">1.5rem</span><span class="cdhg-separator">;
+  </span><span class="cdhg-css-attribute">color:</span><span class="cdhg-separator"> </span><span class="cdhg-css-value">blue</span><span class="cdhg-separator">;
+}</span></code></pre>
+<blockquote class="callout-check callout"><p> Exemples</p><div><p>Vous trouverez quelques exemples 👉<a href="https://github.com/Akahara/documentation/tree/master/web/examples/css/">ici</a>. Allez voir pour trouver votre bonheur.
+Pour vraiment apprendre le css, il faut vraiment pratiquer. Je ne peux pas vous donner beaucoup plus.</p></div></blockquote>
+<h3 id="outils-supplémentaires">4.5 Outils supplémentaires</h3>
+<h4 id="google-icons">4.5.1 Google icons</h4>
+<p>Souvent, rajouter des icônes à un site change vraiment son visuel, j'utilise beaucoup <a href="https://fonts.google.com/icons">google icons</a> pour ça.
+Il vous suffit de rajouter ce code dans la balise <code>&#x3C;head></code> :</p>
+<pre><code class="language-html"><span class="cdhg-separator">&#x3C;</span><span class="cdhg-html-element">link</span><span class="cdhg-separator"> </span><span class="cdhg-html-attribute">href</span><span class="cdhg-separator">=</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">https://fonts.googleapis.com/icon?family=Material+Icons+Outlined</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator"> </span><span class="cdhg-html-attribute">rel</span><span class="cdhg-separator">=</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">stylesheet</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">></span><span class="cdhg-misc">
+</span><span class="cdhg-separator">&#x3C;</span><span class="cdhg-html-element">link</span><span class="cdhg-separator"> </span><span class="cdhg-html-attribute">href</span><span class="cdhg-separator">=</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">https://fonts.googleapis.com/icon?family=Material+Icons</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator"> </span><span class="cdhg-html-attribute">rel</span><span class="cdhg-separator">=</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">stylesheet</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">></span></code></pre>
+<p>Ensuite vous pourrez intégrer des icônes en les trouvant <a href="https://fonts.google.com/icons">ici</a>, il y a le code html à droite après avoir choisi un icône.</p>
+<h4 id="dautres-outils">4.5.2 D'autres outils</h4>
+<p>Vous pouvez utiliser <a href="https://html-css-js.com/css/generator/box-shadow/">ce site</a> pour générer des effets sur les bordures.
+Vous pouvez utiliser <a href="https://getwaves.io/">ce site</a> pour générer des vagues en svg et les intégrer à vos pages en tant qu'images.</p>
+<h2 id="requêtes">5 Requêtes</h2>
+<p>Avant de passer à la partie dynamique (php/js) il vaut mieux comprendre les requêtes.</p>
+<p>En web, tout passe par des <em>requêtes</em> : quand vous chargez une page web votre navigateur émet une première requête pour demander la page au site web. Après avoir obtenu la page il va envoyer une nouvelle requête pour chaque fichier css/js/... nécessaire. Et pour interagir avec le serveur (quand on se connecte, quand on clique sur un bouton...) une ou plusieurs requêtes peuvent être envoyées.
+Chaque requête possède une url de destination et peut posséder des paramètres.</p>
+<blockquote class="callout-tldr callout"><p> Requête GET</p><div><p>La requête GET est la plus simple, elle demande un document au serveur. Elle peut contenir des paramètres qui sont encodés dans l'url :</p><pre><code>https://www.youtube.com/watch?v=lhjk5x54bsE
+</code></pre><p>Ici il y a un paramètre : <code>v=lhjk5x54bsE</code> (nom=<code>v</code> valeur=<code>lhjk5x54bsE</code>). Il peut y en avoir plusieurs, séparés par des <code>&#x26;</code>.
+Quand vous chargez une page c'est une requête GET qui est envoyée, avec l'url de la page.</p></div></blockquote>
+<blockquote class="callout-tldr callout"><p> Requête POST</p><div><p>La requête POST est équivalente à GET mais les paramètres sont cachés dans le corps de la requête, pas dans l'url. Elle est utilisée pour la connexion par exemple, pour éviter d'afficher un mot de passe dans l'url.</p></div></blockquote>
+<blockquote>
+<p>Il y a d'autres types de requêtes mais GET et POST suffisent pour tout faire, surtout pour un premier site web.</p>
+</blockquote>
+<p>Les manières dont vous allez vous servir pour créer votre site sont les <em>liens</em> et les <em>forms</em>.</p>
+<h3 id="liens">5.1 Liens</h3>
+<p>Les liens permettent de passer d'une page à une autre, avec un bouton ou un lien hypertexte. Les liens sont simplement les balises <code>&#x3C;a href="..."></code> que vous allez ajouter à votre page. Pour ajouter des paramètres il suffit de les rajouter dans l'url avec <code>url?param1=val1&#x26;param2=val2</code>.
+Par exemple : <code>&#x3C;a href="https://www.youtube.com/watch?v=RKW6rjnYEkc">Un lien!&#x3C;/a></code>.</p>
+<h3 id="forms">5.2 Forms</h3>
+<p>Les <em>forms</em> (formulaires) sont les balises <code>&#x3C;form action="..." method="..."></code> de la page. L'action du form est l'url qui recevra la requête, la méthode est le type de requête (GET/POST/...), par défaut envoyer un formulaire revient à aller sur la page de l'url du form.
+Pour passer des paramètres il vous faut des balises <code>&#x3C;input type="..."/></code>.</p>
+<p>Plus d'info dans les 👉<a href="https://github.com/Akahara/documentation/tree/master/web/examples/html">examples</a>.</p>
+<h2 id="php">6 php</h2>
+<p>PHP est un langage qui tourne côté serveur et qui permet de servir des informations dynamiques.</p>
+<p>Avant d'écrire du php il faut faire tourner un serveur php, si vous ne l'aviez pas déjà fait démarrez un serveur (wxl)amp et placez vos fichier dans le dossier <code>htdocs/</code> du serveur, son emplacement dépend de votre *amp. Ensuite il vous suffit de renommer vos fichiers .html en .php.</p>
+<p>Vous pouvez tester que php est bien installé en ajoutant <code>&#x3C;?= "truc" ?></code> dans un élément de votre html. Vous devriez voir le texte s'afficher dans la page.</p>
+<p>PHP s'intègre à l'html via des <em>balises php</em>, qui commencent par <code>&#x3C;?php</code> et qui finissent par <code>?></code>, dans une balise php vous pouvez exécuter ce que vous voulez et afficher des choses via <code>echo</code> ou <code>print_r</code>. Vous pouvez aussi afficher directement quelque chose avec une balise php <code>&#x3C;?= choseàafficher ?></code>.</p>
+<p>Exemple :</p>
+<pre><code class="language-php"><span class="cdhg-html-context-switch">&#x3C;?php</span><span class="cdhg-separator">
+</span><span class="cdhg-variable">$list</span><span class="cdhg-separator"> = [ </span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">item 1</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">, </span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">item 2</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">, </span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">item 3</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator"> ];
+</span><span class="cdhg-html-context-switch">?></span><span class="cdhg-misc">  
+</span><span class="cdhg-separator">&#x3C;</span><span class="cdhg-builtin">!DOCTYPE</span><span class="cdhg-separator"> </span><span class="cdhg-html-element">html</span><span class="cdhg-separator">></span><span class="cdhg-misc">
+</span><span class="cdhg-separator">&#x3C;</span><span class="cdhg-html-element">html</span><span class="cdhg-separator">></span><span class="cdhg-misc">
+</span><span class="cdhg-separator">&#x3C;</span><span class="cdhg-html-element">head</span><span class="cdhg-separator">></span><span class="cdhg-misc">...</span><span class="cdhg-separator">&#x3C;/</span><span class="cdhg-html-element">head</span><span class="cdhg-separator">></span><span class="cdhg-misc">
+</span><span class="cdhg-separator">&#x3C;</span><span class="cdhg-html-element">body</span><span class="cdhg-separator">></span><span class="cdhg-misc">
+  </span><span class="cdhg-separator">&#x3C;</span><span class="cdhg-html-element">ul</span><span class="cdhg-separator">></span><span class="cdhg-misc">
+    </span><span class="cdhg-html-context-switch">&#x3C;?php</span><span class="cdhg-separator">
+      </span><span class="cdhg-keyword">foreach</span><span class="cdhg-separator">(</span><span class="cdhg-variable">$list</span><span class="cdhg-separator"> </span><span class="cdhg-keyword">as</span><span class="cdhg-separator"> </span><span class="cdhg-variable">$element</span><span class="cdhg-separator">)
+        </span><span class="cdhg-keyword">echo</span><span class="cdhg-separator"> </span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">&#x3C;li></span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator"> . </span><span class="cdhg-variable">$element</span><span class="cdhg-separator"> . </span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">&#x3C;/li></span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">;
+    </span><span class="cdhg-html-context-switch">?></span><span class="cdhg-misc">
+  </span><span class="cdhg-separator">&#x3C;/</span><span class="cdhg-html-element">ul</span><span class="cdhg-separator">></span><span class="cdhg-misc">
+</span><span class="cdhg-separator">&#x3C;/</span><span class="cdhg-html-element">body</span><span class="cdhg-separator">></span><span class="cdhg-misc">
+</span><span class="cdhg-separator">&#x3C;/</span><span class="cdhg-html-element">html</span><span class="cdhg-separator">></span></code></pre>
+<h3 id="syntaxe-de-base">6.1 Syntaxe de base</h3>
+<ul>
+<li>Toutes les variables commencent par $</li>
+<li>Les <code>;</code> de fin de ligne sont obligatoires</li>
+<li>Comme en JS, vous n'avez pas besoin de classes pour les projets simples, vous pouvez utiliser les tableaux. cf l'exemple</li>
+</ul>
+<pre><code class="language-php"><span class="cdhg-html-context-switch">&#x3C;?php</span><span class="cdhg-separator">
+
+</span><span class="cdhg-variable">$a</span><span class="cdhg-separator"> = </span><span class="cdhg-number">4</span><span class="cdhg-separator">;
+</span><span class="cdhg-comment">// boucle for classique
+</span><span class="cdhg-keyword">for</span><span class="cdhg-separator">(</span><span class="cdhg-variable">$i</span><span class="cdhg-separator"> = </span><span class="cdhg-number">0</span><span class="cdhg-separator">; </span><span class="cdhg-variable">$i</span><span class="cdhg-separator"> &#x3C; </span><span class="cdhg-variable">$a</span><span class="cdhg-separator">; </span><span class="cdhg-variable">$i</span><span class="cdhg-separator">++)
+  </span><span class="cdhg-keyword">echo</span><span class="cdhg-separator"> </span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">$i + 3 = </span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator"> . (</span><span class="cdhg-variable">$i</span><span class="cdhg-separator">+</span><span class="cdhg-number">3</span><span class="cdhg-separator">) . </span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">&#x3C;br></span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">;
+
+</span><span class="cdhg-comment">// liste, les éléments ne sont pas forcément du même type
+</span><span class="cdhg-variable">$array</span><span class="cdhg-separator"> = [ </span><span class="cdhg-variable">$a</span><span class="cdhg-separator">, </span><span class="cdhg-number">4</span><span class="cdhg-separator">, </span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">foo</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator"> ];
+</span><span class="cdhg-comment">// ajouter à une liste
+</span><span class="cdhg-variable">$array</span><span class="cdhg-separator">[] = </span><span class="cdhg-number">43</span><span class="cdhg-separator">;
+</span><span class="cdhg-comment">// afficher une liste
+</span><span class="cdhg-builtin">print_r</span><span class="cdhg-separator">(</span><span class="cdhg-variable">$array</span><span class="cdhg-separator">);
+</span><span class="cdhg-keyword">echo</span><span class="cdhg-separator"> </span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">&#x3C;br></span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">;
+
+</span><span class="cdhg-comment">// un tableau peut avoir des clés
+</span><span class="cdhg-variable">$car</span><span class="cdhg-separator"> = [ </span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">wheels</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator"> => </span><span class="cdhg-number">4</span><span class="cdhg-separator">, </span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">speed</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator"> => </span><span class="cdhg-number">80</span><span class="cdhg-separator">, </span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">name</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator"> => </span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">a car</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator"> ];
+</span><span class="cdhg-comment">// quand vous affichez de grands tableaux, utilisez &#x3C;pre>
+</span><span class="cdhg-keyword">echo</span><span class="cdhg-separator"> </span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">&#x3C;pre></span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">;
+</span><span class="cdhg-builtin">print_r</span><span class="cdhg-separator">(</span><span class="cdhg-variable">$car</span><span class="cdhg-separator">);
+</span><span class="cdhg-keyword">echo</span><span class="cdhg-separator"> </span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">&#x3C;/pre></span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">;
+</span><span class="cdhg-comment">// un tableau peut être indexé de cette manière
+</span><span class="cdhg-keyword">echo</span><span class="cdhg-separator"> </span><span class="cdhg-variable">$car</span><span class="cdhg-separator">[</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-text">wheels</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-separator">] . </span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">&#x3C;br></span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">;
+
+</span><span class="cdhg-comment">// les textes peuvent être composés avec .
+</span><span class="cdhg-variable">$str1</span><span class="cdhg-separator"> = </span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">a </span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator"> . </span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">text</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">;
+</span><span class="cdhg-comment">// les " permettent de formater avec des variables, les ' non
+</span><span class="cdhg-variable">$str2</span><span class="cdhg-separator"> = </span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">$str1 with $a words</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">; </span><span class="cdhg-comment">// a text with 4 words
+</span><span class="cdhg-variable">$str3</span><span class="cdhg-separator"> = </span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-text">$str1 with $a words</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-separator">; </span><span class="cdhg-comment">// $str1 with $a words
+</span><span class="cdhg-variable">$str4</span><span class="cdhg-separator"> = </span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">the car has $car[wheels] wheels</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">; </span><span class="cdhg-comment">// the car has 4 wheels
+</span><span class="cdhg-separator">
+</span><span class="cdhg-comment">// boucle foreach, avec les clés
+</span><span class="cdhg-keyword">foreach</span><span class="cdhg-separator">(</span><span class="cdhg-variable">$car</span><span class="cdhg-separator"> </span><span class="cdhg-keyword">as</span><span class="cdhg-separator"> </span><span class="cdhg-variable">$key</span><span class="cdhg-separator"> => </span><span class="cdhg-variable">$value</span><span class="cdhg-separator">)
+  </span><span class="cdhg-keyword">echo</span><span class="cdhg-separator"> </span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">$key -> $value&#x3C;br></span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">;
+</span><span class="cdhg-comment">// boucle foreach, sans les clés
+</span><span class="cdhg-keyword">foreach</span><span class="cdhg-separator">(</span><span class="cdhg-variable">$array</span><span class="cdhg-separator"> </span><span class="cdhg-keyword">as</span><span class="cdhg-separator"> </span><span class="cdhg-variable">$value</span><span class="cdhg-separator">)
+  </span><span class="cdhg-keyword">echo</span><span class="cdhg-separator"> </span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">[] $value&#x3C;br></span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">;
+ 
+</span><span class="cdhg-html-context-switch">?></span></code></pre>
+<blockquote class="callout-tldr callout"><p> Inclusions de fichiers</p><div><p>Pour utiliser plusieurs fichiers vous pouvez mettre <code>include "autrefichier.php";</code> dans une balise php. Pour éviter les doubles inclusions il y a la même chose avec <code>include_once</code>. Le chemin du fichier est relatif au fichier courant.</p></div></blockquote>
+<blockquote class="callout-tldr callout"><p> Librairie standard</p><div><p>Un aspect du php que je n'aime pas du tout mais qu'on ne peut pas éviter c'est que la librairie standard est immense, si vous avez besoin d'une fonction qui fait n'importe quoi il y a beaucoup de chance qu'elle existe déjà, il faut juste connaître son nom et le format de ses paramètres. Par exemple les fonctions "classiques" :
+<code>ceil()</code> <code>count()</code> <code>die()</code> <code>empty()</code> <code>exit()</code>  <code>header()</code> <code>include()</code>  <code>isset()</code> <code>mkdir()</code> <code>phpinfo()</code> <code>preg_match()</code> <code>print_r()</code> <code>rand()</code> <code>require()</code> <code>str_replace()</code> <code>str_len()</code> <code>trim()</code></p><blockquote>
+<p>Après avoir vérifié, il y a <em><strong>5342</strong></em> fonctions par défaut en php... Bonne chance pour tout apprendre.</p>
+</blockquote></div></blockquote>
+<h3 id="intégration-en-html">6.2 Intégration en html</h3>
+<p>Ce que vous utiliserez le plus souvent c'est l'intégration avec des <code>&#x3C;?= ... ?></code> et des <code>foreach</code> pour afficher des listes :</p>
+<pre><code class="language-php"><span class="cdhg-separator">&#x3C;</span><span class="cdhg-html-element">ul</span><span class="cdhg-separator"> </span><span class="cdhg-html-attribute">id</span><span class="cdhg-separator">=</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">videos-list</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">></span><span class="cdhg-misc">
+</span><span class="cdhg-html-context-switch">&#x3C;?php</span><span class="cdhg-separator">
+  </span><span class="cdhg-keyword">if</span><span class="cdhg-separator">(</span><span class="cdhg-builtin">count</span><span class="cdhg-separator">(</span><span class="cdhg-variable">$filtered_videos</span><span class="cdhg-separator">) !== </span><span class="cdhg-number">0</span><span class="cdhg-separator">) {
+    </span><span class="cdhg-keyword">for</span><span class="cdhg-separator">(</span><span class="cdhg-variable">$i</span><span class="cdhg-separator"> = </span><span class="cdhg-number">0</span><span class="cdhg-separator">; </span><span class="cdhg-variable">$i</span><span class="cdhg-separator"> &#x3C; </span><span class="cdhg-number">10</span><span class="cdhg-separator">; </span><span class="cdhg-variable">$i</span><span class="cdhg-separator">++) {
+      </span><span class="cdhg-variable">$video</span><span class="cdhg-separator"> = </span><span class="cdhg-variable">$filtered_videos</span><span class="cdhg-separator">[</span><span class="cdhg-builtin">array_rand</span><span class="cdhg-separator">(</span><span class="cdhg-variable">$filtered_videos</span><span class="cdhg-separator">)];
+</span><span class="cdhg-html-context-switch">?></span><span class="cdhg-misc">
+  </span><span class="cdhg-separator">&#x3C;</span><span class="cdhg-html-element">li</span><span class="cdhg-separator">></span><span class="cdhg-misc">
+    </span><span class="cdhg-separator">&#x3C;</span><span class="cdhg-html-element">a</span><span class="cdhg-separator"> </span><span class="cdhg-html-attribute">href</span><span class="cdhg-separator">=</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">&#x3C;?= $video[</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-text">url</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-text">] ?></span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">></span><span class="cdhg-misc">
+      </span><span class="cdhg-separator">&#x3C;</span><span class="cdhg-html-element">img</span><span class="cdhg-separator"> </span><span class="cdhg-html-attribute">src</span><span class="cdhg-separator">=</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">&#x3C;?= $video[</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-text">vignette</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-text">] ?></span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator"> </span><span class="cdhg-html-attribute">class</span><span class="cdhg-separator">=</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">video-vignette</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">></span><span class="cdhg-misc">
+      </span><span class="cdhg-separator">&#x3C;</span><span class="cdhg-html-element">div</span><span class="cdhg-separator">></span><span class="cdhg-misc">
+        </span><span class="cdhg-separator">&#x3C;</span><span class="cdhg-html-element">div</span><span class="cdhg-separator">></span><span class="cdhg-html-context-switch">&#x3C;?=</span><span class="cdhg-separator"> </span><span class="cdhg-variable">$video</span><span class="cdhg-separator">[</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-text">title</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-separator">] </span><span class="cdhg-html-context-switch">?></span><span class="cdhg-separator">&#x3C;/</span><span class="cdhg-html-element">div</span><span class="cdhg-separator">></span><span class="cdhg-misc">
+        </span><span class="cdhg-separator">&#x3C;</span><span class="cdhg-html-element">span</span><span class="cdhg-separator">></span><span class="cdhg-html-context-switch">&#x3C;?=</span><span class="cdhg-separator"> </span><span class="cdhg-variable">$video</span><span class="cdhg-separator">[</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-text">author</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-separator">] </span><span class="cdhg-html-context-switch">?></span><span class="cdhg-separator">&#x3C;/</span><span class="cdhg-html-element">span</span><span class="cdhg-separator">>&#x3C;</span><span class="cdhg-html-element">br</span><span class="cdhg-separator">/></span><span class="cdhg-misc">
+        </span><span class="cdhg-separator">&#x3C;</span><span class="cdhg-html-element">span</span><span class="cdhg-separator"> </span><span class="cdhg-html-attribute">class</span><span class="cdhg-separator">=</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">small-text</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">></span><span class="cdhg-html-context-switch">&#x3C;?=</span><span class="cdhg-separator"> </span><span class="cdhg-variable">$video</span><span class="cdhg-separator">[</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-text">views</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-separator">] </span><span class="cdhg-html-context-switch">?></span><span class="cdhg-misc"> views</span><span class="cdhg-separator">&#x3C;/</span><span class="cdhg-html-element">span</span><span class="cdhg-separator">></span><span class="cdhg-misc">
+      </span><span class="cdhg-separator">&#x3C;/</span><span class="cdhg-html-element">div</span><span class="cdhg-separator">></span><span class="cdhg-misc">
+    </span><span class="cdhg-separator">&#x3C;/</span><span class="cdhg-html-element">a</span><span class="cdhg-separator">></span><span class="cdhg-misc">
+  </span><span class="cdhg-separator">&#x3C;/</span><span class="cdhg-html-element">li</span><span class="cdhg-separator">></span><span class="cdhg-misc">
+</span><span class="cdhg-html-context-switch">&#x3C;?php</span><span class="cdhg-separator"> } } </span><span class="cdhg-html-context-switch">?></span><span class="cdhg-misc">
+</span><span class="cdhg-separator">&#x3C;/</span><span class="cdhg-html-element">ul</span><span class="cdhg-separator">></span></code></pre>
+<p>Là vous pouvez remarquer que les corps du <code>if</code> et du <code>for</code> commencent dans une balise php, contiennent le corps html et finissent dans une deuxième balise php. C'est assez commun comme manière de faire.</p>
+<blockquote class="callout-tldr callout"><p> Paramètres GET et POST</p><div><p>En php on peut récupérer les paramètres des requêtes GET et POST avec les variables globales <code>$_GET</code> et <code>$_POST</code>. Pour vérifier que les paramètres sont bien remplis on peut utiliser <code>isset()</code> :</p><pre><code class="language-php"><span class="cdhg-html-context-switch">&#x3C;?php</span><span class="cdhg-separator">
+
+</span><span class="cdhg-keyword">if</span><span class="cdhg-separator">(!</span><span class="cdhg-keyword">isset</span><span class="cdhg-separator">(</span><span class="cdhg-builtin">$_POST</span><span class="cdhg-separator">[</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-text">username</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-separator">]) || !</span><span class="cdhg-keyword">isset</span><span class="cdhg-separator">(</span><span class="cdhg-builtin">$_POST</span><span class="cdhg-separator">[</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-text">password</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-separator">])) {
+  </span><span class="cdhg-builtin">header</span><span class="cdhg-separator">(</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">Location: /bad_connection.html?reason=missing_info</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">); </span><span class="cdhg-comment">// redirection
+</span><span class="cdhg-separator">  </span><span class="cdhg-builtin">exit</span><span class="cdhg-separator">(); </span><span class="cdhg-comment">// stoppe l'exécution du php
+</span><span class="cdhg-separator">}
+</span><span class="cdhg-keyword">if</span><span class="cdhg-separator">(!</span><span class="cdhg-builtin">areValidCredencials</span><span class="cdhg-separator">(</span><span class="cdhg-builtin">$_POST</span><span class="cdhg-separator">[</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-text">username</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-separator">], </span><span class="cdhg-builtin">$_POST</span><span class="cdhg-separator">[</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-text">password</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-separator">])) {
+  </span><span class="cdhg-builtin">header</span><span class="cdhg-separator">(</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">Location: /bad_connection.html?reason=bad_credentials</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">); </span><span class="cdhg-comment">// redirection
+</span><span class="cdhg-separator">  </span><span class="cdhg-builtin">exit</span><span class="cdhg-separator">(); </span><span class="cdhg-comment">// stoppe l'exécution du php
+</span><span class="cdhg-separator">}
+
+</span><span class="cdhg-builtin">header</span><span class="cdhg-separator">(</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">Location: /my_account.html</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">);
+
+</span><span class="cdhg-keyword">function</span><span class="cdhg-separator"> </span><span class="cdhg-builtin">areValidCredencials</span><span class="cdhg-separator">(</span><span class="cdhg-variable">$username</span><span class="cdhg-separator">, </span><span class="cdhg-variable">$password</span><span class="cdhg-separator">) {
+  ... </span><span class="cdhg-comment">// probablement une requête sur une base de données
+</span><span class="cdhg-separator">}
+</span><span class="cdhg-html-context-switch">?></span></code></pre><p>Attention à ne pas utiliser <code>$_GET['truc']</code> avant d'avoir vérifié que <code>truc</code> est bien un paramètre qui existe !</p><blockquote>
+<p>Cet exemple n'est pas complet, si c'était écrit comme ça on ne pourrait pas différencier les comptes d'utilisateurs différents.</p>
+</blockquote></div></blockquote>
+<h3 id="sessions">6.3 Sessions</h3>
+<p>Les sessions sont un moyen de conserver des données entre deux pages, sans passer par les requêtes GET et POST. Quand un client vient sur une page web on peut démarrer une session, si le client avait déjà une session elle est reprise et on peut lire les données de session, sinon une nouvelle est créée et sera supprimée après un certain temps après la dernière connexion du client au site.</p>
+<blockquote class="callout-tldr callout"><p> Utilité des sessions</p><div><p>Les sessions sont très pratiques par exemple pour stocker l'ID d'un utilisateur après qu'il se soit connecté, pour éviter de lui redemander son mot de passe et nom de compte à chaque page.</p></div></blockquote>
+<pre><code class="language-php"><span class="cdhg-misc">----- page principale du compte -----
+</span><span class="cdhg-html-context-switch">&#x3C;?php</span><span class="cdhg-separator">
+</span><span class="cdhg-builtin">session_start</span><span class="cdhg-separator">();
+
+</span><span class="cdhg-comment">// redirection si l'utilisateur n'est pas connecté
+</span><span class="cdhg-keyword">if</span><span class="cdhg-separator">(!</span><span class="cdhg-keyword">isset</span><span class="cdhg-separator">(</span><span class="cdhg-builtin">$_SESSION</span><span class="cdhg-separator">[</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">user_id</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">])) {
+    </span><span class="cdhg-builtin">header</span><span class="cdhg-separator">(</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">Location: /connection</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">);
+    </span><span class="cdhg-builtin">exit</span><span class="cdhg-separator">();
+}
+</span><span class="cdhg-html-context-switch">?></span><span class="cdhg-misc">
+    
+...
+    
+</span><span class="cdhg-separator">&#x3C;</span><span class="cdhg-html-element">div</span><span class="cdhg-separator">></span><span class="cdhg-misc">Bienvenu </span><span class="cdhg-html-context-switch">&#x3C;?=</span><span class="cdhg-separator"> </span><span class="cdhg-builtin">$_SESSION</span><span class="cdhg-separator">[</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-text">user_name</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-separator">] </span><span class="cdhg-html-context-switch">?></span><span class="cdhg-separator">&#x3C;/</span><span class="cdhg-html-element">div</span><span class="cdhg-separator">></span></code></pre>
+<pre><code class="language-php"><span class="cdhg-misc">----- page de connexion -----
+</span><span class="cdhg-html-context-switch">&#x3C;?php</span><span class="cdhg-separator">
+</span><span class="cdhg-builtin">start_session</span><span class="cdhg-separator">();
+    
+</span><span class="cdhg-keyword">if</span><span class="cdhg-separator">(</span><span class="cdhg-keyword">isset</span><span class="cdhg-separator">(</span><span class="cdhg-builtin">$_POST</span><span class="cdhg-separator">[</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-text">user_name</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-separator">]) &#x26;&#x26; </span><span class="cdhg-keyword">isset</span><span class="cdhg-separator">(</span><span class="cdhg-builtin">$_POST</span><span class="cdhg-separator">[</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-text">password</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-separator">])) {
+    </span><span class="cdhg-variable">$userID</span><span class="cdhg-separator"> = </span><span class="cdhg-variable">$database</span><span class="cdhg-separator">-></span><span class="cdhg-builtin">getUserID</span><span class="cdhg-separator">(</span><span class="cdhg-builtin">$_POST</span><span class="cdhg-separator">[</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-text">username</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-separator">], </span><span class="cdhg-builtin">$_POST</span><span class="cdhg-separator">[</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-text">password</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-separator">]);
+    </span><span class="cdhg-keyword">if</span><span class="cdhg-separator">(</span><span class="cdhg-variable">$userID</span><span class="cdhg-separator"> !== </span><span class="cdhg-builtin">False</span><span class="cdhg-separator">) {
+        </span><span class="cdhg-builtin">$_SESSION</span><span class="cdhg-separator">[</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-text">user_id</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-separator">] = </span><span class="cdhg-variable">$userID</span><span class="cdhg-separator">;
+        </span><span class="cdhg-builtin">header</span><span class="cdhg-separator">(</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">Location: /my-account</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">);
+        </span><span class="cdhg-builtin">exit</span><span class="cdhg-separator">();
+    }
+}
+</span><span class="cdhg-html-context-switch">?></span></code></pre>
+<p>Vous pouvez stocker à peu près tout dans les variables de sessions.</p>
+<blockquote class="callout-example callout"><p> Détruire une session</p><div><p>Pour vos tests, faites vous une page qui contient seulement :</p><pre><code class="language-php"><span class="cdhg-html-context-switch">&#x3C;?php</span><span class="cdhg-separator">
+</span><span class="cdhg-builtin">session_start</span><span class="cdhg-separator">();  
+</span><span class="cdhg-builtin">session_unset</span><span class="cdhg-separator">();
+</span><span class="cdhg-builtin">session_destroy</span><span class="cdhg-separator">();
+</span><span class="cdhg-html-context-switch">?></span></code></pre><p>Ca vous permettra de remettre à zéro les variables de session simplement en rechargeant la page.</p></div></blockquote>
+<h3 id="pdo">6.4 PDO</h3>
+<p>PDO est une des deux manières en php d'accéder à une bdd, c'est la plus récente des deux.
+Pour se connecter et faire une requête SELECT :</p>
+<pre><code class="language-php"><span class="cdhg-comment">// the connection, one is enough for the program's lifetime
+</span><span class="cdhg-variable">$connection</span><span class="cdhg-separator"> = </span><span class="cdhg-keyword">new</span><span class="cdhg-separator"> </span><span class="cdhg-builtin">PDO</span><span class="cdhg-separator">(</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">mysql:host=localhost;dbname=mabdd</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">, </span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">root</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">, </span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">password</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">);
+</span><span class="cdhg-variable">$connection</span><span class="cdhg-separator">-></span><span class="cdhg-builtin">setAttribute</span><span class="cdhg-separator">(</span><span class="cdhg-builtin">PDO</span><span class="cdhg-separator">::</span><span class="cdhg-builtin">ATTR_ERRMODE</span><span class="cdhg-separator">, </span><span class="cdhg-builtin">PDO</span><span class="cdhg-separator">::</span><span class="cdhg-builtin">ERRMODE_EXCEPTION</span><span class="cdhg-separator">);
+
+</span><span class="cdhg-comment">// prepare the query, the '?' symbols get replaced by the parameters to execute()
+</span><span class="cdhg-variable">$request</span><span class="cdhg-separator"> = </span><span class="cdhg-variable">$connection</span><span class="cdhg-separator">-></span><span class="cdhg-builtin">prepare</span><span class="cdhg-separator">(</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">SELECT * FROM table WHERE column = ?;</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">);
+</span><span class="cdhg-variable">$request</span><span class="cdhg-separator">-></span><span class="cdhg-builtin">execute</span><span class="cdhg-separator">([ </span><span class="cdhg-number">3</span><span class="cdhg-separator"> ]);
+</span><span class="cdhg-comment">// get the query's results
+</span><span class="cdhg-builtin">print_r</span><span class="cdhg-separator">(</span><span class="cdhg-variable">$request</span><span class="cdhg-separator">-></span><span class="cdhg-builtin">fetchAll</span><span class="cdhg-separator">(</span><span class="cdhg-builtin">PDO</span><span class="cdhg-separator">::</span><span class="cdhg-builtin">FETCH_ASSOC</span><span class="cdhg-separator">));</span></code></pre>
+<p>Quelques précisions :</p>
+<ul>
+<li><code>fetchAll()</code> peut être remplacé par <code>fetch()</code> pour ne récupérer qu'une seule ligne du select ou peut être omis complètement pour une requête <code>INSERT</code> par exemple.</li>
+<li>utilisez <em>toujours</em> les '?' dans vos requêtes, ça vous protège des <a href="https://www.w3schools.com/sql/sql_injection.asp">injections sql</a>.</li>
+<li>Vous pouvez aussi nommer vos paramètres plutôt que d'utiliser les '?' :</li>
+</ul>
+<pre><code class="language-php"><span class="cdhg-variable">$request</span><span class="cdhg-separator"> = </span><span class="cdhg-variable">$connection</span><span class="cdhg-separator">-></span><span class="cdhg-builtin">prepare</span><span class="cdhg-separator">(</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">SELECT * FROM table WHERE column = :value;</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">);
+</span><span class="cdhg-variable">$request</span><span class="cdhg-separator">-></span><span class="cdhg-builtin">execute</span><span class="cdhg-separator">([ </span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-text">value</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-separator"> => </span><span class="cdhg-number">3</span><span class="cdhg-separator"> ]);</span></code></pre>
+<p>Vous trouverez un fichier <code>db_connection.php</code> pour la connexion et un exemple dont vous pourrez vous inspirer.</p>
+<blockquote class="callout-check callout"><p> Bonne pratique</p><div><p>Le plus simple et le plus ergonomique dans vos projets c'est de n'avoir qu'un seul fichier responsable de la connexion à la bdd et de faire toutes vos requêtes dedans.
+Si vous avez l'envie de faire bien et <em>beaucoup</em> de temps faites une interface "data storage" et une implémentation "database storage", d'un point de vue génie logiciel c'est le top.</p></div></blockquote>
+<blockquote class="callout-attention callout"><p> A ne jamais faire</p><div><p>Ne mettez <em>jamais</em> de code sql dans vos fichiers html ni dans le code javascript, l'utilisateur ne doit jamais avoir accès à votre base de donnée directement.</p></div></blockquote>
+<h3 id="communication-avec-lextérieur">6.5 Communication avec l'extérieur</h3>
+<p>Il arrive qu'on veuille envoyer des données sans passer par une page web, dans ce cas on peut aussi utiliser php comme langage de <em>back-end</em>.</p>
+<p>Par exemple, si j'ai un serveur qui contient des historiques utilisateur stockées dans une base de données, je peut vouloir les rendre accessible via une <em>API</em>, ca veut dire qu'il n'y aura pas de <em>page web</em> mais qu'on peut quand même y accéder via une url :</p>
+<pre><code class="language-php"><span class="cdhg-html-context-switch">&#x3C;?php</span><span class="cdhg-separator">
+
+</span><span class="cdhg-comment">// open a database connection
+// maybe check for user identification...
+// retrieve the data from the database
+</span><span class="cdhg-variable">$data</span><span class="cdhg-separator"> = </span><span class="cdhg-variable">$database</span><span class="cdhg-separator">-></span><span class="cdhg-builtin">fetchUserHistoryData</span><span class="cdhg-separator">(</span><span class="cdhg-variable">$user</span><span class="cdhg-separator">);
+</span><span class="cdhg-comment">// show the data
+</span><span class="cdhg-keyword">echo</span><span class="cdhg-separator"> </span><span class="cdhg-builtin">json_encode</span><span class="cdhg-separator">(</span><span class="cdhg-variable">$data</span><span class="cdhg-separator">);
+</span><span class="cdhg-html-context-switch">?></span></code></pre>
+<p>De cette manière quelqu'un qui tape l'url de l'API vera une réponse en JSON et un développeur pourra faire une requête sur l'url pour accéder à ces données.</p>
+<blockquote>
+<p>Si jamais vous vous posez la question : une <strong>API</strong> c'est juste ça, donner la possibilité d'accéder à des données depuis l'extérieur.</p>
+</blockquote>
+<h2 id="le-mvc">7 Le MVC</h2>
+<p>L'idée du pattern MVC (model-view-controller) est de scinder les données, l'affichage et la logique d'un système.</p>
+<ul>
+<li>le <strong>modèle</strong> contient les données, ou c'<em>est</em> carrément les données.</li>
+<li>la <strong>vue</strong> est l'interface utilisateur (l'IHM)</li>
+<li>le <strong>controller</strong> est l'interface entre le modèle et la vue</li>
+</ul>
+<p>La vue n'est pas censée avoir connaissance du modèle et vice-versa.</p>
+<p>Dans les faits c'est "simplement" de distinguer vos fichiers html (ou php) de pages web et vos fichiers php qui font les requêtes sql, modifient des fichiers etc...</p>
+<p>Typiquement dans un projet en MVC on aura 3 dossiers principaux : <code>model</code>, <code>view</code> et <code>controller</code>. Avec un fichier html/php par page web dans <code>view</code> et <code>controller</code>.</p>
+<blockquote class="callout-info callout"><p> <strong>Mon avis sur le MVC</strong></p><div><p>Personnellement, je n'aime pas du tout diviser mes fichiers de cette manière, ce que je fais souvent c'est de mettre tout mon code serveur (php) dans un dossier et tout le code client (html/js/css) dans un autre, et j'utilise js pour faire des requêtes sur mon code php plutôt que d'intégrer php directement (= je n'ai que des .html, pas de .php dans mon code client).
+Vous êtes libre d'adapter le modèle à votre sauce, mais pour un premier projet c'est sans doute mieux de suivre le MVC à la lettre.</p></div></blockquote>
+<h2 id="js">8 JS</h2>
+<p>Javascript est le langage principal qui permet de rendre une page intéractive (click sur un bouton, animations etc). Il faudrait un cours entier sur le langage pour pouvoir tout voir donc je vais mettre ~seulement le plus important ici.</p>
+<blockquote>
+<p>Techniquement vous n'avez pas besoin de JS du tout pour faire un site, mais ça se verra bien dans le résultat final.</p>
+</blockquote>
+<h3 id="syntaxe">8.1 Syntaxe</h3>
+<ul>
+<li>Les <code>;</code> de fin de ligne ne sont pas obligatoires mais vivement conseillés</li>
+<li><code>let</code> ou <code>var</code> pour déclarer des variables (utilisez <code>let</code> par défaut).</li>
+</ul>
+<pre><code class="language-js"><span class="cdhg-keyword">let</span><span class="cdhg-separator"> </span><span class="cdhg-invalid">a</span><span class="cdhg-separator"> = </span><span class="cdhg-number">4</span><span class="cdhg-separator">;
+</span><span class="cdhg-comment">// boucle for classique
+</span><span class="cdhg-keyword">for</span><span class="cdhg-separator">(</span><span class="cdhg-keyword">let</span><span class="cdhg-separator"> </span><span class="cdhg-invalid">i</span><span class="cdhg-separator"> = </span><span class="cdhg-number">0</span><span class="cdhg-separator">; </span><span class="cdhg-invalid">i</span><span class="cdhg-separator"> &#x3C; </span><span class="cdhg-number">3</span><span class="cdhg-separator">; </span><span class="cdhg-invalid">i</span><span class="cdhg-separator">++)
+  </span><span class="cdhg-builtin">console</span><span class="cdhg-separator">.</span><span class="cdhg-builtin">log</span><span class="cdhg-separator">(</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">i + 3 =</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">, </span><span class="cdhg-invalid">i</span><span class="cdhg-separator">+</span><span class="cdhg-number">3</span><span class="cdhg-separator">);
+
+</span><span class="cdhg-comment">// liste, les éléments ne sont pas forcément du même type
+</span><span class="cdhg-keyword">let</span><span class="cdhg-separator"> </span><span class="cdhg-variable">array</span><span class="cdhg-separator"> = [ </span><span class="cdhg-invalid">a</span><span class="cdhg-separator">, </span><span class="cdhg-number">4</span><span class="cdhg-separator">, </span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">foo</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator"> ];
+</span><span class="cdhg-comment">// ajouter à une liste
+</span><span class="cdhg-variable">array</span><span class="cdhg-separator">.</span><span class="cdhg-variable">push</span><span class="cdhg-separator">(</span><span class="cdhg-number">43</span><span class="cdhg-separator">);
+
+</span><span class="cdhg-comment">// les objets
+</span><span class="cdhg-keyword">let</span><span class="cdhg-separator"> </span><span class="cdhg-variable">car</span><span class="cdhg-separator"> = { </span><span class="cdhg-variable">wheels</span><span class="cdhg-separator">: </span><span class="cdhg-number">4</span><span class="cdhg-separator">, </span><span class="cdhg-variable">speed</span><span class="cdhg-separator">: </span><span class="cdhg-number">80</span><span class="cdhg-separator">, </span><span class="cdhg-builtin">name</span><span class="cdhg-separator">: </span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">a car</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator"> };
+</span><span class="cdhg-comment">// un objet peut être indexé de ces manière
+</span><span class="cdhg-builtin">console</span><span class="cdhg-separator">.</span><span class="cdhg-builtin">log</span><span class="cdhg-separator">(</span><span class="cdhg-variable">car</span><span class="cdhg-separator">[</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-text">wheels</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-separator">], </span><span class="cdhg-variable">car</span><span class="cdhg-separator">.</span><span class="cdhg-variable">wheels</span><span class="cdhg-separator">);
+
+</span><span class="cdhg-comment">// les textes peuvent être composés avec +
+</span><span class="cdhg-keyword">let</span><span class="cdhg-separator"> </span><span class="cdhg-variable">str1</span><span class="cdhg-separator"> = </span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">a </span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator"> + </span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">text</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">;
+</span><span class="cdhg-comment">// les ` permettent de formater avec des variables
+</span><span class="cdhg-keyword">let</span><span class="cdhg-separator"> </span><span class="cdhg-variable">str2</span><span class="cdhg-separator"> = </span><span class="cdhg-text cdhg-text-quote">`</span><span class="cdhg-js-template-literal">${</span><span class="cdhg-variable">str1</span><span class="cdhg-js-template-literal">}</span><span class="cdhg-text"> with </span><span class="cdhg-js-template-literal">${</span><span class="cdhg-invalid">a</span><span class="cdhg-js-template-literal">}</span><span class="cdhg-text"> words</span><span class="cdhg-text cdhg-text-quote">`</span><span class="cdhg-separator">; </span><span class="cdhg-comment">// a text with 4 words
+</span><span class="cdhg-keyword">let</span><span class="cdhg-separator"> </span><span class="cdhg-variable">str4</span><span class="cdhg-separator"> = </span><span class="cdhg-text cdhg-text-quote">`</span><span class="cdhg-text">the car has </span><span class="cdhg-js-template-literal">${</span><span class="cdhg-variable">car</span><span class="cdhg-separator">.</span><span class="cdhg-variable">wheels</span><span class="cdhg-js-template-literal">}</span><span class="cdhg-text"> wheels, or maybe </span><span class="cdhg-js-template-literal">${</span><span class="cdhg-variable">car</span><span class="cdhg-separator">.</span><span class="cdhg-variable">wheels</span><span class="cdhg-separator">+</span><span class="cdhg-number">3</span><span class="cdhg-js-template-literal">}</span><span class="cdhg-text cdhg-text-quote">`</span><span class="cdhg-separator">; </span><span class="cdhg-comment">// the car has 4 wheels, or maybe 7
+</span><span class="cdhg-separator">
+</span><span class="cdhg-comment">// boucle foreach, avec les clés d'un objet
+</span><span class="cdhg-keyword">for</span><span class="cdhg-separator">(</span><span class="cdhg-keyword">let</span><span class="cdhg-separator"> </span><span class="cdhg-variable">key</span><span class="cdhg-separator"> </span><span class="cdhg-keyword">in</span><span class="cdhg-separator"> </span><span class="cdhg-variable">car</span><span class="cdhg-separator">) {
+    </span><span class="cdhg-keyword">let</span><span class="cdhg-separator"> </span><span class="cdhg-variable">value</span><span class="cdhg-separator"> = </span><span class="cdhg-variable">car</span><span class="cdhg-separator">[</span><span class="cdhg-variable">key</span><span class="cdhg-separator">];
+    ...
+}
+</span><span class="cdhg-comment">// boucle foreach, sur un tableau
+</span><span class="cdhg-keyword">for</span><span class="cdhg-separator">(</span><span class="cdhg-keyword">let</span><span class="cdhg-separator"> </span><span class="cdhg-variable">value</span><span class="cdhg-separator"> </span><span class="cdhg-keyword">of</span><span class="cdhg-separator"> </span><span class="cdhg-variable">array</span><span class="cdhg-separator">) { ... }</span></code></pre>
+<p>Pour stocker des données le plus utilisé sont les <em>objets</em>. Ils peuvent contenir tout et n'importe quoi, ce sont comme des dictionaires/(hash)map dans d'autre langages.</p>
+<pre><code class="language-js"><span class="cdhg-keyword">let</span><span class="cdhg-separator"> </span><span class="cdhg-variable">allNotes</span><span class="cdhg-separator"> = {
+    </span><span class="cdhg-variable">avg</span><span class="cdhg-separator">: </span><span class="cdhg-number">10</span><span class="cdhg-separator">,
+    </span><span class="cdhg-variable">lessons</span><span class="cdhg-separator">: [
+        {
+            </span><span class="cdhg-builtin">name</span><span class="cdhg-separator">: </span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-text">maths</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-separator">,
+            </span><span class="cdhg-variable">notes</span><span class="cdhg-separator">: [ </span><span class="cdhg-number">8</span><span class="cdhg-separator">, </span><span class="cdhg-number">9</span><span class="cdhg-separator"> ]
+        },
+        {
+            </span><span class="cdhg-builtin">name</span><span class="cdhg-separator">: </span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-text">physics</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-separator">,
+            </span><span class="cdhg-variable">notes</span><span class="cdhg-separator">: [ </span><span class="cdhg-number">10</span><span class="cdhg-separator">, </span><span class="cdhg-number">11</span><span class="cdhg-separator">, </span><span class="cdhg-number">12</span><span class="cdhg-separator"> ]
+        }
+    ]
+};
+
+</span><span class="cdhg-keyword">let</span><span class="cdhg-separator"> </span><span class="cdhg-variable">mathNotes</span><span class="cdhg-separator"> = </span><span class="cdhg-variable">allNotes</span><span class="cdhg-separator">.</span><span class="cdhg-variable">lessons</span><span class="cdhg-separator">[</span><span class="cdhg-number">0</span><span class="cdhg-separator">].</span><span class="cdhg-variable">notes</span><span class="cdhg-separator">;</span></code></pre>
+<p>Vous avez peut-être déjà vu cette syntaxe, c'est (presque) le JSON. C'est beaucoup utilisé un peu partout, pour des fichiers de configurations par exemple.
+Techniquement les retours à la ligne sont optionnels.</p>
+<blockquote class="callout-attention callout"><p> Les types</p><div><p>En JS, les variables n'ont pas de type, et souvent ca produit des bugs :</p><pre><code class="language-js"><span class="cdhg-keyword">let</span><span class="cdhg-separator"> </span><span class="cdhg-invalid">x</span><span class="cdhg-separator"> = </span><span class="cdhg-number">1</span><span class="cdhg-separator">;
+</span><span class="cdhg-keyword">let</span><span class="cdhg-separator"> </span><span class="cdhg-invalid">y</span><span class="cdhg-separator"> = </span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">10</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">;
+</span><span class="cdhg-builtin">console</span><span class="cdhg-separator">.</span><span class="cdhg-builtin">log</span><span class="cdhg-separator">(</span><span class="cdhg-invalid">x</span><span class="cdhg-separator">+</span><span class="cdhg-invalid">y</span><span class="cdhg-separator">); </span><span class="cdhg-comment">// "110"
+</span><span class="cdhg-builtin">console</span><span class="cdhg-separator">.</span><span class="cdhg-builtin">log</span><span class="cdhg-separator">(</span><span class="cdhg-invalid">x</span><span class="cdhg-separator">-</span><span class="cdhg-invalid">y</span><span class="cdhg-separator">); </span><span class="cdhg-comment">// -9
+</span><span class="cdhg-builtin">console</span><span class="cdhg-separator">.</span><span class="cdhg-builtin">log</span><span class="cdhg-separator">(</span><span class="cdhg-invalid">x</span><span class="cdhg-separator">*</span><span class="cdhg-invalid">y</span><span class="cdhg-separator">); </span><span class="cdhg-comment">// 10</span></code></pre><p>Pour passer de <em>string</em> à <em>number</em> il y a <code>parseInt("5")</code> et <code>parseFloat("3.14")</code>.
+Si vous avez un doute vous pouvez toujours vérifier le type d'une variable avec <code>typeof "3.14"</code> qui renvera <code>"string"</code> par exemple.</p></div></blockquote>
+<h3 id="interaction-avec-le-dom">8.2 Interaction avec le DOM</h3>
+<blockquote>
+<p>DOM = document object model, la page</p>
+</blockquote>
+<p>En JS on peut avoir des variables qui <em>sont</em> les éléments de la page, ça nous permet de les modifier depuis le script. Pour la suite je pars de l'exemple :</p>
+<pre><code class="language-html"><span class="cdhg-separator">&#x3C;</span><span class="cdhg-html-element">div</span><span class="cdhg-separator"> </span><span class="cdhg-html-attribute">class</span><span class="cdhg-separator">=</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">container</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">></span><span class="cdhg-misc">
+    </span><span class="cdhg-separator">&#x3C;</span><span class="cdhg-html-element">button</span><span class="cdhg-separator">></span><span class="cdhg-misc">Button</span><span class="cdhg-separator">&#x3C;/</span><span class="cdhg-html-element">button</span><span class="cdhg-separator">></span><span class="cdhg-misc">
+</span><span class="cdhg-separator">&#x3C;/</span><span class="cdhg-html-element">div</span><span class="cdhg-separator">></span><span class="cdhg-misc">
+</span><span class="cdhg-separator">&#x3C;</span><span class="cdhg-html-element">input</span><span class="cdhg-separator"> </span><span class="cdhg-html-attribute">type</span><span class="cdhg-separator">=</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">text</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">></span><span class="cdhg-misc">
+</span><span class="cdhg-separator">&#x3C;</span><span class="cdhg-html-element">span</span><span class="cdhg-separator"> </span><span class="cdhg-html-attribute">id</span><span class="cdhg-separator">=</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">result</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator"> </span><span class="cdhg-html-attribute">class</span><span class="cdhg-separator">=</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">colored</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">>&#x3C;/</span><span class="cdhg-html-element">span</span><span class="cdhg-separator">></span><span class="cdhg-misc">
+</span><span class="cdhg-separator">&#x3C;</span><span class="cdhg-html-element">span</span><span class="cdhg-separator"> </span><span class="cdhg-html-attribute">class</span><span class="cdhg-separator">=</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">colored</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">>&#x3C;/</span><span class="cdhg-html-element">span</span><span class="cdhg-separator">></span><span class="cdhg-misc">
+</span><span class="cdhg-separator">&#x3C;</span><span class="cdhg-html-element">span</span><span class="cdhg-separator"> </span><span class="cdhg-html-attribute">class</span><span class="cdhg-separator">=</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">colored</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">>&#x3C;/</span><span class="cdhg-html-element">span</span><span class="cdhg-separator">></span><span class="cdhg-misc">
+</span><span class="cdhg-separator">&#x3C;</span><span class="cdhg-html-element">input</span><span class="cdhg-separator"> </span><span class="cdhg-html-attribute">id</span><span class="cdhg-separator">=</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">text-input</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator"> </span><span class="cdhg-html-attribute">type</span><span class="cdhg-separator">=</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">text</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">/></span></code></pre>
+<p><strong>Récupérer les éléments du DOM :</strong></p>
+<pre><code class="language-js"><span class="cdhg-comment">// par id
+</span><span class="cdhg-keyword">let</span><span class="cdhg-separator"> </span><span class="cdhg-variable">resultDiv</span><span class="cdhg-separator"> = </span><span class="cdhg-builtin cdhg-variable">document</span><span class="cdhg-separator">.</span><span class="cdhg-variable">getElementById</span><span class="cdhg-separator">(</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">result</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">);
+</span><span class="cdhg-keyword">let</span><span class="cdhg-separator"> </span><span class="cdhg-variable">textInput</span><span class="cdhg-separator"> = </span><span class="cdhg-builtin cdhg-variable">document</span><span class="cdhg-separator">.</span><span class="cdhg-variable">getElementById</span><span class="cdhg-separator">(</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">text-input</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">);
+</span><span class="cdhg-comment">// par sélecteur css (renvoie le premier élément qui corréspond)
+</span><span class="cdhg-keyword">let</span><span class="cdhg-separator"> </span><span class="cdhg-variable">container</span><span class="cdhg-separator"> = </span><span class="cdhg-builtin cdhg-variable">document</span><span class="cdhg-separator">.</span><span class="cdhg-variable">querySelector</span><span class="cdhg-separator">(</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">.container</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">);
+</span><span class="cdhg-keyword">let</span><span class="cdhg-separator"> </span><span class="cdhg-variable">textInput</span><span class="cdhg-separator"> = </span><span class="cdhg-builtin cdhg-variable">document</span><span class="cdhg-separator">.</span><span class="cdhg-variable">querySelector</span><span class="cdhg-separator">(</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">input[type=text]</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">);
+</span><span class="cdhg-comment">// par sélecteur css (renvoie un tableau avec tous les éléments)
+</span><span class="cdhg-keyword">let</span><span class="cdhg-separator"> </span><span class="cdhg-variable">coloredElements</span><span class="cdhg-separator"> = </span><span class="cdhg-builtin cdhg-variable">document</span><span class="cdhg-separator">.</span><span class="cdhg-variable">querySelectorAll</span><span class="cdhg-separator">(</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">.colored</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">);
+</span><span class="cdhg-comment">// par sélecteur css depuis un autre élément
+</span><span class="cdhg-keyword">let</span><span class="cdhg-separator"> </span><span class="cdhg-builtin cdhg-variable">button</span><span class="cdhg-separator"> = </span><span class="cdhg-variable">container</span><span class="cdhg-separator">.</span><span class="cdhg-variable">querySelector</span><span class="cdhg-separator">(</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">button</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">);</span></code></pre>
+<p><strong>Interagir avec le css :</strong></p>
+<pre><code class="language-js"><span class="cdhg-comment">// changer l'id (à éviter)
+</span><span class="cdhg-builtin cdhg-variable">button</span><span class="cdhg-separator">.</span><span class="cdhg-variable">id</span><span class="cdhg-separator"> = </span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-text">new-id</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-separator">;
+</span><span class="cdhg-comment">// changer les classes
+</span><span class="cdhg-builtin cdhg-variable">button</span><span class="cdhg-separator">.</span><span class="cdhg-variable">classList</span><span class="cdhg-separator">.</span><span class="cdhg-variable">add</span><span class="cdhg-separator">(</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-text">new-class</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-separator">);
+</span><span class="cdhg-variable">container</span><span class="cdhg-separator">.</span><span class="cdhg-variable">classList</span><span class="cdhg-separator">.</span><span class="cdhg-variable">remove</span><span class="cdhg-separator">(</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-text">container</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-separator">);
+</span><span class="cdhg-comment">// modifier directement le css
+</span><span class="cdhg-builtin cdhg-variable">button</span><span class="cdhg-separator">.</span><span class="cdhg-variable">style</span><span class="cdhg-separator">.</span><span class="cdhg-variable">backgroundColor</span><span class="cdhg-separator"> = </span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-text">red</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-separator">; </span><span class="cdhg-comment">// ok pour 1 propriété
+</span><span class="cdhg-builtin cdhg-variable">button</span><span class="cdhg-separator">.</span><span class="cdhg-variable">style</span><span class="cdhg-separator">.</span><span class="cdhg-variable">border</span><span class="cdhg-separator"> = </span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-text">1px solid blue</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-separator">; </span><span class="cdhg-comment">// à éviter, utilisez plutôt les classes
+// cacher/afficher un élément
+</span><span class="cdhg-builtin cdhg-variable">button</span><span class="cdhg-separator">.</span><span class="cdhg-builtin cdhg-variable">hidden</span><span class="cdhg-separator"> = </span><span class="cdhg-keyword">true</span><span class="cdhg-separator">;
+</span><span class="cdhg-builtin cdhg-variable">button</span><span class="cdhg-separator">.</span><span class="cdhg-builtin cdhg-variable">hidden</span><span class="cdhg-separator"> = </span><span class="cdhg-keyword">false</span><span class="cdhg-separator">;</span></code></pre>
+<p><strong>Interagir avec les forms :</strong></p>
+<pre><code class="language-js"><span class="cdhg-keyword">let</span><span class="cdhg-separator"> </span><span class="cdhg-variable">textValue</span><span class="cdhg-separator"> = </span><span class="cdhg-variable">textInput</span><span class="cdhg-separator">.</span><span class="cdhg-variable">value</span><span class="cdhg-separator">;
+</span><span class="cdhg-variable">textInput</span><span class="cdhg-separator">.</span><span class="cdhg-variable">value</span><span class="cdhg-separator"> = </span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-text">something else</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-separator">;</span></code></pre>
+<p><strong>Modifier directement les éléments du DOM :</strong></p>
+<pre><code class="language-js"><span class="cdhg-comment">// remplacer le texte d'un élément
+</span><span class="cdhg-variable">resultDiv</span><span class="cdhg-separator">.</span><span class="cdhg-variable">innerText</span><span class="cdhg-separator"> = </span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">New text</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">;
+</span><span class="cdhg-comment">// remplacer toute la hiérarchie d'un élément (rarement utile)
+</span><span class="cdhg-variable">resultDiv</span><span class="cdhg-separator">.</span><span class="cdhg-variable">innerHTML</span><span class="cdhg-separator"> = </span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">&#x3C;span style=\"background-color:red\">New span&#x3C;/span></span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">;
+</span><span class="cdhg-comment">// ajouter un élément
+</span><span class="cdhg-keyword">let</span><span class="cdhg-separator"> </span><span class="cdhg-variable">div</span><span class="cdhg-separator"> = </span><span class="cdhg-builtin cdhg-variable">document</span><span class="cdhg-separator">.</span><span class="cdhg-variable">createElement</span><span class="cdhg-separator">(</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-text">div</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-separator">);
+</span><span class="cdhg-variable">div</span><span class="cdhg-separator">.</span><span class="cdhg-variable">innerText</span><span class="cdhg-separator"> = </span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">...</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">;
+</span><span class="cdhg-variable">resultDiv</span><span class="cdhg-separator">.</span><span class="cdhg-variable">appendChild</span><span class="cdhg-separator">(</span><span class="cdhg-variable">div</span><span class="cdhg-separator">);
+</span><span class="cdhg-comment">// retirer complètement un élément
+</span><span class="cdhg-variable">resultDiv</span><span class="cdhg-separator">.</span><span class="cdhg-variable">remove</span><span class="cdhg-separator">();</span></code></pre>
+<blockquote class="callout-info callout"><p> L'ordre de chargement des scripts</p><div><p>Les scripts sont chargés en même temps que le reste du DOM, si vous mettez votre balise <code>&#x3C;script></code> en haut du document vous ne pourrez pas utiliser <code>querySelector</code> ou <code>getElementById</code> puisque les éléments n'existent pas encore !
+Si vous en avez besoin vous pouvez mettre votre code dans une fonction appelée au chargement de la page :</p><pre><code class="language-js"><span class="cdhg-builtin cdhg-variable">document</span><span class="cdhg-separator">.</span><span class="cdhg-variable">addEventListener</span><span class="cdhg-separator">(</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-text">load</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-separator">, () => </span><span class="cdhg-variable">initializeThings</span><span class="cdhg-separator">());</span></code></pre><p>Ou rajouter <code>defer</code> à la balise <code>&#x3C;script></code>, ce qui l'oblige à charger après le DOM :
+<code>&#x3C;script src="script.js" defer/></code>.</p></div></blockquote>
+<h4 id="les-events">8.2.1 Les events</h4>
+<p>En web, Javascript fonctionne avec la <em>boucle événementielle</em>. Quand l'utilisateur clique un <em>event</em> est levé et JS peut l'intercepter pour y réagir :</p>
+<pre><code class="language-js"><span class="cdhg-keyword">function</span><span class="cdhg-separator"> </span><span class="cdhg-variable">triggerOnClick</span><span class="cdhg-separator">(</span><span class="cdhg-builtin cdhg-variable">event</span><span class="cdhg-separator">) {
+    </span><span class="cdhg-builtin">console</span><span class="cdhg-separator">.</span><span class="cdhg-builtin">log</span><span class="cdhg-separator">(</span><span class="cdhg-builtin cdhg-variable">event</span><span class="cdhg-separator">); </span><span class="cdhg-comment">// affiche l'événement
+</span><span class="cdhg-separator">    </span><span class="cdhg-builtin">console</span><span class="cdhg-separator">.</span><span class="cdhg-builtin">log</span><span class="cdhg-separator">(</span><span class="cdhg-keyword">this</span><span class="cdhg-separator">); </span><span class="cdhg-comment">// affiche l'élément qui reçoit l'événement
+</span><span class="cdhg-separator">    </span><span class="cdhg-keyword">this</span><span class="cdhg-separator">.</span><span class="cdhg-variable">style</span><span class="cdhg-separator">.</span><span class="cdhg-variable">backgroundColor</span><span class="cdhg-separator"> = </span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-text">red</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-separator">; </span><span class="cdhg-comment">// par exemple
+</span><span class="cdhg-separator">}
+
+</span><span class="cdhg-builtin cdhg-variable">button</span><span class="cdhg-separator">.</span><span class="cdhg-variable">addEventListener</span><span class="cdhg-separator">(</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-text">click</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-separator">, </span><span class="cdhg-variable">triggerOnClick</span><span class="cdhg-separator">);
+
+</span><span class="cdhg-comment">// même principe avec une lambda, cf la section lambda, plus bas
+</span><span class="cdhg-builtin cdhg-variable">button</span><span class="cdhg-separator">.</span><span class="cdhg-variable">addEvenetListener</span><span class="cdhg-separator">(</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-text">click</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-separator">, () => </span><span class="cdhg-builtin">console</span><span class="cdhg-separator">.</span><span class="cdhg-builtin">log</span><span class="cdhg-separator">(</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-text">clicked!</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-separator">));</span></code></pre>
+<p>Vous pouvez trouver une liste des évènements <a href="https://developer.mozilla.org/en-US/docs/Web/Events#event_listing">ici</a>. Les plus utiles sont <code>click</code>, <code>mousedown</code>, <code>mouseup</code>, <code>input</code> (quand un champ <code>&#x3C;input></code> est validé), <code>change</code> (quand un champ <code>&#x3C;input></code> est modifié).</p>
+<h3 id="eléments-du-langage">8.3 Eléments du langage</h3>
+<blockquote class="callout-tldr callout"><p> Les délais</p><div><pre><code class="language-js"><span class="cdhg-keyword">function</span><span class="cdhg-separator"> </span><span class="cdhg-variable">someFunction</span><span class="cdhg-separator">() {
+    </span><span class="cdhg-builtin">console</span><span class="cdhg-separator">.</span><span class="cdhg-builtin">log</span><span class="cdhg-separator">(</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">Hello, World!</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">);
+}
+
+</span><span class="cdhg-keyword">let</span><span class="cdhg-separator"> </span><span class="cdhg-variable">to</span><span class="cdhg-separator"> = </span><span class="cdhg-builtin cdhg-variable">setTimeout</span><span class="cdhg-separator">(</span><span class="cdhg-variable">someFunction</span><span class="cdhg-separator">, </span><span class="cdhg-number">500</span><span class="cdhg-separator">); </span><span class="cdhg-comment">// execute someFunction 500ms plus tard
+</span><span class="cdhg-keyword">let</span><span class="cdhg-separator"> </span><span class="cdhg-variable">it</span><span class="cdhg-separator"> = </span><span class="cdhg-builtin cdhg-variable">setInterval</span><span class="cdhg-separator">(</span><span class="cdhg-variable">someFunction</span><span class="cdhg-separator">, </span><span class="cdhg-number">500</span><span class="cdhg-separator">); </span><span class="cdhg-comment">// execute someFunction toutes les 500ms
+// optionnels
+</span><span class="cdhg-builtin cdhg-variable">clearTimeout</span><span class="cdhg-separator">(</span><span class="cdhg-variable">to</span><span class="cdhg-separator">); </span><span class="cdhg-comment">// stoppe le timeout s'il ne s'est pas déjà exécuté
+</span><span class="cdhg-builtin cdhg-variable">clearInterval</span><span class="cdhg-separator">(</span><span class="cdhg-variable">it</span><span class="cdhg-separator">); </span><span class="cdhg-comment">// stoppe l'exécution périodique</span></code></pre></div></blockquote>
+<blockquote class="callout-tldr callout"><p> Les erreurs</p><div><p>Les erreurs fonctionnent comme dans les autres langages classiques mais elles ne sont pas typées donc impossible de 'catch' un seul type d'erreur :</p><pre><code class="language-js"><span class="cdhg-keyword">try</span><span class="cdhg-separator"> {
+    </span><span class="cdhg-keyword">if</span><span class="cdhg-separator">(</span><span class="cdhg-builtin">Math</span><span class="cdhg-separator">.</span><span class="cdhg-variable">random</span><span class="cdhg-separator">() &#x3C; .</span><span class="cdhg-number">5</span><span class="cdhg-separator">)
+        </span><span class="cdhg-keyword">throw</span><span class="cdhg-separator"> </span><span class="cdhg-keyword">new</span><span class="cdhg-separator"> </span><span class="cdhg-class">Error</span><span class="cdhg-separator">(</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">50% error</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">);
+} </span><span class="cdhg-keyword">catch</span><span class="cdhg-separator"> (</span><span class="cdhg-invalid">e</span><span class="cdhg-separator">) {
+    </span><span class="cdhg-builtin">console</span><span class="cdhg-separator">.</span><span class="cdhg-builtin">error</span><span class="cdhg-separator">(</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">Something went wrong: </span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">, </span><span class="cdhg-invalid">e</span><span class="cdhg-separator">);
+}</span></code></pre></div></blockquote>
+<blockquote class="callout-tldr callout"><p> Les constantes</p><div><p>Par convention les noms des constantes sont en majuscule avec des underscores.</p><pre><code class="language-js"><span class="cdhg-keyword">const</span><span class="cdhg-separator"> </span><span class="cdhg-class">SOME_CONSTANT</span><span class="cdhg-separator"> = </span><span class="cdhg-number">4</span><span class="cdhg-separator">;</span></code></pre></div></blockquote>
+<h3 id="les-requêtes-en-js">8.4 Les requêtes en JS</h3>
+<p>On peut envoyer des requêtes GET et POST depuis Javascript directement, ca permet de ne pas rafraichir la page pour afficher de nouvelles info :</p>
+<pre><code class="language-js"><span class="cdhg-keyword">let</span><span class="cdhg-separator"> </span><span class="cdhg-variable">url</span><span class="cdhg-separator"> = </span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-text">https://www.google.com</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-separator">;
+</span><span class="cdhg-keyword">let</span><span class="cdhg-separator"> </span><span class="cdhg-variable">params</span><span class="cdhg-separator"> = </span><span class="cdhg-text cdhg-text-quote">''</span><span class="cdhg-separator">;
+</span><span class="cdhg-keyword">let</span><span class="cdhg-separator"> </span><span class="cdhg-variable">xhr</span><span class="cdhg-separator"> = </span><span class="cdhg-keyword">new</span><span class="cdhg-separator"> </span><span class="cdhg-class">XMLHttpRequest</span><span class="cdhg-separator">();
+</span><span class="cdhg-variable">xhr</span><span class="cdhg-separator">.</span><span class="cdhg-builtin cdhg-variable">open</span><span class="cdhg-separator">(</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-text">GET</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-separator">, </span><span class="cdhg-variable">url</span><span class="cdhg-separator">, </span><span class="cdhg-keyword">true</span><span class="cdhg-separator">);
+</span><span class="cdhg-variable">xhr</span><span class="cdhg-separator">.</span><span class="cdhg-variable">send</span><span class="cdhg-separator">(</span><span class="cdhg-variable">params</span><span class="cdhg-separator">);
+</span><span class="cdhg-variable">xhr</span><span class="cdhg-separator">.</span><span class="cdhg-variable">onload</span><span class="cdhg-separator"> = () => {
+    </span><span class="cdhg-keyword">if</span><span class="cdhg-separator">(</span><span class="cdhg-variable">xhr</span><span class="cdhg-separator">.</span><span class="cdhg-builtin cdhg-variable">status</span><span class="cdhg-separator"> == </span><span class="cdhg-number">200</span><span class="cdhg-separator">) {
+        </span><span class="cdhg-builtin">console</span><span class="cdhg-separator">.</span><span class="cdhg-builtin">log</span><span class="cdhg-separator">(</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">Response =</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">, </span><span class="cdhg-variable">xhr</span><span class="cdhg-separator">.</span><span class="cdhg-variable">responseText</span><span class="cdhg-separator">);
+        </span><span class="cdhg-comment">// do something with the data
+</span><span class="cdhg-separator">    } </span><span class="cdhg-keyword">else</span><span class="cdhg-separator"> {
+        </span><span class="cdhg-keyword">throw</span><span class="cdhg-separator"> </span><span class="cdhg-keyword">new</span><span class="cdhg-separator"> </span><span class="cdhg-class">Error</span><span class="cdhg-separator">(</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">Could not fetch </span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">);
+    }
+};</span></code></pre>
+<p>Pour vérifier que vos requêtes sont bien envoyées aux bons endroits vous pouvez cocher <code>xhr</code> dans la console des devtools (pas <code>requêtes</code> !).</p>
+<p>Souvent on passe par le format JSON pour échanger des données avec des requêtes. En JS on peut écrire :</p>
+<pre><code class="language-js"><span class="cdhg-comment">// let response = `{"a":3, "b":"c"}`;
+</span><span class="cdhg-keyword">let</span><span class="cdhg-separator"> </span><span class="cdhg-variable">response</span><span class="cdhg-separator"> = </span><span class="cdhg-variable">xhr</span><span class="cdhg-separator">.</span><span class="cdhg-variable">responseText</span><span class="cdhg-separator">;
+</span><span class="cdhg-keyword">let</span><span class="cdhg-separator"> </span><span class="cdhg-variable">responseObject</span><span class="cdhg-separator"> = </span><span class="cdhg-class">JSON</span><span class="cdhg-separator">.</span><span class="cdhg-variable">parse</span><span class="cdhg-separator">(</span><span class="cdhg-variable">response</span><span class="cdhg-separator">);
+</span><span class="cdhg-builtin">console</span><span class="cdhg-separator">.</span><span class="cdhg-builtin">log</span><span class="cdhg-separator">(</span><span class="cdhg-variable">responseObject</span><span class="cdhg-separator">);</span></code></pre>
+<p>Dans le cas ou on <em>reçoit</em> une requête au lieu de l'émettre, on peut récupérer les paramètres GET de cette manière :</p>
+<pre><code class="language-js"><span class="cdhg-keyword">let</span><span class="cdhg-separator"> </span><span class="cdhg-variable">params</span><span class="cdhg-separator"> = </span><span class="cdhg-keyword">new</span><span class="cdhg-separator"> </span><span class="cdhg-class">URLSearchParams</span><span class="cdhg-separator">(</span><span class="cdhg-builtin cdhg-variable">window</span><span class="cdhg-separator">.</span><span class="cdhg-builtin cdhg-variable">location</span><span class="cdhg-separator">.</span><span class="cdhg-variable">search</span><span class="cdhg-separator">);
+</span><span class="cdhg-keyword">if</span><span class="cdhg-separator">(</span><span class="cdhg-variable">params</span><span class="cdhg-separator">.</span><span class="cdhg-variable">has</span><span class="cdhg-separator">(</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-text">someparam</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-separator">))
+	</span><span class="cdhg-builtin">console</span><span class="cdhg-separator">.</span><span class="cdhg-builtin">log</span><span class="cdhg-separator">(</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">Parameter someparam=</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">, </span><span class="cdhg-variable">params</span><span class="cdhg-separator">.</span><span class="cdhg-variable">get</span><span class="cdhg-separator">(</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-text">someparam</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-separator">));
+</span><span class="cdhg-comment">// ne pas oublier parseInt ou parseFloat si vos paramètres sont des nombres</span></code></pre>
+<h3 id="les-twists-de-javascript">8.5 Les twists de Javascript</h3>
+<blockquote>
+<p>Passez cette section si c'est la première fois que vous utilisez JS, sinon amusez vous bien</p>
+</blockquote>
+<p>Quand vous maitrisez un peu le langage il y a quelques opérateurs qui sont très sympa à utiliser :</p>
+<blockquote class="callout-tldr callout"><p> Ternary operator</p><div><pre><code class="language-js"><span class="cdhg-keyword">let</span><span class="cdhg-separator"> </span><span class="cdhg-invalid">a</span><span class="cdhg-separator"> = </span><span class="cdhg-builtin">Math</span><span class="cdhg-separator">.</span><span class="cdhg-variable">random</span><span class="cdhg-separator">() &#x3C; .</span><span class="cdhg-number">5</span><span class="cdhg-separator">;
+</span><span class="cdhg-keyword">let</span><span class="cdhg-separator"> </span><span class="cdhg-invalid">b</span><span class="cdhg-separator"> = </span><span class="cdhg-invalid">a</span><span class="cdhg-separator"> ? </span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">machin</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator"> : </span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">truc</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">;
+</span><span class="cdhg-comment">// b vaut "machin" 50% du temps et "truc" sinon</span></code></pre><p>Syntaxe <code>condition ? sivrai : sifaux</code>.</p></div></blockquote>
+<blockquote class="callout-tldr callout"><p> ?. operator</p><div><pre><code class="language-js"><span class="cdhg-keyword">let</span><span class="cdhg-separator"> </span><span class="cdhg-variable">obj1</span><span class="cdhg-separator"> = { </span><span class="cdhg-variable">val</span><span class="cdhg-separator">: </span><span class="cdhg-number">2</span><span class="cdhg-separator"> };
+</span><span class="cdhg-keyword">let</span><span class="cdhg-separator"> </span><span class="cdhg-variable">obj2</span><span class="cdhg-separator"> = </span><span class="cdhg-builtin">undefined</span><span class="cdhg-separator">;
+</span><span class="cdhg-keyword">for</span><span class="cdhg-separator">(</span><span class="cdhg-keyword">let</span><span class="cdhg-separator"> </span><span class="cdhg-variable">obj</span><span class="cdhg-separator"> </span><span class="cdhg-keyword">of</span><span class="cdhg-separator"> [ </span><span class="cdhg-variable">obj1</span><span class="cdhg-separator">, </span><span class="cdhg-variable">obj2</span><span class="cdhg-separator"> ]) {
+    </span><span class="cdhg-keyword">let</span><span class="cdhg-separator"> </span><span class="cdhg-variable">val</span><span class="cdhg-separator"> = </span><span class="cdhg-variable">obj</span><span class="cdhg-separator">?.</span><span class="cdhg-variable">val</span><span class="cdhg-separator">;
+    </span><span class="cdhg-comment">// val vaut 2 pour obj1 et undefined pour obj2
+</span><span class="cdhg-separator">    </span><span class="cdhg-comment">// si on avait écrit obj.val alors il y aurait
+</span><span class="cdhg-separator">    </span><span class="cdhg-comment">// eu une erreur pour obj2
+</span><span class="cdhg-separator">}</span></code></pre></div></blockquote>
+<blockquote class="callout-tldr callout"><p> Les lambdas</p><div><p>Des fonctions écrites plus simplement.</p><pre><code class="language-js"><span class="cdhg-comment">// écritures équivalentes
+// fonction classique
+</span><span class="cdhg-keyword">function</span><span class="cdhg-separator"> </span><span class="cdhg-variable">square</span><span class="cdhg-separator">(</span><span class="cdhg-invalid">x</span><span class="cdhg-separator">) { </span><span class="cdhg-keyword">return</span><span class="cdhg-separator"> </span><span class="cdhg-invalid">x</span><span class="cdhg-separator">*</span><span class="cdhg-invalid">x</span><span class="cdhg-separator">; }
+</span><span class="cdhg-comment">// fonction comme valeur
+</span><span class="cdhg-keyword">let</span><span class="cdhg-separator"> </span><span class="cdhg-variable">square</span><span class="cdhg-separator"> = </span><span class="cdhg-keyword">function</span><span class="cdhg-separator">(</span><span class="cdhg-invalid">x</span><span class="cdhg-separator">) { </span><span class="cdhg-keyword">return</span><span class="cdhg-separator"> </span><span class="cdhg-invalid">x</span><span class="cdhg-separator">*</span><span class="cdhg-invalid">x</span><span class="cdhg-separator">; }
+</span><span class="cdhg-comment">// lambda
+</span><span class="cdhg-keyword">let</span><span class="cdhg-separator"> </span><span class="cdhg-variable">square</span><span class="cdhg-separator"> = (</span><span class="cdhg-invalid">x</span><span class="cdhg-separator">) => </span><span class="cdhg-invalid">x</span><span class="cdhg-separator">*</span><span class="cdhg-invalid">x</span><span class="cdhg-separator">;
+</span><span class="cdhg-comment">// parenthèses optionnelles s'il n'y a exactement 1 argument
+</span><span class="cdhg-keyword">let</span><span class="cdhg-separator"> </span><span class="cdhg-variable">square</span><span class="cdhg-separator"> = </span><span class="cdhg-invalid">x</span><span class="cdhg-separator"> => </span><span class="cdhg-invalid">x</span><span class="cdhg-separator">*</span><span class="cdhg-invalid">x</span><span class="cdhg-separator">;
+</span><span class="cdhg-comment">// corps plus complexe
+</span><span class="cdhg-keyword">let</span><span class="cdhg-separator"> </span><span class="cdhg-variable">square</span><span class="cdhg-separator"> = </span><span class="cdhg-invalid">x</span><span class="cdhg-separator"> => { </span><span class="cdhg-keyword">return</span><span class="cdhg-separator"> </span><span class="cdhg-invalid">x</span><span class="cdhg-separator">*</span><span class="cdhg-invalid">x</span><span class="cdhg-separator">; }
+
+</span><span class="cdhg-builtin">console</span><span class="cdhg-separator">.</span><span class="cdhg-builtin">log</span><span class="cdhg-separator">(</span><span class="cdhg-variable">square</span><span class="cdhg-separator">(</span><span class="cdhg-number">3</span><span class="cdhg-separator">));
+
+</span><span class="cdhg-comment">// exemple classique
+</span><span class="cdhg-builtin cdhg-variable">document</span><span class="cdhg-separator">.</span><span class="cdhg-variable">addEventListener</span><span class="cdhg-separator">(</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-text">load</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-separator">, () => {
+    </span><span class="cdhg-builtin">console</span><span class="cdhg-separator">.</span><span class="cdhg-builtin">log</span><span class="cdhg-separator">(</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">document loaded</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">);
+});</span></code></pre><p>Attention à la différence entre <code>()=>{}</code> et <code>function(){}</code> avec <code>this</code> et les events. Dans le premier cas <code>this</code> ne correspond pas à l'élément qui reçoit l'événement !</p></div></blockquote>
+<blockquote class="callout-tldr callout"><p> L'unpacking</p><div><pre><code class="language-js"><span class="cdhg-keyword">let</span><span class="cdhg-separator"> </span><span class="cdhg-variable">someObject</span><span class="cdhg-separator"> = { </span><span class="cdhg-variable">var1</span><span class="cdhg-separator">: </span><span class="cdhg-number">32</span><span class="cdhg-separator">, </span><span class="cdhg-variable">var2</span><span class="cdhg-separator">: </span><span class="cdhg-keyword">null</span><span class="cdhg-separator"> };
+</span><span class="cdhg-comment">// let var1 = someObject.var1, var2 = someObject.var2;
+</span><span class="cdhg-keyword">let</span><span class="cdhg-separator"> { </span><span class="cdhg-variable">var1</span><span class="cdhg-separator">, </span><span class="cdhg-variable">var2</span><span class="cdhg-separator"> } = </span><span class="cdhg-variable">someObject</span><span class="cdhg-separator">; </span><span class="cdhg-comment">// même sens, écriture condensée
+</span><span class="cdhg-separator">
+</span><span class="cdhg-keyword">let</span><span class="cdhg-separator"> </span><span class="cdhg-variable">someArray</span><span class="cdhg-separator"> = [ </span><span class="cdhg-number">1</span><span class="cdhg-separator">, </span><span class="cdhg-number">2</span><span class="cdhg-separator">, </span><span class="cdhg-number">3</span><span class="cdhg-separator"> ];
+</span><span class="cdhg-keyword">let</span><span class="cdhg-separator"> </span><span class="cdhg-variable">x1</span><span class="cdhg-separator"> = </span><span class="cdhg-variable">someArray</span><span class="cdhg-separator">[</span><span class="cdhg-number">0</span><span class="cdhg-separator">], </span><span class="cdhg-variable">x2</span><span class="cdhg-separator"> = </span><span class="cdhg-variable">someArray</span><span class="cdhg-separator">[</span><span class="cdhg-number">1</span><span class="cdhg-separator">], </span><span class="cdhg-variable">x3</span><span class="cdhg-separator"> = </span><span class="cdhg-variable">someArray</span><span class="cdhg-separator">[</span><span class="cdhg-number">2</span><span class="cdhg-separator">];
+</span><span class="cdhg-keyword">let</span><span class="cdhg-separator"> [ </span><span class="cdhg-variable">x1</span><span class="cdhg-separator">, </span><span class="cdhg-variable">x2</span><span class="cdhg-separator">, </span><span class="cdhg-variable">x3</span><span class="cdhg-separator"> ] = </span><span class="cdhg-variable">someArray</span><span class="cdhg-separator">; </span><span class="cdhg-comment">// même sens, écriture condensée</span></code></pre><p>On peut aussi se servire de l'unpacking dans des paramètres :</p><pre><code class="language-js"><span class="cdhg-keyword">function</span><span class="cdhg-separator"> </span><span class="cdhg-variable">someFunction</span><span class="cdhg-separator">(</span><span class="cdhg-variable">val</span><span class="cdhg-separator">, { </span><span class="cdhg-variable">var1</span><span class="cdhg-separator">, </span><span class="cdhg-variable">var2</span><span class="cdhg-separator">, </span><span class="cdhg-variable">var3</span><span class="cdhg-separator"> }) { ... }
+
+</span><span class="cdhg-keyword">let</span><span class="cdhg-separator"> </span><span class="cdhg-variable">params</span><span class="cdhg-separator"> = { </span><span class="cdhg-variable">var1</span><span class="cdhg-separator">: </span><span class="cdhg-number">3</span><span class="cdhg-separator">, </span><span class="cdhg-variable">var2</span><span class="cdhg-separator">: </span><span class="cdhg-number">54</span><span class="cdhg-separator">, </span><span class="cdhg-variable">var3</span><span class="cdhg-separator">: </span><span class="cdhg-number">6</span><span class="cdhg-separator"> };
+</span><span class="cdhg-variable">someFunction</span><span class="cdhg-separator">(</span><span class="cdhg-number">54</span><span class="cdhg-separator">, </span><span class="cdhg-variable">params</span><span class="cdhg-separator">);</span></code></pre></div></blockquote>
+<blockquote class="callout-tldr callout"><p> Les promise</p><div><p>Pour le code asynchrone, c'est un peu trop compliqué pour que j'explique tout ici, je vous laisse chercher si ça vous intéresse.
+Vous trouverez facilement avec les mots clés <code>Promise</code> <code>async</code> <code>await</code>.</p><pre><code class="language-js"><span class="cdhg-keyword">function</span><span class="cdhg-separator"> </span><span class="cdhg-variable">sendRequest</span><span class="cdhg-separator">() {
+    </span><span class="cdhg-keyword">let</span><span class="cdhg-separator"> </span><span class="cdhg-variable">xhr</span><span class="cdhg-separator"> = </span><span class="cdhg-keyword">new</span><span class="cdhg-separator"> </span><span class="cdhg-class">XMLHttpRequest</span><span class="cdhg-separator">();
+    </span><span class="cdhg-variable">xhr</span><span class="cdhg-separator">.</span><span class="cdhg-variable">send</span><span class="cdhg-separator">();
+    </span><span class="cdhg-keyword">return</span><span class="cdhg-separator"> </span><span class="cdhg-keyword">new</span><span class="cdhg-separator"> </span><span class="cdhg-class">Promise</span><span class="cdhg-separator">((</span><span class="cdhg-variable">resolve</span><span class="cdhg-separator">, </span><span class="cdhg-variable">reject</span><span class="cdhg-separator">) => {
+        </span><span class="cdhg-variable">xhr</span><span class="cdhg-separator">.</span><span class="cdhg-variable">on</span><span class="cdhg-separator">(</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-text">load</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-separator">, () => {
+            </span><span class="cdhg-keyword">if</span><span class="cdhg-separator">(</span><span class="cdhg-variable">xhr</span><span class="cdhg-separator">.</span><span class="cdhg-builtin cdhg-variable">status</span><span class="cdhg-separator"> == </span><span class="cdhg-number">200</span><span class="cdhg-separator">)
+                </span><span class="cdhg-variable">resolve</span><span class="cdhg-separator">(</span><span class="cdhg-variable">xhr</span><span class="cdhg-separator">.</span><span class="cdhg-variable">response</span><span class="cdhg-separator">);
+            </span><span class="cdhg-keyword">else</span><span class="cdhg-separator">
+                </span><span class="cdhg-variable">reject</span><span class="cdhg-separator">(</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">Could not send request</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">);
+        });
+    });
+}
+
+</span><span class="cdhg-keyword">async</span><span class="cdhg-separator"> </span><span class="cdhg-keyword">function</span><span class="cdhg-separator"> </span><span class="cdhg-variable">sendManyRequests</span><span class="cdhg-separator">() {
+    </span><span class="cdhg-keyword">let</span><span class="cdhg-separator"> </span><span class="cdhg-variable">responses</span><span class="cdhg-separator"> = [];
+    </span><span class="cdhg-keyword">for</span><span class="cdhg-separator">(</span><span class="cdhg-keyword">let</span><span class="cdhg-separator"> </span><span class="cdhg-invalid">i</span><span class="cdhg-separator"> = </span><span class="cdhg-number">0</span><span class="cdhg-separator">; </span><span class="cdhg-invalid">i</span><span class="cdhg-separator"> &#x3C; </span><span class="cdhg-number">30</span><span class="cdhg-separator">; </span><span class="cdhg-invalid">i</span><span class="cdhg-separator">++)
+        </span><span class="cdhg-variable">responses</span><span class="cdhg-separator">.</span><span class="cdhg-variable">push</span><span class="cdhg-separator">(</span><span class="cdhg-variable">sendRequest</span><span class="cdhg-separator">()); </span><span class="cdhg-comment">// n'est pas bloqué en attente de la réponse
+</span><span class="cdhg-separator">    </span><span class="cdhg-keyword">await</span><span class="cdhg-separator"> </span><span class="cdhg-class">Promise</span><span class="cdhg-separator">.</span><span class="cdhg-builtin cdhg-variable">all</span><span class="cdhg-separator">(</span><span class="cdhg-variable">responses</span><span class="cdhg-separator">); </span><span class="cdhg-comment">// attend que toutes les requêtes aient terminé
+</span><span class="cdhg-separator">    </span><span class="cdhg-keyword">for</span><span class="cdhg-separator">(</span><span class="cdhg-keyword">let</span><span class="cdhg-separator"> </span><span class="cdhg-variable">response</span><span class="cdhg-separator"> </span><span class="cdhg-keyword">of</span><span class="cdhg-separator"> </span><span class="cdhg-variable">responses</span><span class="cdhg-separator">) {
+        </span><span class="cdhg-builtin">console</span><span class="cdhg-separator">.</span><span class="cdhg-builtin">log</span><span class="cdhg-separator">(</span><span class="cdhg-variable">response</span><span class="cdhg-separator">); </span><span class="cdhg-comment">// on traite les résultats un à un
+</span><span class="cdhg-separator">    }
+}</span></code></pre></div></blockquote>
+<blockquote class="callout-tldr callout"><p> Les templates</p><div><p>Les balises <code>&#x3C;template></code> n'apparaissent pas dans la page web, elles existent pour être dupliquées en js et ajoutées à la page.</p><pre><code class="language-html"><span class="cdhg-separator">&#x3C;</span><span class="cdhg-html-element">ul</span><span class="cdhg-separator"> </span><span class="cdhg-html-attribute">class</span><span class="cdhg-separator">=</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">article-list</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">>&#x3C;/</span><span class="cdhg-html-element">ul</span><span class="cdhg-separator">></span><span class="cdhg-misc">
+
+</span><span class="cdhg-separator">&#x3C;</span><span class="cdhg-html-element">template</span><span class="cdhg-separator"> </span><span class="cdhg-html-attribute">id</span><span class="cdhg-separator">=</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">article-item</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">></span><span class="cdhg-misc">
+</span><span class="cdhg-separator">&#x3C;</span><span class="cdhg-html-element">li</span><span class="cdhg-separator">></span><span class="cdhg-misc">
+    </span><span class="cdhg-separator">&#x3C;</span><span class="cdhg-html-element">h6</span><span class="cdhg-separator"> </span><span class="cdhg-html-attribute">class</span><span class="cdhg-separator">=</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">template-title</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">>&#x3C;/</span><span class="cdhg-html-element">h6</span><span class="cdhg-separator">></span><span class="cdhg-misc">
+    </span><span class="cdhg-separator">&#x3C;</span><span class="cdhg-html-element">span</span><span class="cdhg-separator"> </span><span class="cdhg-html-attribute">class</span><span class="cdhg-separator">=</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">template-body</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">>&#x3C;/</span><span class="cdhg-html-element">span</span><span class="cdhg-separator">></span><span class="cdhg-misc">
+</span><span class="cdhg-separator">&#x3C;/</span><span class="cdhg-html-element">li</span><span class="cdhg-separator">></span><span class="cdhg-misc">
+</span><span class="cdhg-separator">&#x3C;/</span><span class="cdhg-html-element">template</span><span class="cdhg-separator">></span></code></pre><pre><code class="language-js"><span class="cdhg-keyword">const</span><span class="cdhg-separator"> </span><span class="cdhg-variable">articleItemTemplate</span><span class="cdhg-separator"> = </span><span class="cdhg-builtin cdhg-variable">document</span><span class="cdhg-separator">.</span><span class="cdhg-variable">getElementById</span><span class="cdhg-separator">(</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">article-item</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">);
+</span><span class="cdhg-keyword">const</span><span class="cdhg-separator"> </span><span class="cdhg-variable">articleList</span><span class="cdhg-separator"> = </span><span class="cdhg-builtin cdhg-variable">document</span><span class="cdhg-separator">.</span><span class="cdhg-variable">getElementById</span><span class="cdhg-separator">(</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">article-list</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">);
+
+</span><span class="cdhg-keyword">function</span><span class="cdhg-separator"> </span><span class="cdhg-variable">addArticle</span><span class="cdhg-separator">(</span><span class="cdhg-variable">title</span><span class="cdhg-separator">, </span><span class="cdhg-variable">body</span><span class="cdhg-separator">) {
+    </span><span class="cdhg-keyword">let</span><span class="cdhg-separator"> </span><span class="cdhg-variable">node</span><span class="cdhg-separator"> = </span><span class="cdhg-builtin cdhg-variable">document</span><span class="cdhg-separator">.</span><span class="cdhg-variable">importNode</span><span class="cdhg-separator">(</span><span class="cdhg-variable">articleItemTemplate</span><span class="cdhg-separator">.</span><span class="cdhg-variable">content</span><span class="cdhg-separator">, </span><span class="cdhg-keyword">true</span><span class="cdhg-separator">).</span><span class="cdhg-variable">firstElementChild</span><span class="cdhg-separator">;
+    </span><span class="cdhg-comment">// node est une copie de l'élément li
+</span><span class="cdhg-separator">    </span><span class="cdhg-variable">node</span><span class="cdhg-separator">.</span><span class="cdhg-variable">querySelector</span><span class="cdhg-separator">(</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">template-title</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">) = </span><span class="cdhg-variable">title</span><span class="cdhg-separator">;
+    </span><span class="cdhg-variable">node</span><span class="cdhg-separator">.</span><span class="cdhg-variable">querySelector</span><span class="cdhg-separator">(</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">template-body</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">) = </span><span class="cdhg-variable">body</span><span class="cdhg-separator">;
+    </span><span class="cdhg-variable">articleList</span><span class="cdhg-separator">.</span><span class="cdhg-variable">appendChild</span><span class="cdhg-separator">(</span><span class="cdhg-variable">node</span><span class="cdhg-separator">);
+}</span></code></pre><p>Attention à ne pas utiliser d'ids dans les templates ! Sinon si vous importez leurs contenus deux fois vous aurez des ids dupliquées.</p></div></blockquote>
+<blockquote class="callout-tldr callout"><p> L'opérateur ||</p><div><p>En JS tout peut être converti en booléen (<code>null</code>-><code>false</code>, <code>""</code>-><code>false</code>, <code>"a"</code>-><code>true</code>, <code>0</code>-><code>false</code>, <code>-4</code>-><code>true</code>...) et l'opérateur <code>a||b</code> peut s'écrire <code>Boolean(a)?a:b</code>, ca permet d'écrire :</p><pre><code class="language-js"><span class="cdhg-keyword">let</span><span class="cdhg-separator"> </span><span class="cdhg-variable">params</span><span class="cdhg-separator"> = </span><span class="cdhg-keyword">new</span><span class="cdhg-separator"> </span><span class="cdhg-class">URLSearchParams</span><span class="cdhg-separator">(</span><span class="cdhg-builtin cdhg-variable">window</span><span class="cdhg-separator">.</span><span class="cdhg-builtin cdhg-variable">location</span><span class="cdhg-separator">.</span><span class="cdhg-variable">search</span><span class="cdhg-separator">);
+</span><span class="cdhg-keyword">let</span><span class="cdhg-separator"> </span><span class="cdhg-variable">key</span><span class="cdhg-separator"> = </span><span class="cdhg-variable">params</span><span class="cdhg-separator">.</span><span class="cdhg-variable">get</span><span class="cdhg-separator">(</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-text">key</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-separator">) || </span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">defaultKey</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">;</span></code></pre><p>De cette manière, si <code>params.get('key')</code> renvoie quelque chose, ce sera la valeur de <code>key</code>, sinon <code>key</code> vaudra <code>"defaultKey"</code>.</p></div></blockquote>
+<blockquote class="callout-tldr callout"><p> Les template literals</p><div><pre><code class="language-js"><span class="cdhg-keyword">let</span><span class="cdhg-separator"> </span><span class="cdhg-variable">someval</span><span class="cdhg-separator"> = </span><span class="cdhg-number">3</span><span class="cdhg-separator">;
+</span><span class="cdhg-keyword">let</span><span class="cdhg-separator"> </span><span class="cdhg-variable">otherval</span><span class="cdhg-separator"> = </span><span class="cdhg-number">6</span><span class="cdhg-separator">;
+</span><span class="cdhg-keyword">let</span><span class="cdhg-separator"> </span><span class="cdhg-variable">str</span><span class="cdhg-separator"> = </span><span class="cdhg-text cdhg-text-quote">`</span><span class="cdhg-js-template-literal">${</span><span class="cdhg-variable">someval</span><span class="cdhg-js-template-literal">}</span><span class="cdhg-text"> + </span><span class="cdhg-js-template-literal">${</span><span class="cdhg-variable">otherval</span><span class="cdhg-js-template-literal">}</span><span class="cdhg-text"> = </span><span class="cdhg-js-template-literal">${</span><span class="cdhg-variable">someval</span><span class="cdhg-separator"> + </span><span class="cdhg-variable">otherval</span><span class="cdhg-js-template-literal">}</span><span class="cdhg-text cdhg-text-quote">`</span><span class="cdhg-separator">; </span><span class="cdhg-comment">// 3 + 6 = 9</span></code></pre><p>Dans des textes écrits avec <code>\`` on peut ajouter des blocks </code>${...}` qui contiennent du javascript.</p></div></blockquote>
+<h2 id="notes-additionnelles">9 Notes additionnelles</h2>
+<blockquote class="callout-tldr callout"><p> Le web en standalone</p><div><p><a href="https://electronjs.org">Electron</a> permet de faire des applications sur mobile et en standalone sur tous les OS. Si vous cherchez à faire une application et que vous avez besoin d'une interface c'est une très bonne solution.</p></div></blockquote>
+<blockquote class="callout-tldr callout"><p> Debugging sur mobile</p><div><p>Trouver des problèmes de css/js sur mobile est beaucoup plus compliqué que sur PC puisqu'il n'y a pas de console.
+Il est possible de rattacher une console d'ordi à un process sur un mobile, c'est faisable mais pas toujours évident. Vous pouvez aussi utiliser un émulateur.</p></div></blockquote>
+<blockquote class="callout-tldr callout"><p> Le favicon</p><div><p>Le favicon est l'icône qui apparaît à gauche du nom de l'onglet. Il vous suffit de générer un fichier en .ico et de le placer à la racine de votre site web. Vous pouvez utiliser <a href="https://favicon.io/">ce site</a> pour le générer.</p></div></blockquote>
+<blockquote class="callout-tldr callout"><p> Accéder aux pages sans l'extension du fichier</p><div><p>Si sur votre serveur vous avez un fichier <code>truc.html</code> (ou .php) à la racine, vous pouvez y accéder à <code>localhost/truc.html</code>. Mais pour éviter d'avoir à indiquer le .html on nomme le fichier <code>index.html</code> et on le met dans un dossier <code>truc</code>. L'arborescence d'un site ressemble souvent à ceci :</p><pre><code>.
+├── index.html/php
+├── index.css,js...
+├── favicon.ico
+├── connexion/
+│   ├── index.html/php
+│   └── index.css,js...
+├── page-perso/
+│   ├── index.html/php
+│   ├── index.css,js...
+│   ├── editer-mon-compte/
+│   │   ├── index.html/php
+│   │   └── index.css,js...
+│   └── ...
+└── ...
+</code></pre></div></blockquote>
+<h3 id="nodejs">9.1 NodeJS</h3>
+<p><a href="https://nodejs.org">NodeJS</a> (ou node) est un moyen d'utiliser JS côté serveur, personnellement je préfère 100 fois utiliser node plutôt que php.</p>
+<p>Node utilise le node packet manager (npm) pour installer des librairies, ça vous permet d'obtenir très facilement plein de librairies et d'accélérer le développement.</p>
+<p>Pour démarrer je vous conseille d'installer node et <a href="https://expressjs.com/">express</a> (<code>npm install express</code>). Vous pourrez tester votre installation avec ce code :</p>
+<pre><code class="language-javascript"><span class="cdhg-comment">// --- main.js ---
+</span><span class="cdhg-separator">
+</span><span class="cdhg-keyword">const</span><span class="cdhg-separator"> </span><span class="cdhg-variable">express</span><span class="cdhg-separator"> = </span><span class="cdhg-variable">require</span><span class="cdhg-separator">(</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-text">express</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-separator">);
+</span><span class="cdhg-comment">// create the web app (server)
+</span><span class="cdhg-keyword">const</span><span class="cdhg-separator"> </span><span class="cdhg-variable">app</span><span class="cdhg-separator"> = </span><span class="cdhg-variable">express</span><span class="cdhg-separator">();
+</span><span class="cdhg-variable">app</span><span class="cdhg-separator">.</span><span class="cdhg-variable">use</span><span class="cdhg-separator">(</span><span class="cdhg-variable">express</span><span class="cdhg-separator">.</span><span class="cdhg-variable">json</span><span class="cdhg-separator">());
+</span><span class="cdhg-variable">app</span><span class="cdhg-separator">.</span><span class="cdhg-variable">use</span><span class="cdhg-separator">(</span><span class="cdhg-variable">express</span><span class="cdhg-separator">.</span><span class="cdhg-variable">urlencoded</span><span class="cdhg-separator">({ </span><span class="cdhg-variable">extended</span><span class="cdhg-separator">: </span><span class="cdhg-keyword">true</span><span class="cdhg-separator"> }));  
+</span><span class="cdhg-variable">app</span><span class="cdhg-separator">.</span><span class="cdhg-variable">use</span><span class="cdhg-separator">(</span><span class="cdhg-variable">express</span><span class="cdhg-separator">.</span><span class="cdhg-keyword">static</span><span class="cdhg-separator">(</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-text">public</span><span class="cdhg-text cdhg-text-quote">'</span><span class="cdhg-separator">));
+</span><span class="cdhg-variable">app</span><span class="cdhg-separator">.</span><span class="cdhg-variable">listen</span><span class="cdhg-separator">(</span><span class="cdhg-number">80</span><span class="cdhg-separator">, () => </span><span class="cdhg-builtin">console</span><span class="cdhg-separator">.</span><span class="cdhg-builtin">log</span><span class="cdhg-separator">(</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">Running on http://localhost</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">));
+</span><span class="cdhg-comment">// it is very likely that your computer won't let you start a server on port 80, if so, change to something like 12345 and type 'localhost:12345' in your browser.</span></code></pre>
+<p>Et vos autres fichiers devront être placés dans un dossier <code>public/</code> adjacent au <code>main.js</code>, ensuite vous pouvez démarrer votre serveur avec <code>node main.js</code>.</p>
+<p>La documentation en ligne d'express est très bien faite, je vous laisse chercher pour la suite.</p>
+<blockquote class="callout-note callout"><p> JS sans le web</p><div><p>NodeJS peut aussi être utilisé pour vos projets qui n'utilisent pas le web !
+Après tout, javascript est un langage très général - dans la même veine que python -, d'autant qu'on peut accéder aux fichiers avec node et avec le nombre de librairies qui existent on peut à peu près tout faire très rapidement.</p><blockquote>
+<p>JS est mon langage de prédilection pour les proof-of-concepts et les projets rapides, je vous invite à en faire autant.</p>
+</blockquote></div></blockquote>
+<h2 id="liens-1">10 Liens</h2>
+<p>La liste des liens les plus utiles :</p>
+<table>
+<thead>
+<tr>
+<th>Nom</th>
+<th>Utilité</th>
+<th>lien</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Examples</td>
+<td>la liste des exemples html/css/js/php</td>
+<td><a href="https://github.com/Akahara/documentation/tree/master/web/examples">https://github.com/Akahara/documentation/tree/master/web/examples</a></td>
+</tr>
+<tr>
+<td>google icons</td>
+<td>des icônes en accès libre</td>
+<td><a href="https://fonts.google.com/icons">https://fonts.google.com/icons</a></td>
+</tr>
+<tr>
+<td>Doc MDN</td>
+<td>liste des balises html</td>
+<td><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">https://developer.mozilla.org/en-US/docs/Web/HTML/Element</a></td>
+</tr>
+<tr>
+<td>W3C Validator</td>
+<td>le validateur html</td>
+<td><a href="https://validator.w3.org/">https://validator.w3.org/</a></td>
+</tr>
+<tr>
+<td>Flexbox</td>
+<td>un tuto sur les flexbox css</td>
+<td><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">https://css-tricks.com/snippets/css/a-guide-to-flexbox/</a></td>
+</tr>
+<tr>
+<td>box shadow</td>
+<td>un générateur de bordures css</td>
+<td><a href="https://html-css-js.com/css/generator/box-shadow/">https://html-css-js.com/css/generator/box-shadow/</a></td>
+</tr>
+<tr>
+<td>getwaves</td>
+<td>un générateur de vagues svg</td>
+<td><a href="https://getwaves.io/">https://getwaves.io/</a></td>
+</tr>
+<tr>
+<td>favicon.io</td>
+<td>un générateur de favicon</td>
+<td><a href="https://favicon.io/">https://favicon.io/</a></td>
+</tr>
+</tbody>
+</table>
+
+    <a id="back-link" href="/documentation"><span class="material-icons-outlined">home</span></a>
+    <style>
+#back-link {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+    </style>
+</body>
+</html>

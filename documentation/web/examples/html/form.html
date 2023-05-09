@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>form example</title>
+</head>
+<body>
+  <details>
+    <summary>Basic example</summary>
+    
+    Enter your name, submit, and watch the url change.
+    <form action="" method="GET">
+      <label>
+        Enter your name:
+        <input type="text" name="my-name">
+      </label>
+      <button type="submit">Submit</button>
+    </form>
+  </details>
+  <hr>
+  <details>
+    <summary>Input type showcase</summary>
+
+    <form>
+      <label>Checkbox: <input type="checkbox"></label><br>
+      <label>Text: <input type="text"></label><br>
+      <label>Date: <input type="date"></label><br>
+      <label>Number: <input type="number"></label><br>
+      <label>Password: <input type="password"></label><br>
+      <label>Range: <input type="range"></label><br>
+      <label>
+        Select:
+        <select>
+          <option value="opt-1">Option 1</option>
+          <option value="opt-2">Option 2</option>
+          <option value="opt-3">Option 3</option>
+        </select>
+      </label><br>
+      <button>Button</button><br>
+      <input type="button" value="Input Button">
+    </form>
+  </details>
+  <hr>
+  <details>
+    <summary>Neat attributes</summary>
+    <form>
+      <label>
+        Required: <input required type="text">
+        <span>Add "required" to an input to make it necessary to submit</span>
+      </label><br>
+      <label>
+        Placeholder: <input type="text" placeholder="blabla...">
+      </label><br>
+      <label>
+        Value: <input type="number" value="3">
+        <span>The "value" attribute works for must inputs</span>
+      </label><br>
+      <label>
+        Pattern: <input type="text" pattern="\w+@[a-z]{1,10}\.[a-z]{1,3}" required placeholder="enter an email">
+        <span>The pattern attributes sets a pattern (a <a href="https://regexr.com/">regex</a>) that must be respected to submit the form. More often than not 'pattern' goes with 'required'</span>
+      </label><br>
+      <label>
+        Range attributes: <input type="range" min="1" max="5" step=".5">
+      </label><br>
+      <p>
+        Try not to fill a 'required' or enter an invalid 'pattern' value and click submit.
+      </p>
+      <input type="submit" value="Submit!">
+    </form>
+  </details>
+  <hr>
+  <details>
+    <summary>Info</summary>
+    <p>
+      The <code>&lt;label&gt;</code> tag is not required but more often than not it is useful to add.
+    </p>
+    <p>
+      If an <code>&lt;input&gt;</code> tag is not named (<code>name="..."</code>) it won't be sent at all.
+    </p>
+    <p>
+      All inputs have a default style on all browsers, if you want to style theim yourself you will have
+      to override the default padding, margin and border.
+    </p>
+  </details>
+  <hr>
+  <details>
+    <summary>Receive a form in JS</summary>
+    <form action="" method="GET">
+      <label>x=<input type="number" name="x"></label><br>
+      <label>y=<input type="number" name="y"></label><br>
+      <p>
+        x+y = <span id="x-plus-y-result"></span>
+      </p>
+      <button type="submit">Submit</button>
+    </form>
+    <script>
+      // The script would be in a separate .js file in a real project
+
+      // window.location.search is the end of the url, after the ? symbol
+      let params = new URLSearchParams(window.location.search);
+      let resultDiv = document.getElementById('x-plus-y-result');
+      if(!params.has('x') || !params.has('y')) {
+        resultDiv.innerText = 'You did not specify x and y';
+      } else {
+        resultDiv.innerText = parseFloat(params.get('x')) + parseFloat(params.get('y'));
+      }
+    </script>
+  </details>
+</body>
+</html>

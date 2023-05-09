@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Symbols" rel="stylesheet">
+  <title>Menubar example</title>
+</head>
+<body>
+  <div id="actionbar">
+    <h3><span class="material-symbols-outlined">home</span> My website</h3>
+    <ul>
+      <li><a href=""><span class="material-symbols-outlined">contact_page</span> Page 1</a></li>
+      <li><a href=""><span class="material-symbols-outlined">description</span> Page 2</a></li>
+      <li><a href=""><span class="material-symbols-outlined">request_page</span> Page 3</a></li>
+      <li><a href=""><span class="material-symbols-outlined">edit_document</span> Page 4</a></li>
+      <li><a href=""><span class="material-symbols-outlined">document_scanner</span> Page 5</a></li>
+    </ul>
+    <hr>
+    <ul>
+      <li><a href=""><span class="material-symbols-outlined">edit</span> Page 6</a></li>
+      <li><a href=""><span class="material-symbols-outlined">edit</span> Page 7</a></li>
+      <li><a href=""><span class="material-symbols-outlined">edit</span> Page 8</a></li>
+    </ul>
+    <hr>
+    <ul>
+      <li><a href=""><span class="material-symbols-outlined">edit</span> Page 9</a></li>
+      <li><a href=""><span class="material-symbols-outlined">edit</span> Page 10</a></li>
+      <li><a href=""><span class="material-symbols-outlined">edit</span> Page 11</a></li>
+    </ul>
+    <div>
+      Text at bottom<br>
+      Put credits here for example
+    </div>
+  </div>
+
+  <div id="content">
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum nihil nemo dolor beatae, atque enim, magni et qui incidunt reiciendis harum quam? Magnam labore perspiciatis animi eaque modi nam debitis?
+  </div>
+
+  <style>
+/* This code would be in a .css file in a real project */
+
+* {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+  margin: 0;
+}
+
+#actionbar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 13rem;
+  background-color: rgb(244, 244, 244);
+  overflow-y: auto;
+}
+
+#content {
+  margin-left: 13rem;
+}
+
+#actionbar > h3 {
+  background-color: rgb(223, 223, 223);
+  padding: 18px;
+  padding-right: 30px;
+  margin-top: 0;
+  margin-bottom: 15px;
+  box-shadow: 0px -3px 15px 2px #000000;
+}
+
+#actionbar > ul {
+  margin: 10px;
+  list-style-type: none;
+  padding-left: 5px;
+}
+
+#actionbar > hr {
+  border: none;
+  height: 1px;
+  background-color: rgb(177, 177, 177);
+}
+
+#actionbar a {
+  text-decoration: none;
+  color: rgb(0, 48, 168);
+}
+
+#actionbar > :last-child {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  right: 5px;
+  font-size: small;
+}
+
+.material-symbols-outlined {
+  vertical-align: middle;
+}
+
+  </style>
+</body>
+</html>

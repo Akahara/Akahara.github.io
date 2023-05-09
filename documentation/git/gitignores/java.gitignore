@@ -1,0 +1,16 @@
+# java files
+*.class
+*.log
+
+# crash dumps
+hs_err_pid*
+
+# eclipse settings files
+# TODO add intelliJ settings files
+bin/
+.settings/
+.project
+.classpath
+
+# macos files
+*.DS_Store

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>web-exercice-fr.md</title>
+    <link href="/documentation/index.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+</head>
+<body>
+    <h2 id="table-des-matières">1 Table des matières</h2>
+<p><nav class="toc"><ol class="toc-level toc-level-1"><li class="toc-item toc-item-h2"><a class="toc-link toc-link-h2" href="#table-des-matières">Table des matières</a></li><li class="toc-item toc-item-h2"><a class="toc-link toc-link-h2" href="#intro">Intro</a><ol class="toc-level toc-level-2"><li class="toc-item toc-item-h3"><a class="toc-link toc-link-h3" href="#avant-de-commencer">Avant de commencer</a></li></ol></li><li class="toc-item toc-item-h2"><a class="toc-link toc-link-h2" href="#dabord-lhtml">D'abord l'html</a></li><li class="toc-item toc-item-h2"><a class="toc-link toc-link-h2" href="#un-meilleur-html">Un meilleur html</a><ol class="toc-level toc-level-2"><li class="toc-item toc-item-h3"><a class="toc-link toc-link-h3" href="#google-icons">Google icons</a></li><li class="toc-item toc-item-h3"><a class="toc-link toc-link-h3" href="#les-images">Les images</a></li><li class="toc-item toc-item-h3"><a class="toc-link toc-link-h3" href="#les-liens">Les liens</a></li><li class="toc-item toc-item-h3"><a class="toc-link toc-link-h3" href="#les-sélecteurs">Les sélecteurs</a></li></ol></li><li class="toc-item toc-item-h2"><a class="toc-link toc-link-h2" href="#le-css">Le css</a></li><li class="toc-item toc-item-h2"><a class="toc-link toc-link-h2" href="#le-php">Le php</a></li><li class="toc-item toc-item-h2"><a class="toc-link toc-link-h2" href="#les-forms">Les forms</a></li><li class="toc-item toc-item-h2"><a class="toc-link toc-link-h2" href="#lintéraction-form-php">L'intéraction form-php</a></li><li class="toc-item toc-item-h2"><a class="toc-link toc-link-h2" href="#bdd">BDD</a></li><li class="toc-item toc-item-h2"><a class="toc-link toc-link-h2" href="#la-suite">La suite</a><ol class="toc-level toc-level-2"><li class="toc-item toc-item-h3"><a class="toc-link toc-link-h3" href="#une-api">Une api</a></li></ol></li><li class="toc-item toc-item-h2"><a class="toc-link toc-link-h2" href="#conclusion">Conclusion</a></li></ol></nav></p>
+<h2 id="intro">2 Intro</h2>
+<p>Comme exercice je vous propose de recréer la page du lecteur youtube, ça vous permettra de pratiquer html et css.
+Si vous préférez, vous pouvez reconstruire une page de discord, ça vous donnera aussi une bonne idée de comment utiliser les choses et vous aurez à faire par vous même, la structure du code ne sera pas très différente mais le résultat si.</p>
+<blockquote class="callout-hint callout"><p> Ce que je vous donne</p><div><p>Vous pourrez suivre avec le code que je mettrai en lien mais je vous invite à faire d'abord par vous même. Il y aura des indications avant chaque section.
+Il y aura aussi un screenshot après chaque avancée, si vous n'avez pas exactement la même chose que moi ce n'est pas grave.
+Vous pouvez aussi faire tout autre chose et utiliser mon exemple comme source seulement.</p><p>N'oubliez pas les exemples <a href="https://github.com/Akahara/documentation/tree/master/web/examples">ici</a> !</p></div></blockquote>
+<blockquote class="callout-check callout"><p> Info - temps par étape</p><div><p>J'indique des temps à chaque étape <em>à titre indicatif</em>, ce sont les temps que je pense que j'aurais mit à tout faire pour la première fois, je sors les chiffres de mon chapeau donc ne vous inquiétez pas si vous prenez plus ou moins de temps qu'indiqué.
+Surtout sur la partie css, vous pouvez passer un instant ou plusieurs jours dessus.</p></div></blockquote>
+<h3 id="avant-de-commencer">2.1 Avant de commencer</h3>
+<p>Avant de commencer une page c'est toujours une bonne idée de dessiner au crayon un sketch de ce que vous voulez obtenir à la fin. Pour cet exemple je l'ai déjà <a href="https://youtu.be/dQw4w9WgXcQ">ici</a>.</p>
+<h2 id="dabord-lhtml">3 D'abord l'html</h2>
+<p>On commence <em>toujours</em> par l'html, on y écrit ce que contient la page. Le but de cette étape n'est pas d'avoir quelque chose de joli mais de savoir <em>où</em> on va, et ce qu'il y aura à terme.</p>
+<blockquote class="callout-check callout"><p> Etape 1 (1/2h)</p><div><p>Commencez avec une page vide puis rajoutez les balises, les textes et même les images si vous voulez. Utilisez le <a href="https://www.lipsum.com/">lorem ipsum</a> pour les textes longs, ça ne sert à rien d'écrire le contenu de votre site tout de suite.</p></div></blockquote>
+<p>👉 <a href="https://github.com/Akahara/documentation/tree/master/web/follow-allong/step%201/">code</a>
+<img src="follow-allong/screenshots/step%201.png" alt="missing image"></p>
+<h2 id="un-meilleur-html">4 Un meilleur html</h2>
+<p>Avant d'ajouter du css on peut faire des choses un peu plus jolies. Par exemple j'aime bien utiliser <a href="https://developers.google.com/fonts/docs/material_icons">google fonts</a> pour ajouter des icônes et des polices de texte.</p>
+<h3 id="google-icons">4.1 Google icons</h3>
+<p>La liste des icones est <a href="https://fonts.google.com/icons">ici</a>, il vous suffit de rajouter</p>
+<pre><code class="language-html"><span class="cdhg-separator">&#x3C;</span><span class="cdhg-html-element">link</span><span class="cdhg-separator"> </span><span class="cdhg-html-attribute">href</span><span class="cdhg-separator">=</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">https://fonts.googleapis.com/icon?family=Material+Icons+Outlined</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator"> </span><span class="cdhg-html-attribute">rel</span><span class="cdhg-separator">=</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">stylesheet</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">></span><span class="cdhg-misc">
+</span><span class="cdhg-separator">&#x3C;</span><span class="cdhg-html-element">link</span><span class="cdhg-separator"> </span><span class="cdhg-html-attribute">href</span><span class="cdhg-separator">=</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">https://fonts.googleapis.com/icon?family=Material+Icons</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator"> </span><span class="cdhg-html-attribute">rel</span><span class="cdhg-separator">=</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">stylesheet</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">></span></code></pre>
+<p>dans votre balise <code>&#x3C;head></code>, puis de copier la ligne</p>
+<pre><code class="language-html"><span class="cdhg-separator">&#x3C;</span><span class="cdhg-html-element">span</span><span class="cdhg-separator"> </span><span class="cdhg-html-attribute">class</span><span class="cdhg-separator">=</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">material-symbols-outlined</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">></span><span class="cdhg-misc">menu</span><span class="cdhg-separator">&#x3C;/</span><span class="cdhg-html-element">span</span><span class="cdhg-separator">></span></code></pre>
+<p>qui correspond à votre icône.</p>
+<h3 id="les-images">4.2 Les images</h3>
+<p>La balise <code>&#x3C;img/></code> permet d'intégrer des images à votre page, elle s'utilise de cette façon :</p>
+<pre><code class="language-html"><span class="cdhg-separator">&#x3C;</span><span class="cdhg-html-element">img</span><span class="cdhg-separator"> </span><span class="cdhg-html-attribute">src</span><span class="cdhg-separator">=</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-text">URL/CHEMIN</span><span class="cdhg-text cdhg-text-quote">"</span><span class="cdhg-separator">/></span></code></pre>
+<p>Si votre image est un fichier vous pouvez indiquer son chemin relatif <em>au fichier .html</em>. Si elle vient d'internet vous pouvez aussi simplement mettre son url.</p>
+<blockquote>
+<p>Pour les images j'utiliserai les vignettes des tracks de <a href="https://www.youtube.com/c/LenaRaine/videos">Lena Raine</a>, je vous invite à aller écouter ce qu'elle fait !</p>
+</blockquote>
+<blockquote class="callout-check callout"><p> Etape 2a (1/4h)</p><div><p>Rajoutez les images et les icônes si ce n'est pas déjà fait.</p></div></blockquote>
+<p>👉 <a href="https://github.com/Akahara/documentation/tree/master/web/follow-allong/step%202a/">code</a>
+<img src="follow-allong/screenshots/step%202a.png" alt="missing image"></p>
+<h3 id="les-liens">4.3 Les liens</h3>
+<p>C'est aussi le moment de rajouter les liens vers d'autres pages si vous en avez. Ici je parle seulement des liens avec les balises <code>&#x3C;a></code> comme les menus et les liens externes. Si vous avez des trucs plus compliqués comme une barre de recherche ce sera plus tard.</p>
+<blockquote class="callout-check callout"><p> Etape 2b (5min)</p><div><p>Rajoutez les liens des balises <code>&#x3C;a></code>.</p></div></blockquote>
+<blockquote>
+<p>Je ne mets pas le code tout de suite, quand j'ai construit l'exemple j'ai rajouté les liens après le css.</p>
+</blockquote>
+<h3 id="les-sélecteurs">4.4 Les sélecteurs</h3>
+<p>Pour ajouter du css il va vous falloir des <em>IDs</em> et des <em>classes</em> dans votre html, si vous avez l'habitude vous pouvez les rajouter en même temps que le reste, mais ça marche aussi de les rajouter après le reste.</p>
+<blockquote>
+<p>J'ai rajouté un peu plus d'IDs que nécessaire, en prévision du JS. C'est toujours utile de rajouter les IDs des éléments interactifs (boutons...).</p>
+</blockquote>
+<blockquote class="callout-check callout"><p> Etape 2c (10min)</p><div><p>Rajoutez les sélecteurs (IDs et classes) les plus importants, de toute façon vous serez amené à les modifier en ajoutant le css.</p></div></blockquote>
+<blockquote>
+<p>Je ne mets pas le code tout de suite, il n'a de l'intérêt qu'après le css.</p>
+</blockquote>
+<h2 id="le-css">5 Le css</h2>
+<p>Le css c'est souvent l'étape la plus longue, on peut faire quelque chose vite fait bien fait ou y passer des heures.
+La première phase c'est de positionner vos éléments sur la page, la seconde c'est mettre les bonnes couleurs aux bons endroits, mettre les accents dans le texte, les bordures etc...</p>
+<blockquote>
+<p>Si vous ne voulez pas faire de css tout de suite vous pouvez vous en passer, ca risque juste d'être un peu pénible de développer avec une interface aussi moche.</p>
+</blockquote>
+<blockquote class="callout-check callout"><p> Etape 3a (1h à 5h)</p><div><p>Prenez le temps qu'il faut pour bien placer vos éléments dans la page, vous pouvez utiliser les listes des propriétés et des sélecteurs du "cours" et vous servir d'internet !</p></div></blockquote>
+<p>👉 <a href="https://github.com/Akahara/documentation/tree/master/web/follow-allong/step%203a/">code</a>
+<img src="follow-allong/screenshots/step%203a.png" alt="missing image"></p>
+<blockquote class="callout-check callout"><p> Etape 3b (1/2h à 2h)</p><div><p>Passez aussi un peu de temps pour colorier ce qui doit être colorié, mettre les bordures, changer les styles par défaut etc...</p></div></blockquote>
+<p>👉 <a href="https://github.com/Akahara/documentation/tree/master/web/follow-allong/step%203b/">code</a>
+<img src="follow-allong/screenshots/step%203b.png" alt="missing image"></p>
+<h2 id="le-php">6 Le php</h2>
+<p>Pour pratiquer un peu le php je vous propose de faire en sorte que les vidéos listées à droite du lecteur soient choisies aléatoirement à chaque rechargement de la page.</p>
+<p>Pour pouvoir faire ça il va nous falloir un serveur avec php (j'utiliserai xampp). Vérifiez que votre installation fonctionne en renommant l'index en <code>index.php</code>, placez-le à la racine de votre serveur web et tapez <code>localhost</code> dans l'url de votre navigateur.
+Si votre page ne s'affiche pas allez voir le "cours".</p>
+<p>Pour afficher des vidéos il va vous falloir... des vidéos (qui l'eut cru !). Pour éviter de tout mettre au même endroit je vais créer un fichier <code>videos.php</code> qui contiendra juste une liste des vidéos possibles.</p>
+<blockquote class="callout-check callout"><p> Etape 4a (10min)</p><div><p>Faites vous une liste de vidéos et mettez-la dans un fichier <code>videos.php</code>, vous pouvez aussi reprendre la mienne si ça ne vous intéresse pas.</p><blockquote>
+<p>Si vous faites le projet discord plutôt que youtube, vous pouvez faire une liste de comptes ou de messages.</p>
+</blockquote></div></blockquote>
+<p>Ensuite il reste à rajouter le php dans la page, d'abord avec un <code>#include "videos.php"</code> en haut de la page puis avec des <code>foreach</code>, <code>echo</code> ou <code>&#x3C;?= ... ?></code>.</p>
+<blockquote class="callout-check callout"><p> Etape 4b (1/4h)</p><div><p>Rajoutez le php nécessaire à l'affichage des vidéos, vous pouvez faire comme moi et afficher miniature, titre, auteur et vues et vous pouvez même rajouter un lien vers la vidéo avec une balise <code>&#x3C;a href="..."></code>.
+Vous aurez peut-être besoin de changer le css, dans ce cas c'est bien plus qu'1/4h qu'il vous faudra.</p></div></blockquote>
+<p>👉 <a href="https://github.com/Akahara/documentation/tree/master/web/follow-allong/step%204/">code</a>
+<img src="follow-allong/screenshots/step%204.png" alt="missing image"></p>
+<p>Ca c'était le php statique, pas de connexion avec une base de données ni d'entrées utilisateur.</p>
+<p>Avant d'intégrer bdd/interactivité il va nous falloir un <em>form</em> en html.</p>
+<h2 id="les-forms">7 Les forms</h2>
+<p>Nous allons utiliser le champ de recherche en haut de la page pour filtrer les vidéos de la barre de droite - ce n'est pas très raccord avec le site de base mais ça nous évite d'avoir à créer plusieurs pages.</p>
+<p>Nous avons déjà une balise <code>&#x3C;input/></code> pour le champ de recherche, il suffit de l'entourer par un <code>&#x3C;form></code> et de mettre un bouton <code>&#x3C;button type="submit"></code> à la place de l'icône de recherche (en gardant l'icône <em>dans</em> le bouton).</p>
+<p>Ensuite il reste à préciser le champ <code>name="..."</code> du champ de recherche et l'action/la méthode du form.
+Pour vérifier que tout fonctionne je vais d'abord rediriger les recherches sur le site officiel de youtube. Pour ca il me suffit de faire une recherche normale, sur youtube, et de regarder l'url que ca me produit :</p>
+<pre><code>https://www.youtube.com/results?search_query=web
+</code></pre>
+<p>Avec ça j'obtiens les attributs que je dois rajouter :</p>
+<table>
+<thead>
+<tr>
+<th>Attribut</th>
+<th>Balise</th>
+<th>Valeur</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>action</td>
+<td>form</td>
+<td>"<a href="https://www.youtube.com/results">https://www.youtube.com/results</a>"</td>
+</tr>
+<tr>
+<td>method</td>
+<td>form</td>
+<td>"GET"</td>
+</tr>
+<tr>
+<td>name</td>
+<td>input</td>
+<td>"search_query"</td>
+</tr>
+</tbody>
+</table>
+<blockquote class="callout-check callout"><p> Etape 5 (10min)</p><div><p>Rajoutez le form et mettez les bons attributs aux bons endroits. Vérifiez que la barre de recherche vous amène bien sur youtube.</p></div></blockquote>
+<p>👉 <a href="https://github.com/Akahara/documentation/tree/master/web/follow-allong/step%205/">code</a></p>
+<h2 id="lintéraction-form-php">8 L'intéraction form-php</h2>
+<p>On peut garder notre form tel quel à l'exception de son <em>action</em>. On va rediriger la requête sur la même page en remplaçant l'url de youtube par "#". On va s'assurer que la valeur du champ de recherche est bien passée en ajoutant <code>&#x3C;?= $_GET['search_query'] ?></code> quelque part, tout en haut de l'html ou dans le titre de la vidéo par exemple.</p>
+<p>Une fois que c'est fait il reste à filtrer les vidéos qui peuvent être affichées avec la valeur en question. N'oubliez pas qu'elle peut ne pas exister, notamment à la première ouverture de la page.</p>
+<blockquote class="callout-check callout"><p> Etape 6 (1/4h)</p><div><p>Changez le php pour filtrer les vidéos dont le titre contient ce que l'utilisateur a recherché.</p><blockquote>
+<p>N'hésitez pas à différencier le code php pour l'affichage et pour le filtrage. Souvent on met tout ce qui est récupération des données en php avant l'html et l'affichage est mixé à l'html.</p>
+</blockquote></div></blockquote>
+<p>👉 <a href="https://github.com/Akahara/documentation/tree/master/web/follow-allong/step%206/">code</a></p>
+<h2 id="bdd">9 BDD</h2>
+<p>Pour éviter d'avoir à écrire toutes les vidéos tel quelles en php, on va utiliser une base de données, avec apache et mysql vous devriez avoir accès à phpmyadmin (<a href="http://localhost/phpmyadmin">localhost/phpmyadmin</a>), vous devriez pouvoir créer une bdd et un utilisateur avec un mot de passe.</p>
+<p>J'utiliserai PDO, vous pourrez trouver un code de base dans le "cours".</p>
+<blockquote class="callout-check callout"><p> Etape 7 (1/2h-1h)</p><div><p>Créez un utilisateur et une base de données avec une seule table des vidéos du site. Remplissez la table et faites une requête en php qui récupère les vidéos dont le nom contient la recherche de l'utilisateur.
+Vous devriez pouvoir retirer le fichier <code>videos.php</code> ensuite.</p></div></blockquote>
+<p>👉 <a href="https://github.com/Akahara/documentation/tree/master/web/follow-allong/step%207/">code</a></p>
+<h2 id="la-suite">10 La suite</h2>
+<p>À ce niveau vous devriez avoir à peu près tout pour faire votre premier site. Si vous voulez continuer à lire je vous propose de remplacer l'intégration des vidéos directement en php par une api pour pratiquer un peu le javascript. Sinon c'est la fin de cet exercice !</p>
+<h3 id="une-api">10.1 Une api</h3>
+<p>L'idée est de retirer tout le code php de l'index et d'utiliser javascript pour demander au serveur les vidéos à afficher. Du point de vue de l'utilisateur la page va être chargée mais sera vide au début, et les vidéos apparaîtront après.</p>
+<blockquote class="callout-check callout"><p> Etape I (5min-1/4h)</p><div><p>Je vais commencer par créer un fichier <code>api.php</code> qui récupèrera seulement les vidéos (comme on le faisait déjà) et qui les affichera sous format json (cf la fonction <code>json_encode</code>).
+Vous pouvez vérifier que l'api fonctionne en allant la regarder depuis votre navigateur.</p></div></blockquote>
+<blockquote class="callout-check callout"><p> Etape II (5min)</p><div><p>Retirez tout le php de l'index, vous pouvez même renommer l'extension en <code>.html</code>. Gardez ce l'élément <code>&#x3C;li></code> qui était dans la boucle <code>foreach</code> mais placez-le dans une balise <code>&#x3C;template></code>, il nous sera utile pour rajouter les vidéos ensuite.</p></div></blockquote>
+<blockquote class="callout-check callout"><p> Etape III (1/2h-3/4h)</p><div><p>Rajoutez un script js et faites deux fonctions : une qui ajoute une balise <code>&#x3C;li></code> d'une vidéo à la liste et l'autre qui envoie une requête GET sur l'api et qui appelle la première pour générer la liste des vidéos.</p></div></blockquote>
+<blockquote class="callout-check callout"><p> Etape IV (1/4h)</p><div><p>Il ne reste plus qu'à filtrer les vidéos affichées en fonction du paramètre <code>search_query</code> de l'étape 6.</p></div></blockquote>
+<p>👉 <a href="https://github.com/Akahara/documentation/tree/master/web/follow-allong/API%201/">code</a></p>
+<blockquote class="callout-check callout"><p> Alternative</p><div><p>Techniquement, c'est mieux d'envoyer le paramètre à l'api, ne rien filtrer en JS et de changer le form pour qu'il ne recharge pas complètement la page. Si vous êtes arrivé jusque là vous ne devriez pas avoir de mal à voir comment faire, je mets quand même le code dans le doute.</p></div></blockquote>
+<p>👉 <a href="https://github.com/Akahara/documentation/tree/master/web/follow-allong/API%202/">code</a></p>
+<h2 id="conclusion">11 Conclusion</h2>
+<p>Avec tout ça vous avez de très bonnes bases pour faire à peu près n'importe quoi en web, comme toujours google est votre amis si vous avez des questions spécifiques.</p>
+
+    <a id="back-link" href="/documentation"><span class="material-icons-outlined">home</span></a>
+    <style>
+#back-link {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+    </style>
+</body>
+</html>

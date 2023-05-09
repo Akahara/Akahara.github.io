@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>git-use-case.md</title>
+    <link href="/documentation/index.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+</head>
+<body>
+    <p>Here is an example of a git use-case. I created a repository on github (test.git) and cloned it. The default branch was named <em>main</em> instead of the usual <em>master</em>.</p>
+<blockquote>
+<p><strong>Clone</strong></p>
+<p><img src="resources/git-cmd-1.png" alt="missing image"></p>
+</blockquote>
+<blockquote>
+<p><strong>Add a file</strong></p>
+<p><img src="resources/git-cmd-2.png" alt="missing image"></p>
+</blockquote>
+<blockquote>
+<p><strong>Stage the file</strong></p>
+<p><img src="resources/git-cmd-3.png" alt="missing image"></p>
+</blockquote>
+<blockquote>
+<p><strong>Commit</strong></p>
+<p><img src="resources/git-cmd-4.png" alt="missing image"></p>
+</blockquote>
+<blockquote>
+<p><strong>Push</strong></p>
+<p><img src="resources/git-cmd-5.png" alt="missing image"></p>
+</blockquote>
+<blockquote>
+<p><strong>Switch to a new branch</strong></p>
+<p><img src="resources/git-cmd-6.png" alt="missing image"></p>
+</blockquote>
+<blockquote>
+<p><strong>Remove the file</strong></p>
+<p><img src="resources/git-cmd-7.png" alt="missing image"></p>
+</blockquote>
+<blockquote>
+<p><strong>Merge the 2 branches</strong></p>
+<p><img src="resources/git-cmd-8.png" alt="missing image"></p>
+</blockquote>
+<blockquote>
+<p><strong>Pull with a conflict</strong></p>
+<p>I created a file named <em>conflict.txt</em> and someone else also did, we both wrote a single line and git does not know how to handle the situation, it gives me a merge conflict that I have to resolve myself.
+<img src="resources/git-cmd-9.png" alt="missing image">
+To start resolving the conflict, we must first commit what was not commited.
+<img src="resources/git-cmd-10.png" alt="missing image">
+The conflicting file :
+<img src="resources/git-cmd-11.png" alt="missing image">
+conflicts are marked with &#x3C;&#x3C;&#x3C; and >>>, above the === line is the current file and below is the file as it is currently on the remote.
+To fix the conflict you can do whatever, keep both parts, remove one or both... <em>Never leave the &#x3C;&#x3C;&#x3C; === and >>> lines!</em></p>
+</blockquote>
+<blockquote>
+<p><strong>To finish fixing the conflict, commit one last time</strong></p>
+<p><img src="resources/git-cmd-12.png" alt="missing image"></p>
+</blockquote>
+
+    <a id="back-link" href="/documentation"><span class="material-icons-outlined">home</span></a>
+    <style>
+#back-link {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+    </style>
+</body>
+</html>

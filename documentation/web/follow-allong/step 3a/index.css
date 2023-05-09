@@ -1,0 +1,83 @@
+body {
+  margin: 0;
+}
+
+#page-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+  position: sticky;
+  top: 0;
+}
+
+.material-icons, .material-icons-outlined {
+  vertical-align: bottom;
+}
+
+#page-body {
+  display: flex;
+  padding: 20px;
+  max-width: 1600px;
+  margin: auto;
+}
+
+#videos-list {
+  flex-grow: 1;
+  padding: 20px;
+  margin: 0;
+}
+
+#videos-list > li {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+#videos-list > li > :first-child {
+  margin-right: 10px;
+}
+
+#video-player > * {
+  width: 100%;
+}
+
+#video-actions {
+  text-align: end;
+  position: relative;
+  /* display: flex; */
+  /* justify-content: space-between; */
+}
+
+#video-actions > :first-child {
+  position: absolute;
+  left: 0;
+}
+
+#video-actions > * {
+  margin-right: 15px;
+}
+
+#video-info {
+  display: flex;
+  flex-direction: row;
+}
+
+#video-info > :nth-child(2) {
+  flex-grow: 1;
+  padding: 0 20px 0 20px;
+}
+
+#video-info > :last-child {
+  white-space: nowrap;
+}
+
+#video-info h4 {
+  margin: 0;
+}
+
+.profile-picture {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}

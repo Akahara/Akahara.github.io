@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log-in</title>
+</head>
+<body>
+  <div id="login-form">
+    <section>
+      <h3>Log-In</h3>
+      <hr>
+      <form>
+        <label>
+          Account name<br>
+          <input type="text" required placeholder="Enter your account name...">
+        </label>
+        <label>
+          Password<br>
+          <input type="password" required placeholder="Enter yout password...">
+        </label>
+        <button type="submit">Log-in</button>
+      </form>
+    </section>
+    <section>
+      <h4>Don't have an account ?</h4>
+      <a href="does-not-exist-link">Create one here</a>
+    </section>
+  </div>
+  
+  <style>
+/* This code would be in a .css file in a real project */
+
+#login-form {
+  width: fit-content;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Courier New', Courier, monospace;
+}
+
+#login-form form {
+  padding: 8px;
+}
+
+#login-form > section {
+  box-shadow: 0px 0px 8px 2px #7e7e7e;
+  background-color: rgb(223, 255, 224);
+  border-radius: 12px 0 12px 0;
+  text-align: center;
+  margin: 15px;
+  padding: 8px 5px 8px 5px;
+}
+
+#login-form hr {
+  width: 75%;
+  height: 1px;
+  border: none;
+  background-color: #7e7e7e;
+}
+
+#login-form label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+#login-form input {
+  border-radius: 3px;
+  border: 1px solid rgb(191, 191, 191);
+  padding: 5px;
+  outline: none;
+}
+
+#login-form button {
+  font-size: 1.1em;
+  cursor: pointer;
+  border: none;
+  padding: 2px;
+  background-color: rgb(164, 255, 164);
+  width: 75%;
+  border-radius: 6px;
+  font-family: 'Courier New', Courier, monospace;
+  margin-top: 18px;
+}
+
+#login-form h3,
+#login-form h4 {
+  margin: 0;
+}
+
+  </style>
+</body>
+</html>

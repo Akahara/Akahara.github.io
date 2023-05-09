@@ -1,0 +1,6 @@
+# JS/web projects
+**/node_modules
+**/package-lock.json
+
+# macosx files
+.DS_Store

@@ -1,0 +1,198 @@
+html,
+body {
+    padding: 0;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+}
+
+body {
+    margin: 10vh auto 10vh auto;
+    width: 60%;
+}
+
+@media screen and (max-width: 992px) {
+    body {
+        width: 90%;
+    }
+}
+
+blockquote {
+    border-left: 5px solid rgba(212, 212, 212, 0.333);
+    /* background-color: rgba(82, 82, 82, 0.044); */
+    padding: 10px;
+    border-radius: 4px;
+    margin: 10px 6% 10px 6%;
+}
+
+blockquote > p:last-child,
+blockquote > p:first-child {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+blockquote > p {
+    color: rgb(87, 96, 106);
+}
+
+p {
+    text-align: justify;
+}
+
+/* downscale logos */
+img[src$="svg"] {
+    width: 18%;
+}
+
+img {
+    max-width: 100%;
+    max-height: 50vh;
+    display: block;
+    margin: 2px;
+}
+
+h1,h2,h3,h4 {
+    font-weight: 900;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+h3 {
+    margin-top: 60px;
+}
+
+h1 { border-bottom: 1px solid rgb(113, 113, 113); }
+h2 { border-bottom: 1px solid rgb(113, 113, 113); }
+h3 { border-bottom: 1px solid rgb(113, 113, 113); }
+
+code, kbd, pre, samp {
+    font-family: monospace,monospace;
+    font-size: 1em;
+}
+
+code {
+    background-color: rgba(175, 184, 193, 0.2);
+    padding: .2em .4em;
+    border-radius: 6px;
+    font-size: 85%;
+}
+
+pre > code {
+    background-color: transparent;
+    padding: 0;
+}
+
+pre {
+    padding: 10px;
+    border-radius: 2px;
+    background-color: rgb(246, 248, 250);
+    overflow-x: auto;
+}
+
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+td, th {
+    border: 1px solid #d0d7de;
+    padding: 6px 13px;
+}
+
+tbody > tr:nth-child(2n) {
+    background-color: #f6f8fa;
+}
+
+a {
+    text-decoration: none;
+    color: #0969da;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+li {
+    margin-top: 3px;
+}
+
+image {
+    color: rgb(212, 75, 75);
+}
+
+.callout {
+    --callout-c1: black;
+    --callout-c2: #6f6f6f;
+    padding: 0;
+    border-color: var(--callout-c1);
+    background-color: rgba(0, 0, 0, 0.018);
+}
+
+.callout > :first-child {
+    margin: 0;
+    padding: 10px;
+    background-color: var(--callout-c2);
+    color: white;
+}
+
+.callout > :first-child::before {
+    font-family: "Material Icons Outlined";
+    content: var(--callout-icon, '\e88e');
+    color: var(--callout-c1);
+    vertical-align: middle;
+    margin-right: 8px;
+    font-size: 1.3em;
+}
+
+.callout > :last-child {
+    padding: 10px;
+}
+
+.callout > :last-child > :first-child { margin-top: 0; }
+.callout > :last-child > :last-child { margin-bottom: 0; }
+
+.callout-note { --callout-c1: rgb(76, 104, 196); --callout-c2: rgb(65, 65, 183); --callout-icon: '\e3c9'; }
+.callout-abstract,
+.callout-summary,
+.callout-tldr { --callout-c1: rgb(76, 182, 196); --callout-c2: rgb(136, 207, 220); --callout-icon: '\e88e'; }
+.callout-info,
+.callout-todo { --callout-c1: rgb(87, 156, 217); --callout-c2: rgb(136, 175, 220); --callout-icon: '\e86c'; }
+.callout-tip,
+.callout-hint,
+.callout-important { --callout-c1: rgb(76, 196, 166); --callout-c2: rgb(136, 220, 161); --callout-icon: '\ef55'; }
+.callout-success,
+.callout-check,
+.callout-done { --callout-c1: rgb(84, 196, 76); --callout-c2: rgb(140, 220, 136); --callout-icon: '\e876'; }
+.callout-question,
+.callout-help,
+.callout-faq { --callout-c1: rgb(61, 197, 63); --callout-c2: #68d751; --callout-icon: '\e887'; }
+.callout-warning,
+.callout-caution,
+.callout-attention { --callout-c1: rgb(211, 134, 36); --callout-c2: rgb(232, 163, 74); --callout-icon: '\e002'; }
+.callout-failure,
+.callout-fail,
+.callout-missing { --callout-c1: rgb(196, 76, 76); --callout-c2: rgb(220, 136, 136); --callout-icon: '\e5cd'; }
+.callout-danger,
+.callout-error { --callout-c1: rgb(209, 52, 52); --callout-c2: rgb(238, 106, 106); --callout-icon: '\ec1c'; }
+.callout-bug  { --callout-c1: rgb(209, 52, 52); --callout-c2: rgb(238, 106, 106); --callout-icon: '\e868'; }
+.callout-example  { --callout-c1: rgb(162, 52, 209); --callout-c2:rgb(214, 106, 238); --callout-icon: '\e164'; }
+.callout-quote,
+.callout-cite  { --callout-c1: rgb(164, 162, 162); --callout-c2: rgb(198, 198, 198); --callout-icon: '\e244'; }
+
+
+code > .cdhg-number { color: rgb(5, 80, 174); }
+code > .cdhg-separator,
+code > .cdhg-variable { color: rgb(79, 79, 79); }
+code > .cdhg-class { color: rgb(51, 111, 50); }
+code > .cdhg-builtin { color: rgb(130, 80, 223); }
+code > .cdhg-text { color: rgb(23, 112, 39); }
+code > .cdhg-keyword { color: rgb(23, 83, 179); }
+code > .cdhg-comment { color: rgb(110, 119, 129); }
+code > .cdhg-misc { color: rgb(81, 81, 81); }
+
+code > .cdhg-html-element { color: rgb(11, 130, 166); }
+code > .cdhg-html-attribute { color: rgb(188, 16, 171); }
+code > .cdhg-css-selector { color: rgb(17, 99, 41); }
+code > .cdhg-css-attribute { color: rgb(188, 16, 171); }
+code > .cdhg-js-template-literal,
+code > .cdhg-html-context-switch { color: rgb(144, 123, 0); }

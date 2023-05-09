@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>git-fr.md</title>
+    <link href="/documentation/index.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+</head>
+<body>
+    <h1 id="git">Git</h1>
+<p><img src="resources/git.svg" alt="missing image"></p>
+<h2 id="une-introduction">1 Une introduction</h2>
+<p><nav class="toc"><ol class="toc-level toc-level-1"><li class="toc-item toc-item-h2"><a class="toc-link toc-link-h2" href="#une-introduction">Une introduction</a><ol class="toc-level toc-level-2"><li class="toc-item toc-item-h3"><a class="toc-link toc-link-h3" href="#quest-ce-que-cest-">Qu'est-ce que c'est ?</a></li><li class="toc-item toc-item-h3"><a class="toc-link toc-link-h3" href="#quest-ce-que-ce-nest-pas">Qu'est-ce que ce n'est pas</a></li></ol></li><li class="toc-item toc-item-h2"><a class="toc-link toc-link-h2" href="#comment-sen-servir">Comment s'en servir</a><ol class="toc-level toc-level-2"><li class="toc-item toc-item-h3"><a class="toc-link toc-link-h3" href="#comment-fonctionne-git">Comment fonctionne git</a></li><li class="toc-item toc-item-h3"><a class="toc-link toc-link-h3" href="#git-depuis-la-shell">Git depuis la shell</a></li></ol></li><li class="toc-item toc-item-h2"><a class="toc-link toc-link-h2" href="#problèmes-courants">Problèmes courants</a></li><li class="toc-item toc-item-h2"><a class="toc-link toc-link-h2" href="#notes">Notes</a><ol class="toc-level toc-level-2"><li class="toc-item toc-item-h3"><a class="toc-link toc-link-h3" href="#erreurs-de-commit">Erreurs de commit</a></li></ol></li></ol></nav></p>
+<h3 id="quest-ce-que-cest-">1.1 Qu'est-ce que c'est ?</h3>
+<p>Git est un outil de gestion de versions, il permet de synchroniser des fichiers entre plusieurs personnes et de garder un historique des modifications.</p>
+<h3 id="quest-ce-que-ce-nest-pas">1.2 Qu'est-ce que ce n'est pas</h3>
+<p>Git est très pratique pour les projets à plusieurs mais il ne résout pas tout. Ce n'est pas une solution miracle - vous aurez encore beaucoup de travail à faire par vous même.
+Vous avez sans doute déjà entendu parler de <a href="https://github.com">github</a>, <a href="https://gitlab.com">gitlab</a>, <a href="https://bitbucket.com">bitbucket</a> ou d'autres, ce sont des sites webs qui hébergent vos projets git et vous permettent de les parcourir simplement. <em>Mais il n'y a pas besoin de github (ou un autre) pour que git soit utile !</em> En soit ce sont juste des clouds de stockage.
+Retenez que git≠github, git c'est l'outil, github c'est l'interface.</p>
+<blockquote>
+<p>Personnelement j'utilise github, mais vous pouvez utiliser ce que vous voulez, les commandes git sont exactement les mêmes.</p>
+</blockquote>
+<p><img src="resources/github.svg" alt="missing image">
+<img src="resources/gitlab.svg" alt="missing image"></p>
+<h2 id="comment-sen-servir">2 Comment s'en servir</h2>
+<h3 id="comment-fonctionne-git">2.1 Comment fonctionne git</h3>
+<p>Git fonctionne avec des repository. Un dossier peut être un <em>répo</em> git, dans ce cas là il contient un dossier caché <code>.git</code> auquel il ne faut jamais toucher. C'est dans un répo que vous avez accès aux fonctionnalités de git.</p>
+<blockquote>
+<p>J'utilise "répo" à la place de repository, c'est juste le nom contracté.</p>
+</blockquote>
+<p>Techniquement un répo tout seul peut déjà servir, mais c'est mieux si vous n'êtes pas seul à y avoir accès, donc on en fait une copie sur un serveur en ligne (typiquement github), ensuite d'autres peuvent <em>cloner</em> le répo et le modifier.
+Donc en tout il y a le répo "maître" qui est sur github plus un par utilisateur. D'ailleur c'est souvent plus simple de créer le répo en ligne en premier et d'en faire soi-même un clone.</p>
+<p>Maintenant que le répo existe, on peut y travailler, modifier des fichiers etc. Pour que les autres voient les modifications il faut d'abord dire à git "j'ai modifié ça" et ensuite envoyer les modifications vers github. De leur côté les autres pourront utiliser git pour récupérer les modifs.</p>
+<p>Git fonctionne avec des commit. Une fois que vous avez modifié quelque chose, il faut rassembler les modifications en commit et c'est le commit qui sera envoyé/reçu par/vers github.</p>
+<blockquote class="callout-tldr callout"><p> Vocab</p><div><ul>
+<li><strong>repository</strong> - ensemble de fichiers géré par git</li>
+<li><strong>commit</strong> - ensemble de modifications sauvegardées</li>
+<li><strong>remote</strong> - le répo git distant (sur github), c'est le repository principal de votre projet</li>
+<li><strong>local</strong> - le répo git local (sur votre ordi, il peut y en avoir plusieurs)</li>
+<li><strong>staged</strong> - un fichier est "staged" si git l'a sauvegardé mais qu'il n'est pas encore dans un commit</li>
+<li><strong>branch</strong> - cf <a href="#Les%20branches">les branches</a></li>
+<li><strong>head</strong> - le dernier commit local (sur la branche active)</li>
+<li><strong>pull</strong> - récupérer les modifications des autres depuis le remote</li>
+<li><strong>push</strong> - envoyer ses propres modifications vers le remote</li>
+</ul></div></blockquote>
+<h3 id="git-depuis-la-shell">2.2 Git depuis la shell</h3>
+<blockquote class="callout-tldr callout"><p> Rappels sur la shell</p><div><p>La shell (terminal/command line/user prompt/powershell/invité de commande...) est un outil du développeur qui peut à peu près tout faire, mais sans interface.
+On en aura un usage assez basique, si vous ne l'avez jamais utilisé dites vous que c'est un "explorateur de fichiers très évolué". Démarrez une shell, tapez <code>pwd</code> pour savoir où vous êtes, utilisez <code>ls</code> pour lister les fichiers de votre emplacement, <code>cd ..</code> pour revenir un dossier en arrière ou <code>cd truc</code> pour aller dans le dossier truc.</p><p><img src="resources/cmd.png" alt="missing image"></p></div></blockquote>
+<h4 id="la-partie-simple">2.2.1 La partie simple</h4>
+<p>Pour apprendre git, le plus simple c'est de commencer par la ligne de commande. Il existe des interfaces graphiques que vous pourrez utiliser plus tard...</p>
+<blockquote class="callout-info callout"><p> 0 - Préparation</p><div><p>Pour utiliser git dans tous les cas il faut vous placer au bon endroit avant de commencer. Utilisez la commande <code>cd</code> ou démarrez votre shell dans le dossier du répo directement.</p><p>La première fois que vous utilisez git, faite</p><pre><code>git config --global user.name "˂votre nom˃"
+git config --global user.email "˂votre mail˃"
+</code></pre><p>à noter que votre mail doit correspondre à celui de votre compte github.</p></div></blockquote>
+<blockquote class="callout-example callout"><p> 1 - Créer un nouveau répo</p><div><p>Pour avoir un repository, on peut soit en <em>cloner</em> un existant :</p><pre><code>git clone ˂url˃
+</code></pre><p>Soit en créer un nouveau :</p><pre><code>git init
+</code></pre><blockquote>
+<p>La commande clone créé un nouveau dossier dans lequel votre répo habitera, init utilise le dossier dans lequel vous êtes déjà</p>
+</blockquote><p>Pour l'exercice, commencez par cloner le répo dont je vous donne l'url.
+Git vous affichera un message de succès ou un message pour vous dire quoi faire.</p></div></blockquote>
+<blockquote class="callout-example callout"><p> 2 - Modifier des trucs</p><div><p>Vous pouvez créer un fichier avec votre nom-prénom et le remplir avec ce que vous voulez, vous aurez à le remodifier plus tard.</p><p>Après ça faites</p><pre><code>git status
+</code></pre><p>pour voir l'ensemble des fichiers modifiés/créés/supprimés. Vous pouvez aussi faire</p><pre><code>git diff
+</code></pre><p>pour voir la différence entre le dernier commit et vos fichiers locaux.</p></div></blockquote>
+<blockquote class="callout-example callout"><p> 3 - Le commit</p><div><p>Pour dire à git "j'ai fait ça et j'en suis fier !", il faut faire un <em>commit</em>. D'abord faites</p><pre><code>git add ˂edited files...˃
+</code></pre><p>pour que les fichiers deviennent <em>staged</em>. Pour tout ajouter d'un coup vous pouvez faire <code>git add .</code></p><blockquote>
+<p>Vous pouvez refaire un <code>git status</code> pour voir la différence.</p>
+</blockquote><p>Ensuite faites</p><pre><code>git commit -m "˂commit message˃"
+</code></pre><p>vous pouvez aussi ne pas mettre le <code>-m "..."</code> mais votre shell vous demandera un message de commit.</p><blockquote>
+<p>Vous pouvez encore refaire un <code>git status</code> pour voir la différence.
+Et si vous faites <code>git log</code> vous pourrez voire votre commit (<em>head</em>) en avance sur le remote</p>
+</blockquote></div></blockquote>
+<blockquote class="callout-example callout"><p> 4 - Le pull</p><div><p>Avant d'envoyer ses modifications vers github, il faut <em>toujours</em> récupérer les modifications des autres <em>avant</em>. De toute façon git vous le dira si vous ne l'avez pas fait. Pour ca vous pouvez faire</p><pre><code>git pull
+</code></pre><p>Git va vous afficher une liste des fichiers qui ont été modifiés.</p><blockquote>
+<p>C'est souvent une bonne idée de faire un pull <em>avant</em> de commencer à travailler, pour avoir la dernière version du projet.</p>
+</blockquote></div></blockquote>
+<blockquote class="callout-example callout"><p> 5 - Le push</p><div><p>Une fois que votre repository est synchronisé avec le remote vous pouvez faire</p><pre><code>git push
+</code></pre><p>Si git vous répond "out of sync" ou quelque chose du genre c'est que quelqu'un à push avant vous ! Allez lui dire qu'il n'est pas gentil et retournez à l'étape 4.</p></div></blockquote>
+<blockquote>
+<p>TLDR :</p>
+<ol>
+<li>git add</li>
+<li>git commit</li>
+<li>git pull</li>
+<li>(git push)</li>
+<li>repeat
+C'est la boucle normale de développement. On l'affine avec les branches, les pull requests...</li>
+</ol>
+</blockquote>
+<h4 id="les-merges">2.2.2 Les merges</h4>
+<p>Très vite quand vous allez pull/push git va vous dire "error [...] files would be overwritten by merge", ça veut dire que vos fichiers sont en conflicts avec les fichiers du répo principal.</p>
+<p>Dans ce cas il vous faut résoudre les conflits vous même, commencez par <em>add</em>, <em>commit</em> vos fichiers et re-<em>pull</em> s'il vous restait des fichiers hors commit. Ensuite dans les fichiers en conflits</p>
+<h4 id="les-branches">2.2.3 Les branches</h4>
+<p>Les <em>branch</em>es sont des espaces parallèles de développement. Elles peuvent  servir pour séparer les avancées de chaque personne, permettre des expérimentations qui peuvent être intégrées au projet ou rejetées etc.</p>
+<p>Chaque repository possède une branche par défaut, souvent <code>master</code>. C'est la branche sélectionnée par défaut. Vous pouvez voir la branche active avec la première ligne du <code>git status</code>.</p>
+<p><img src="resources/github-branch.png" alt="missing image"></p>
+<p>Concrètement, une branche est une <em>version</em> du repository, qui contient des commits et qui peut être modifiée sans affecter les autres. Je vous propose de les utiliser pour pouvoir push vos modifications sans affecter les autres et quand vous serez prêt vous pourrez fusionner votre branche et la branche principale.</p>
+<p>Pour lister les branches :</p>
+<pre><code>git branch
+</code></pre>
+<p>Pour créer une branche :</p>
+<pre><code>git branch &#x3C;branch name>
+</code></pre>
+<p>Pour se déplacer sur une branche :</p>
+<pre><code>git checkout &#x3C;branch name>
+</code></pre>
+<p>Quand vous faites un <em>checkout</em> d'une autre branche, vos fichiers sont modifiés pour devenir ceux de la branche. De la même manière, les commits sont séparés entre les branches.
+Pour voir l'historique complet des branches vous pouvez utiliser :</p>
+<pre><code>git log --oneline --reflog --graph
+</code></pre>
+<p>Pour fusionner une branche à une autre, d'abord placez vous sur la branche qui <em>reçoit</em> les modifications (<code>checkout</code>) puis faites :</p>
+<pre><code>git merge &#x3C;branch name>
+</code></pre>
+<p>Avec le nom de la branche qui <em>possède déjà</em> les modifications (les commits).
+Lorsqu'une branche n'est plus utilisée vous pouvez la supprimer depuis github et en local :</p>
+<pre><code>git branch -d &#x3C;branch name>
+</code></pre>
+<p>ça rend le répo un peu plus propre. Les commits qui ont été <em>merge</em> ne seront pas perdus.</p>
+<blockquote class="callout-info callout"><p> Bonne pratique</p><div><p>En début de projet mettez vous d'accord sur l'utilisation des branches, une solution simple est que chacun ait sa branche.
+Il y a aussi beaucoup de projets ou les branches ne sont pas nécessaires, si le projet n'est pas très grand vous pouvez vous permettre de travailler sur la branche principale.</p></div></blockquote>
+<h4 id="le-gitignore">2.2.4 Le .gitignore</h4>
+<p>TLDR : Prenez le .gitignore qui correspond à votre langage &#x26; IDE et rajoutez le avant au projet tout le reste.</p>
+<p>Dans vos projets il y a des fichiers que vous voulez synchroniser et d'autres non, vous avez deux choix : éviter de les ajouter à vos commits à chaque fois ou utiliser un <code>.gitignore</code>.</p>
+<p>Vous pouvez avoir un .gitignore dans chaque dossier de votre répo, ils permettent d'exclure des fichiers. Par exemple :</p>
+<pre><code class="language-gitignore"><span class="cdhg-misc"># le dossier "config"
+config
+
+# tous les fichiers/dossiers "node_modules" et "package-lock.json"
+**/node_modules
+**/package-lock.json
+
+# tous les fichiers en .png, peu importe ou
+*.png
+
+# tous les .txt du dossier "output" 
+output/*.txt</span></code></pre>
+<blockquote class="callout-info callout"><p> Bonne pratique</p><div><p>De manière générale, ajoutez <em>toujours</em> vos fichiers de configuration d'IDE au .gitignore, ça permet aux autres d'utiliser d'autres IDE et ça peut poser problème entre différentes configurations.</p><blockquote>
+<p>Il m'est arrivé d'avoir à modifier un fichier à chaque commit parce que la version de Java n'était pas la même sur mes deux machines ; évitez vous ça.</p>
+</blockquote></div></blockquote>
+<p>Normalement vous avez des exemples de .gitignore à côté de ce fichier. Vous pouvez aussi en trouver des plus ou moins complets <a href="https://github.com/github/gitignore">ici</a>.</p>
+<blockquote class="callout-attention callout"><p> Attention</p><div><p>Si vous rajoutez un fichier au .gitignore mais qu'il est déjà dans un commit il faudra faire <code>git rm --cached &#x3C;fichier></code> et faire un nouveau commit. Ca supprimera le fichier de ceux qui vont pull ensuite, pensez à faire une sauvegarde ou à aller le récupérer dans l'historique git.
+Pour éviter ça mettez un .gitignore <strong>dès le début du projet</strong>.</p></div></blockquote>
+<h2 id="problèmes-courants">3 Problèmes courants</h2>
+<ul>
+<li>En début de projet vérifiez toujours que vous êtes sur la branche principale, ça peut poser beaucoup de problèmes sinon.</li>
+<li>Si votre IDE ne reconnaît pas votre projet après un pull, vérifiez que le gitignore contient bien les fichiers de configurations et qu'ils ne sont pas déjà sur la branche principale.</li>
+<li>Au début d'un projet, si vous ne pouvez pas pull/push c'est peut-être un problème de remote, dans ce cas utilisez <code>git push -u origin/master</code> (si origin est votre remote et master la branche principale).</li>
+<li>Si vraiment git vous dit non, une solution est de re-cloner le projet dans un nouveau dossier (gardez toujours l'ancien, au cas ou)</li>
+</ul>
+<h2 id="notes">4 Notes</h2>
+<blockquote class="callout-tldr callout"><p> Commandes essentielles</p><div><p>Si vous connaissez ces commandes vous pouvez a peu près tout faire, elles sont détaillées plus haut.</p><pre><code>git init
+git clone ˂url˃
+git status
+git log --oneline
+
+git add ˂files...˃
+git add .
+git commit -m "˂message˃"
+
+git pull
+git push
+
+git branch
+git branch ˂branch˃
+git checkout ˂branch˃
+git branch -d ˂branch˃
+
+git merge ˂branch˃
+</code></pre></div></blockquote>
+<p>👉 <a href="https://training.github.com/downloads/github-git-cheat-sheet.pdf">Cheat-sheet git</a></p>
+<p>Après un commit il n'est pas strictement nécessaire de push, vous pouvez accumuler des commits en push plusieurs d'un coup, ça peut être une bonne idée si vous avez cassé quelque chose dans le projet par exemple. Il vaut toujours mieux attendre que de push des modifications qui vont gêner les autres, ou alors push sur une branche annexe.</p>
+<h3 id="erreurs-de-commit">4.1 Erreurs de commit</h3>
+<ul>
+<li>
+<p>Vous avez déjà <code>git add</code> votre fichier mais pas encore commit :</p>
+<pre><code>git rm --cached &#x3C;file>
+</code></pre>
+</li>
+<li>
+<p>Vous avez déjà <code>git commit</code> un fichier mais pas encore push :</p>
+<pre><code>-- réparez votre fichier, puis
+git add &#x3C;file>
+git commit -m "&#x3C;message>" --ammend
+</code></pre>
+<p>Ça ne marche que si le fichier fait parti de votre dernier commit.</p>
+</li>
+<li>
+<p>Vous avez déjà push :
+Pas de chance, l'historique git est inaltérable, il ne vous reste plus qu'à refaire un commit et espérer que ça n'a gêné personne.</p>
+</li>
+<li>
+<p>Vous avez fait des modifications mais qui ne valent pas la peine d'être gardées, pour revenir aux fichiers tels qu'ils étaient au dernier commit :</p>
+<pre><code>git reset --hard
+</code></pre>
+<p><strong>Attention</strong>, cette action n'est pas réversible !</p>
+</li>
+</ul>
+<p>Si votre cas n'est pas dans la liste, vous pouvez regarder <a href="https://docs.gitlab.com/ee/topics/git/numerous_undo_possibilities_in_git/">ici</a></p>
+
+    <a id="back-link" href="/documentation"><span class="material-icons-outlined">home</span></a>
+    <style>
+#back-link {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+    </style>
+</body>
+</html>
