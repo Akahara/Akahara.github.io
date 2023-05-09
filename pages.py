@@ -12,7 +12,7 @@ for page_file in os.listdir('pages'):
         continue
     page_name = page_file[:-3]
     
-    processes.append(Popen(f'node ../markdown-to-html/index_cli.js pages/{page_name}.md ./pages/out_{page_name}.html', shell=True))
+    processes.append(Popen(f'node ./markdown-to-html/index_cli.js pages/{page_name}.md ./pages/out_{page_name}.html', shell=True))
 
 for p in processes:
     p.wait()
