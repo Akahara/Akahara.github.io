@@ -8,6 +8,8 @@ const DOCUMENTATION_DIR_PATH = 'documentation_source';
 const DOCUMENTATION_DIR_OUTPUT_PATH = 'documentation';
 const EXCLUDED_PATHS = [ ".git", "courses" ];
 
+const REMOVED_INDEX = join(DOCUMENTATION_DIR_OUTPUT_PATH, 'readme.html');
+
 async function generateHtmlFiles() {
     const htmlTemplate = readFileSync(TEMPLATE_PATH).toString();
     const visitableMdPaths = [];
@@ -16,6 +18,11 @@ async function generateHtmlFiles() {
     console.log("visitableMdPaths", visitableMdPaths);
     visitableMdPaths.sort();
     visitablePaths.sort();
+
+    // remove the readme.html file from the original documentation repository
+    // because github.io pages give higher priority to readme.html than index.html
+    visitableMdPaths.splice(visitableMdPaths.indexOf(REMOVED_INDEX), 1);
+    rmSync(REMOVED_INDEX);
 
     writeFileSync(join(DOCUMENTATION_DIR_OUTPUT_PATH, 'index.html'), htmlTemplate
         .replace('TITLE', 'documentation index')
